@@ -39,15 +39,15 @@ Skilled at working in diverse teams, translating complex technical concepts for 
 
 ---
 
-## 💼 Featured Projects 
-[🛡️ Anomaly and Fraud Detection in Finance](https://github.com/Vinylango25/Anomaly-Fraud-detection-in-Finance) 
+# 💼 Featured Projects 
+## 🛡️ Anomaly and Fraud Detection in Finance
 
 ![Figure 1: Age distribution](fg7.png)
 
 This project developed a scalable and interpretable fraud detection pipeline for highly imbalanced credit card transaction data. It employed advanced sampling techniques like SMOTE and SMOTEENN to balance the dataset and evaluated a range of models including Logistic Regression, Random Forest, Gradient Boosting, LightGBM, KNN, and Isolation Forest. AutoML tools such as FLAML and PyOD enhanced model tuning and anomaly detection. Feature selection methods (RFE, Mutual Information) were applied to retain key predictors, and performance was assessed using precision, recall, F1-score, ROC-AUC, and confusion matrices. To ensure transparency, LIME and SHAP were used for model explainability, enabling clear interpretation of fraud predictions. 👉 [View on GitHub](https://github.com/Vinylango25/Anomaly-Fraud-detection-in-Finance)
 
 ---
-[🏥 Healthcare Accessibility in Nairobi](https://github.com/Vinylango25/Healthcare-Accessibility-in-Nairobi)
+## 🏥 Healthcare Accessibility in Nairobi
 
 ![Figure 1: Age distribution](fig6.png)
 
