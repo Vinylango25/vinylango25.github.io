@@ -55,6 +55,17 @@ This project conducted a comprehensive data-driven analysis of healthcare access
 
 
 
+
+## 🤖 Lending Automation - ML for Credit Scoring
+
+![Figure 1: Age distribution](cost.png)
+
+
+This project evaluated the application of machine learning models—specifically Random Forest, XGBoost, and LightGBM—for automating credit scoring and lending decisions in order to streamline the loan approval process, reduce manual intervention, and optimize operational efficiency. The models were trained on historical loan application data to predict creditworthiness, using engineered features that captured borrower behavior, financial indicators, and risk patterns. Comparative analysis focused on performance metrics such as precision, recall, F1-score, and ROC-AUC to determine each model's predictive power and reliability. In addition to model accuracy, emphasis was placed on computational efficiency and scalability to ensure the solution could be deployed in real-time lending environments. The outcome demonstrated that ML-driven credit scoring can significantly shorten processing time, reduce default risk, and enable data-driven lending strategies that improve customer experience and operational throughput.  👉 [View on GitHub](https://github.com/Vinylango25/Credit-Scoring-Lending-automation)
+
+
+
+
 | Project | Description | Tools Used |
 |--------|-------------|------------|
 | [🛡️ Anomaly and Fraud Detection in Finance](https://github.com/Vinylango25/Anomaly-Fraud-detection-in-Finance) | Conducted a comprehensive anomaly detection project on an imbalanced credit card fraud dataset. Compared traditional and AutoML models (PyOD, FLAML), applied feature selection techniques, and evaluated performance under SMOTE and SMOTEENN balancing. Used multiple detectors including Logistic Regression, Random Forest, Gradient Boosting, LightGBM, KNN, and Isolation Forest. Performed global and local explainability analysis with LIME and SHAP to assess model interpretability and decision transparency. | Python, Scikit-learn, LightGBM, FLAML, PyOD, LIME, SHAP |
