@@ -39,7 +39,24 @@ Skilled at working in diverse teams, translating complex technical concepts for 
 
 ---
 
-## 💼 Featured Projects  
+## 💼 Featured Projects 
+###[🛡️ Anomaly and Fraud Detection in Finance](https://github.com/Vinylango25/Anomaly-Fraud-detection-in-Finance) 
+
+The project aimed to build a comprehensive fraud detection pipeline focused on identifying anomalies in highly imbalanced credit card transaction data. The primary goal was to detect fraudulent transactions effectively while maintaining model interpretability and scalability for deployment in real-world financial environments.
+
+To address the extreme class imbalance inherent in fraud detection datasets, advanced sampling techniques such as SMOTE and SMOTEENN were applied. These approaches helped balance the dataset by generating synthetic minority samples and removing noisy data points, respectively.
+
+A variety of machine learning models were developed and compared, including Logistic Regression, Random Forest, Gradient Boosting, LightGBM, K-Nearest Neighbors (KNN), and Isolation Forest. In addition to traditional approaches, the project integrated AutoML tools such as FLAML for automated hyperparameter optimization and PyOD for unsupervised anomaly detection, enhancing performance and reducing manual effort.
+
+Feature selection was performed using techniques such as Recursive Feature Elimination (RFE) and Mutual Information to retain the most informative variables. Model evaluation was conducted using metrics like precision, recall, F1-score, ROC-AUC, and confusion matrices to ensure reliable performance across imbalanced classes.
+
+To ensure transparency and build stakeholder trust, both global and local model interpretability were addressed using LIME and SHAP. These explainability tools were used to visualize feature contributions to predictions, enabling clear justification of the model’s fraud detection decisions.
+
+The result was a robust, explainable, and scalable anomaly detection pipeline capable of identifying fraud with high accuracy and interpretability, making it suitable for deployment in finance and banking systems.
+
+👉 [View on GitHub](https://github.com/Vinylango25/Anomaly-Fraud-detection-in-Finance)
+
+
 
 | Project | Description | Tools Used |
 |--------|-------------|------------|
