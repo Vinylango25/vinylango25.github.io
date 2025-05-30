@@ -18,10 +18,10 @@ Skilled at working in diverse teams, translating complex technical concepts for 
 ---
 
 ### 🎓 Education
-- MSc in Data Science, [Your University Name]  
-- AWS Certified Machine Learning – Specialty  
-- Coursera: Deep Learning Specialization by Andrew Ng  
-- Other relevant certifications or trainings (add here)
+💫 MPhil in Environmental Science: The Cyprus Institute, Nicosia Cyprus.
+💫 MSc in Mathematical Sciences(Data Science) : University of Western Cape/AIMS, Cape Town, South Africa.
+💫 BSc. Mathematics: University of Nairobi, Nairobi, Kenya.
+--
 
 
 # 📋 Professional Summary
