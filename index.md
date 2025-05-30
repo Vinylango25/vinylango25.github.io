@@ -40,7 +40,7 @@ Skilled at working in diverse teams, translating complex technical concepts for 
 ---
 
 ## 💼 Featured Projects 
-###[🛡️ Anomaly and Fraud Detection in Finance](https://github.com/Vinylango25/Anomaly-Fraud-detection-in-Finance) 
+[🛡️ Anomaly and Fraud Detection in Finance](https://github.com/Vinylango25/Anomaly-Fraud-detection-in-Finance) 
 
 The project aimed to build a comprehensive fraud detection pipeline focused on identifying anomalies in highly imbalanced credit card transaction data. The primary goal was to detect fraudulent transactions effectively while maintaining model interpretability and scalability for deployment in real-world financial environments.
 
