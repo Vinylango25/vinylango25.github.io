@@ -18,10 +18,9 @@ Skilled at working in diverse teams, translating complex technical concepts for 
 ---
 
 ### 🎓 Education
-💫 MPhil in Environmental Science: The Cyprus Institute, Nicosia Cyprus.
-💫 MSc in Mathematical Sciences(Data Science) : University of Western Cape/AIMS, Cape Town, South Africa.
-💫 BSc. Mathematics: University of Nairobi, Nairobi, Kenya.
---
+- MPhil in Environmental Science: The Cyprus Institute, Nicosia Cyprus.
+- MSc in Mathematical Sciences(Data Science) : University of Western Cape/AIMS, Cape Town, South Africa.
+- BSc. Mathematics: University of Nairobi, Nairobi, Kenya.
 
 
 # 📋 Professional Summary
