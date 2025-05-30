@@ -42,7 +42,7 @@ Skilled at working in diverse teams, translating complex technical concepts for 
 ## 💼 Featured Projects 
 [🛡️ Anomaly and Fraud Detection in Finance](https://github.com/Vinylango25/Anomaly-Fraud-detection-in-Finance) 
 
-<img src="1740424576401.jpg" alt="Vincent Kipkemoi" width="200" style="border-radius: 50%;" />
+<img src="fg7.png" alt="Vincent Kipkemoi" width="200" style="border-radius: 50%;" />
 
 This project developed a scalable and interpretable fraud detection pipeline for highly imbalanced credit card transaction data. It employed advanced sampling techniques like SMOTE and SMOTEENN to balance the dataset and evaluated a range of models including Logistic Regression, Random Forest, Gradient Boosting, LightGBM, KNN, and Isolation Forest. AutoML tools such as FLAML and PyOD enhanced model tuning and anomaly detection. Feature selection methods (RFE, Mutual Information) were applied to retain key predictors, and performance was assessed using precision, recall, F1-score, ROC-AUC, and confusion matrices. To ensure transparency, LIME and SHAP were used for model explainability, enabling clear interpretation of fraud predictions.
 
