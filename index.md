@@ -44,18 +44,14 @@ Skilled at working in diverse teams, translating complex technical concepts for 
 
 ![Figure 1: Age distribution](fg7.png)
 
-This project developed a scalable and interpretable fraud detection pipeline for highly imbalanced credit card transaction data. It employed advanced sampling techniques like SMOTE and SMOTEENN to balance the dataset and evaluated a range of models including Logistic Regression, Random Forest, Gradient Boosting, LightGBM, KNN, and Isolation Forest. AutoML tools such as FLAML and PyOD enhanced model tuning and anomaly detection. Feature selection methods (RFE, Mutual Information) were applied to retain key predictors, and performance was assessed using precision, recall, F1-score, ROC-AUC, and confusion matrices. To ensure transparency, LIME and SHAP were used for model explainability, enabling clear interpretation of fraud predictions.
-
-👉 [View on GitHub](https://github.com/Vinylango25/Anomaly-Fraud-detection-in-Finance)
+This project developed a scalable and interpretable fraud detection pipeline for highly imbalanced credit card transaction data. It employed advanced sampling techniques like SMOTE and SMOTEENN to balance the dataset and evaluated a range of models including Logistic Regression, Random Forest, Gradient Boosting, LightGBM, KNN, and Isolation Forest. AutoML tools such as FLAML and PyOD enhanced model tuning and anomaly detection. Feature selection methods (RFE, Mutual Information) were applied to retain key predictors, and performance was assessed using precision, recall, F1-score, ROC-AUC, and confusion matrices. To ensure transparency, LIME and SHAP were used for model explainability, enabling clear interpretation of fraud predictions. 👉 [View on GitHub](https://github.com/Vinylango25/Anomaly-Fraud-detection-in-Finance)
 
 ---
 [🏥 Healthcare Accessibility in Nairobi](https://github.com/Vinylango25/Healthcare-Accessibility-in-Nairobi)
 
 ![Figure 1: Age distribution](fig6.png)
 
-This project conducted a comprehensive data-driven analysis of healthcare accessibility across Nairobi's sub-counties, examining population demographics, healthcare facility distribution, and service availability in relation to SDG Goal 3 (Good Health and Wellbeing). Through spatial and statistical analysis, the study identified key disparities in access, particularly in informal settlements, and proposed actionable, evidence-based recommendations to improve healthcare infrastructure, enhance service delivery, and support equitable access to medical resources for underserved communities.
-
-👉 [View on GitHub](https://github.com/Vinylango25/Healthcare-Accessibility-in-Nairobi)
+This project conducted a comprehensive data-driven analysis of healthcare accessibility across Nairobi's sub-counties, examining population demographics, healthcare facility distribution, and service availability in relation to SDG Goal 3 (Good Health and Wellbeing). Through spatial and statistical analysis, the study identified key disparities in access, particularly in informal settlements, and proposed actionable, evidence-based recommendations to improve healthcare infrastructure, enhance service delivery, and support equitable access to medical resources for underserved communities. 👉 [View on GitHub](https://github.com/Vinylango25/Healthcare-Accessibility-in-Nairobi)
 
 
 
