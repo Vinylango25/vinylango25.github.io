@@ -48,6 +48,15 @@ This project developed a scalable and interpretable fraud detection pipeline for
 
 👉 [View on GitHub](https://github.com/Vinylango25/Anomaly-Fraud-detection-in-Finance)
 
+---
+[🏥 Healthcare Accessibility in Nairobi](https://github.com/Vinylango25/Healthcare-Accessibility-in-Nairobi)
+
+![Figure 1: Age distribution](fig6.png)
+
+This project conducted a comprehensive data-driven analysis of healthcare accessibility across Nairobi's sub-counties, examining population demographics, healthcare facility distribution, and service availability in relation to SDG Goal 3 (Good Health and Wellbeing). Through spatial and statistical analysis, the study identified key disparities in access, particularly in informal settlements, and proposed actionable, evidence-based recommendations to improve healthcare infrastructure, enhance service delivery, and support equitable access to medical resources for underserved communities.
+
+👉 [View on GitHub](https://github.com/Vinylango25/Healthcare-Accessibility-in-Nairobi)
+
 
 
 | Project | Description | Tools Used |
