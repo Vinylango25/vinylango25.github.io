@@ -47,6 +47,9 @@ Skilled at working in diverse teams, translating complex technical concepts for 
 This project conducted a comprehensive data-driven analysis of healthcare accessibility across Nairobi's sub-counties, examining population demographics, healthcare facility distribution, and service availability in relation to SDG Goal 3 (Good Health and Wellbeing). Through spatial and statistical analysis, the study identified key disparities in access, particularly in informal settlements, and proposed actionable, evidence-based recommendations to improve healthcare infrastructure, enhance service delivery, and support equitable access to medical resources for underserved communities. 👉 [View on GitHub](https://github.com/Vinylango25/Healthcare-Accessibility-in-Nairobi)
 
 
+---
+
+
 ## 🛡️ Anomaly and Fraud Detection in Finance
 
 ![Figure 1: Age distribution](fg7.png)
@@ -62,11 +65,15 @@ This project developed a scalable and interpretable fraud detection pipeline for
 
 This project evaluated the application of machine learning models—specifically Random Forest, XGBoost, and LightGBM—for automating credit scoring and lending decisions in order to streamline the loan approval process, reduce manual intervention, and optimize operational efficiency. The models were trained on historical loan application data to predict creditworthiness, using engineered features that captured borrower behavior, financial indicators, and risk patterns. Comparative analysis focused on performance metrics such as precision, recall, F1-score, and ROC-AUC to determine each model's predictive power and reliability. In addition to model accuracy, emphasis was placed on computational efficiency and scalability to ensure the solution could be deployed in real-time lending environments. The outcome demonstrated that ML-driven credit scoring can significantly shorten processing time, reduce default risk, and enable data-driven lending strategies that improve customer experience and operational throughput.  👉 [View on GitHub](https://github.com/Vinylango25/Credit-Scoring-Lending-automation)
 
+---
+
 ## 🌍 Air Quality Monitoring in Nicosia, Cyprus
 
 ![Figure 1: Age distribution](dqo.png)
 
 This project focused on developing and evaluating machine learning models—namely Random Forest, Artificial Neural Networks (ANN), and XGBoost—to calibrate low-cost gas sensors measuring pollutants such as CO, NO₂, O₃, and SO₂ for urban air quality monitoring. The primary objective was to improve sensor accuracy and achieve data quality standards compliant with EU directives. To address challenges posed by sensor cross-sensitivity and environmental variability, the models incorporated techniques for correcting sensor interference and adjusting for ambient conditions such as temperature and humidity. Feature engineering and data preprocessing played a key role in enhancing model robustness. The calibrated models successfully improved the reliability of gas concentration readings, particularly for CO, NO₂, and O₃. In addition to model development, the project proposed a scalable and cost-effective sensor network deployment strategy to support continuous, real-time air quality monitoring in urban environments, making the solution both scientifically rigorous and practically deployable.  👉 [View on GitHub](https://github.com/Vinylango25/Air-Quality-in-Nicosia-Cyprus)
+
+---
 
 ## 📉 Customer Churn Analysis and Prediction
 
@@ -75,7 +82,7 @@ This project focused on developing and evaluating machine learning models—name
 Developed a system to analyze customer churn using survival analysis techniques. Implemented Kaplan-Meier curves and Cox Proportional Hazards models to understand churn over time and estimate customer lifetime value. Built a Random Forest classifier to predict churn, achieving an F1 score of 0.62 and ROC-AUC of 0.85. Deployed a Flask web app featuring SHAP visualizations, survival/hazard curves, and churn probability gauges for individual customer insights. [View on GitHub](https://github.com/Vinylango25/Customer_Churn_Analysis_And_Prediction)
 
 
-
+---
 
 | Project | Description | Tools Used |
 |--------|-------------|------------|
