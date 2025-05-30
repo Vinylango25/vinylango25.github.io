@@ -89,7 +89,7 @@ Developed a system to analyze customer churn using survival analysis techniques.
 ---
 <br><br>
 
-## 💼 Full Projects summary
+## 💼 Full Projects Summary
 
 | Project | Description | Tools Used |
 |--------|-------------|------------|
