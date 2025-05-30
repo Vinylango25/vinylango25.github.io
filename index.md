@@ -1,4 +1,3 @@
-# 💫 About Me
 <img src="1740424576401.jpg" alt="Vincent Kipkemoi" width="200" style="border-radius: 50%;" />
 ### 💫 Hi there! 👋 I'm Kipkemoi Vincent  
 
