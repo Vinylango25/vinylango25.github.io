@@ -7,6 +7,22 @@ and analytical solutions that drive growth and optimize decision-making.
 Currently based in **Nairobi, Kenya**, open to opportunities **worldwide**.
 
 ---
+### 🎯 My Mission  
+I’m passionate about using AI and data science to tackle real-world challenges — from enhancing financial security through fraud detection to improving healthcare accessibility in underserved communities. I strive to build scalable, interpretable ML solutions that create lasting impact.
+
+---
+
+### 🤝 Collaboration & Communication  
+Skilled at working in diverse teams, translating complex technical concepts for non-technical stakeholders, and applying agile project management to deliver impactful solutions.
+
+---
+
+### 🎓 Education
+- MSc in Data Science, [Your University Name]  
+- AWS Certified Machine Learning – Specialty  
+- Coursera: Deep Learning Specialization by Andrew Ng  
+- Other relevant certifications or trainings (add here)
+
 
 # 📋 Professional Summary
 
