@@ -89,6 +89,8 @@ Developed a system to analyze customer churn using survival analysis techniques.
 ---
 <br><br>
 
+## 💼 Full Projects summary
+
 | Project | Description | Tools Used |
 |--------|-------------|------------|
 | [🛡️ Anomaly and Fraud Detection in Finance](https://github.com/Vinylango25/Anomaly-Fraud-detection-in-Finance) | Conducted a comprehensive anomaly detection project on an imbalanced credit card fraud dataset. Compared traditional and AutoML models (PyOD, FLAML), applied feature selection techniques, and evaluated performance under SMOTE and SMOTEENN balancing. Used multiple detectors including Logistic Regression, Random Forest, Gradient Boosting, LightGBM, KNN, and Isolation Forest. Performed global and local explainability analysis with LIME and SHAP to assess model interpretability and decision transparency. | Python, Scikit-learn, LightGBM, FLAML, PyOD, LIME, SHAP |
