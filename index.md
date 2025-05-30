@@ -40,14 +40,18 @@ Skilled at working in diverse teams, translating complex technical concepts for 
 ---
 
 # 💼 Featured Projects 
+
 ## 🏥 Healthcare Accessibility in Nairobi
 
 ![Figure 1: Age distribution](fig6.png)
 
 This project conducted a comprehensive data-driven analysis of healthcare accessibility across Nairobi's sub-counties, examining population demographics, healthcare facility distribution, and service availability in relation to SDG Goal 3 (Good Health and Wellbeing). Through spatial and statistical analysis, the study identified key disparities in access, particularly in informal settlements, and proposed actionable, evidence-based recommendations to improve healthcare infrastructure, enhance service delivery, and support equitable access to medical resources for underserved communities. 👉 [View on GitHub](https://github.com/Vinylango25/Healthcare-Accessibility-in-Nairobi)
 
+<br><br>
 
 ---
+
+<br><br>
 
 
 ## 🛡️ Anomaly and Fraud Detection in Finance
@@ -74,14 +78,12 @@ This project evaluated the application of machine learning models—specifically
 This project focused on developing and evaluating machine learning models—namely Random Forest, Artificial Neural Networks (ANN), and XGBoost—to calibrate low-cost gas sensors measuring pollutants such as CO, NO₂, O₃, and SO₂ for urban air quality monitoring. The primary objective was to improve sensor accuracy and achieve data quality standards compliant with EU directives. To address challenges posed by sensor cross-sensitivity and environmental variability, the models incorporated techniques for correcting sensor interference and adjusting for ambient conditions such as temperature and humidity. Feature engineering and data preprocessing played a key role in enhancing model robustness. The calibrated models successfully improved the reliability of gas concentration readings, particularly for CO, NO₂, and O₃. In addition to model development, the project proposed a scalable and cost-effective sensor network deployment strategy to support continuous, real-time air quality monitoring in urban environments, making the solution both scientifically rigorous and practically deployable.  👉 [View on GitHub](https://github.com/Vinylango25/Air-Quality-in-Nicosia-Cyprus)
 
 ---
----
 
 ## 📉 Customer Churn Analysis and Prediction
 
 ![Figure 1: Age distribution](churn.png)
 
 Developed a system to analyze customer churn using survival analysis techniques. Implemented Kaplan-Meier curves and Cox Proportional Hazards models to understand churn over time and estimate customer lifetime value. Built a Random Forest classifier to predict churn, achieving an F1 score of 0.62 and ROC-AUC of 0.85. Deployed a Flask web app featuring SHAP visualizations, survival/hazard curves, and churn probability gauges for individual customer insights. [View on GitHub](https://github.com/Vinylango25/Customer_Churn_Analysis_And_Prediction)
-
 
 ---
 
