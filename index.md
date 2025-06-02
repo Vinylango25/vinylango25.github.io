@@ -1,7 +1,5 @@
 
-
-
-  
+<div style="max-width:100%; padding:0 5vw;"> 
 
 <img src="IMG_9019.jpg" alt="Vincent Kipkemoi" width="200" style="border-radius: 50%;" />
 ### 💫 Hi there! 👋 I'm Kipkemoi Vincent  
@@ -197,3 +195,5 @@ Developed a system to analyze customer churn using survival analysis techniques.
 ## 🚀 Let's Collaborate!  
 I am open to working on **AI, ML, data science, and fintech projects**.  
 💬 **Reach out to me for exciting collaborations!**  
+
+</div>
