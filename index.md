@@ -1,56 +1,5 @@
 
-  <h2>💼 Featured Projects</h2>
 
-<table style="width:100%; border-collapse:collapse; border:none;">
-  <tr>
-    <td style="vertical-align:top; width:50%; padding:15px;">
-      <h3>🏥 Healthcare Accessibility in Nairobi</h3>
-      <img src="fig6.png" alt="Healthcare Project" style="width:100%; border-radius:5px;">
-      <p>This project conducted a comprehensive data-driven analysis of healthcare accessibility across Nairobi’s sub-counties, identifying disparities and proposing actionable solutions.</p>
-      <p>👉 <a href="https://github.com/Vinylango25/Healthcare-Accessibility-in-Nairobi">GitHub</a> | 
-      <a href="https://medium.com/@vinylango90/enhancing-healthcare-accessibility-in-nairobi-kenya-ee275471faa7">Medium</a></p>
-    </td>
-
-    <td style="vertical-align:top; width:50%; padding:15px;">
-      <h3>🛡️ Anomaly and Fraud Detection in Finance</h3>
-      <img src="fg7.png" alt="Fraud Detection Project" style="width:100%; border-radius:5px;">
-      <p>Developed a scalable fraud detection pipeline using SMOTE, PyOD, AutoML tools (FLAML), and explainable AI (SHAP, LIME). Optimized model performance and interpretability for imbalanced data.</p>
-      <p>👉 <a href="https://github.com/Vinylango25/Anomaly-Fraud-detection-in-Finance">GitHub</a> | 
-      <a href="https://medium.com/@vinylango90/anomaly-detection-in-credit-card-transactions-using-pyod-and-microsoft-automl-flaml-727a091487bd">Medium</a></p>
-    </td>
-  </tr>
-
-  <tr>
-    <td style="vertical-align:top; width:50%; padding:15px;">
-      <h3>🤖 Lending Automation - ML for Credit Scoring</h3>
-      <img src="cost.png" alt="Credit Scoring Project" style="width:100%; border-radius:5px;">
-      <p>Used Random Forest, XGBoost, and LightGBM to automate loan approvals, reduce processing time, and minimize default risk. Models trained on financial indicators and historical loan data.</p>
-      <p>👉 <a href="https://github.com/Vinylango25/Credit-Scoring-Lending-automation">GitHub</a> | 
-      <a href="https://medium.com/@vinylango90/credit-scoring-lending-automation-6dabe30d53da">Medium</a></p>
-    </td>
-
-    <td style="vertical-align:top; width:50%; padding:15px;">
-      <h3>🌍 Air Quality Monitoring in Nicosia, Cyprus</h3>
-      <img src="dqo.png" alt="Air Quality Monitoring Project" style="width:100%; border-radius:5px;">
-      <p>Developed ML calibration models for low-cost air quality sensors using Random Forest and ANN, improving data compliance with EU standards for pollutants like CO, NO₂, and O₃.</p>
-      <p>👉 <a href="https://github.com/Vinylango25/Air-Quality-in-Nicosia-Cyprus">GitHub</a> | 
-      <a href="https://medium.com/@vinylango90/sensor-calibration-and-air-quality-monitoring-in-nicosia-cyprus-e5072a4184aa">Medium</a></p>
-    </td>
-  </tr>
-
-  <tr>
-    <td style="vertical-align:top; width:50%; padding:15px;">
-      <h3>📉 Customer Churn Analysis and Prediction</h3>
-      <img src="churn.png" alt="Churn Analysis Project" style="width:100%; border-radius:5px;">
-      <p>Analyzed customer churn using survival analysis (Kaplan-Meier, Cox models) and Random Forest classification. Deployed with Flask app and SHAP visualizations for actionable business insights.</p>
-      <p>👉 <a href="https://github.com/Vinylango25/Customer_Churn_Analysis_And_Prediction">GitHub</a></p>
-    </td>
-
-    <td style="vertical-align:top; width:50%; padding:15px;">
-      <!-- You can insert another project here or leave this empty -->
-    </td>
-  </tr>
-</table>
 
   
 
