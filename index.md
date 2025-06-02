@@ -1,144 +1,117 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kipkemoi Vincent | Data Scientist</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f8f9fa;
-      color: #333;
-    }
 
-    header {
-      background-color: #111;
-      color: white;
-      padding: 2rem;
-      text-align: center;
-    }
+  
 
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      padding: 2rem;
-      max-width: 1200px;
-      margin: auto;
-      gap: 2rem;
-    }
+ 
+ 
 
-    .left, .right {
-      flex: 1 1 45%;
-      min-width: 300px;
-    }
+<img src="IMG_9019.jpg" alt="Vincent Kipkemoi" width="160" style="border-radius: 50%;" />
 
-    img.profile {
-      width: 180px;
-      border-radius: 50%;
-      display: block;
-      margin-bottom: 1rem;
-    }
+# 💫 Hi there! I'm Kipkemoi Vincent
 
-    h1, h2 {
-      color: #222;
-    }
+> Data Scientist | ML/AI Engineer | Data Analyst  
+> Based in **Nairobi, Kenya**, open to remote & global opportunities.
 
-    .download-cv {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
-      background-color: #007bff;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
+[📄 Download My CV](CV_VincentLangat.pdf){: .btn}
 
-    .skills, .contact {
-      margin-top: 2rem;
-    }
+---
 
-    .projects {
-      background: white;
-      padding: 2rem;
-      margin-top: 2rem;
-    }
+<table>
+<tr>
+<td valign="top" width="50%">
 
-    .projects h2 {
-      margin-top: 0;
-    }
+## 🎯 About Me
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: #222;
-      color: white;
-    }
-  </style>
-</head>
-<body>
+I am a passionate data scientist with 5+ years of experience building scalable ML systems and analytics pipelines in **fintech, healthcare, agri-tech**, and **environmental science**.
 
-<header>
-  <img src="IMG_9019.jpg" alt="Vincent Kipkemoi" class="profile">
-  <h1>Hi, I'm Kipkemoi Vincent</h1>
-  <p>Data Scientist | ML/AI Engineer | Data Analyst</p>
-  <a href="CV_VincentLangat.pdf" class="download-cv" download>📄 Download CV</a>
-</header>
+I leverage AI & data to solve real-world problems, from fraud detection to healthcare access. My goal is to develop transparent, ethical, and production-ready solutions that create social and business impact.
 
-<div class="container">
-  <div class="left">
-    <h2>About Me</h2>
-    <p>I’m a passionate Data Scientist with 5+ years experience building scalable, interpretable machine learning systems and analytics pipelines across sectors like fintech, healthcare, environmental science, and agriculture.</p>
-    
-    <h2>Mission</h2>
-    <p>Leverage data and AI to solve real-world challenges — from fraud detection to healthcare access. I aim to build ethical, impactful, and production-ready ML solutions.</p>
+### 🛠️ Tech Skills
 
-    <div class="skills">
-      <h2>Tech Stack</h2>
-      <ul>
-        <li>Python, R, SQL, TensorFlow, PyTorch, Scikit-learn</li>
-        <li>XGBoost, LightGBM, CatBoost, PyOD, FLAML</li>
-        <li>AWS, GCP, Docker, Kubernetes, MLflow</li>
-        <li>Tableau, Preset, Streamlit, FastAPI, Django</li>
-      </ul>
-    </div>
-  </div>
+- **Languages & Tools:** Python, R, SQL, Scikit-learn, TensorFlow, PyTorch, LightGBM, XGBoost, CatBoost
+- **MLOps:** Docker, Kubernetes, Streamlit, MLflow, FastAPI, CI/CD
+- **Cloud:** AWS, GCP
+- **BI Tools:** Tableau, Power BI, Preset, Excel
+- **Other:** STATA, Matlab, SPSS, Flask, Django, Git
 
-  <div class="right">
-    <h2>Education</h2>
-    <ul>
-      <li><strong>MPhil</strong> in Environmental Science — The Cyprus Institute</li>
-      <li><strong>MSc</strong> in Mathematical Sciences — AIMS/UWC</li>
-      <li><strong>BSc</strong> in Mathematics — University of Nairobi</li>
-    </ul>
+</td>
+<td valign="top" width="50%">
 
-    <div class="contact">
-      <h2>Contact</h2>
-      <p><strong>Email:</strong> vincentl@aims.ac.za</p>
-      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kipkemoi-vincent-19307a94/" target="_blank">View Profile</a></p>
-      <p><strong>GitHub:</strong> <a href="https://github.com/Vinylango25" target="_blank">Vinylango25</a></p>
-    </div>
-  </div>
-</div>
+## 🎓 Education
 
-<div class="projects">
-  <h2>Featured Projects</h2>
-  <ul>
-    <li><strong><a href="https://github.com/Vinylango25/Healthcare-Accessibility-in-Nairobi" target="_blank">🏥 Healthcare Accessibility in Nairobi</a></strong>: Mapping healthcare gaps in informal settlements using spatial & demographic analysis.</li>
-    <li><strong><a href="https://github.com/Vinylango25/Anomaly-Fraud-detection-in-Finance" target="_blank">🛡️ Fraud Detection in Finance</a></strong>: Built interpretable anomaly detection models using PyOD, SHAP, SMOTE, FLAML.</li>
-    <li><strong><a href="https://github.com/Vinylango25/Credit-Scoring-Lending-automation" target="_blank">🤖 ML for Lending Automation</a></strong>: XGBoost & LGBM models to automate credit scoring and reduce default risk.</li>
-    <li><strong><a href="https://github.com/Vinylango25/Air-Quality-in-Nicosia-Cyprus" target="_blank">🌍 Air Quality Monitoring</a></strong>: Calibrated low-cost air sensors with ML models to improve pollution monitoring accuracy.</li>
-    <li><strong><a href="https://github.com/Vinylango25/Customer_Churn_Analysis_And_Prediction" target="_blank">📉 Churn Analysis</a></strong>: Predictive churn modeling with survival analysis & SHAP-enabled dashboards.</li>
-  </ul>
-</div>
+- **MPhil** in Environmental Science  
+  _The Cyprus Institute, Cyprus_
+- **MSc** in Mathematical Sciences (Data Science)  
+  _AIMS/UWC, South Africa_
+- **BSc** in Mathematics  
+  _University of Nairobi, Kenya_
 
-<footer>
-  <p>© 2025 Kipkemoi Vincent | Built with ❤️ and Python</p>
-</footer>
+## 📬 Contact
 
-</body>
-</html>
+- 📧 **Email:** vincentl@aims.ac.za / vinylango90@gmail.com  
+- 💼 [LinkedIn](https://www.linkedin.com/in/kipkemoi-vincent-19307a94/)  
+- 💻 [GitHub](https://github.com/Vinylango25)  
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🚀 Featured Projects
+
+### [🏥 Healthcare Accessibility in Nairobi](https://github.com/Vinylango25/Healthcare-Accessibility-in-Nairobi)
+Used spatial and demographic data to assess healthcare infrastructure gaps in Nairobi's informal settlements.
+
+### [🛡️ Fraud Detection in Finance](https://github.com/Vinylango25/Anomaly-Fraud-detection-in-Finance)
+Developed scalable ML pipeline using PyOD, SHAP, AutoML to detect anomalies in credit card transactions.
+
+### [🤖 ML for Lending Automation](https://github.com/Vinylango25/Credit-Scoring-Lending-automation)
+Built XGBoost & LGBM models to automate credit scoring, reduce loan default risk, and streamline approvals.
+
+### [🌍 Air Quality Monitoring – Cyprus](https://github.com/Vinylango25/Air-Quality-in-Nicosia-Cyprus)
+Calibrated low-cost gas sensors using ML models to meet EU standards for CO, NO₂, and O₃.
+
+### [📉 Churn Prediction & Lifetime Value](https://github.com/Vinylango25/Customer_Churn_Analysis_And_Prediction)
+Used survival analysis (Kaplan-Meier, Cox model) + SHAP to build churn prediction dashboard.
+
+---
+
+## 📊 GitHub Stats
+
+<table>
+<tr>
+<td align="center">
+  
+**Vinylango25**  
+<img src="https://streak-stats.demolab.com/?user=Vinylango25&theme=dark" alt="GitHub Streak" /><br/>
+<img src="https://github-readme-stats.vercel.app/api?username=Vinylango25&show_icons=true&theme=dark" /><br/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Vinylango25&layout=compact&theme=dark" />
+
+</td>
+<td align="center">
+
+**vinylango**  
+<img src="https://streak-stats.demolab.com/?user=vinylango&theme=dark" alt="GitHub Streak" /><br/>
+<img src="https://github-readme-stats.vercel.app/api?username=vinylango&show_icons=true&theme=dark" /><br/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=vinylango&layout=compact&theme=dark" />
+
+</td>
+</tr>
+</table>
+
+---
+
+## 💡 Dev Quote of the Day
+
+![Quote](https://quotes-github-readme.vercel.app/api?type=horizontal)
+
+---
+
+## 🧠 Let's Collaborate
+
+I'm open to exciting opportunities in **AI, ML, data science, and fintech**.  
+Feel free to [connect](https://www.linkedin.com/in/kipkemoi-vincent-19307a94/) or reach out via email.
+
 
 
 
