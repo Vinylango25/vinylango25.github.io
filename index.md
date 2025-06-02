@@ -1,100 +1,51 @@
+<table style="width:100%; border-collapse:collapse; border:none;">
+  <tr>
+    <td style="vertical-align:top; padding:10px; width:50%;">
+      <h3>🏥 Healthcare Accessibility in Nairobi</h3>
+      <img src="fig6.png" alt="Healthcare Project" style="width:100%;">
+      <p>This project conducted a comprehensive data-driven analysis of healthcare accessibility across Nairobi's sub-counties, examining population demographics, healthcare facility distribution, and service availability in relation to SDG Goal 3 (Good Health and Wellbeing)...</p>
+      <p>👉 <a href="https://github.com/Vinylango25/Healthcare-Accessibility-in-Nairobi">GitHub</a> | <a href="https://medium.com/@vinylango90/enhancing-healthcare-accessibility-in-nairobi-kenya-ee275471faa7">Medium</a></p>
+    </td>
 
-<style>
-.project-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.project-card {
-  width: 48%;
-  box-sizing: border-box;
-  margin-bottom: 20px;
-}
-@media screen and (max-width: 768px) {
-  .project-card {
-    width: 100%;
-  }
-}
-</style>
+    <td style="vertical-align:top; padding:10px; width:50%;">
+      <h3>🛡️ Anomaly and Fraud Detection in Finance</h3>
+      <img src="fg7.png" alt="Fraud Detection Project" style="width:100%;">
+      <p>This project developed a scalable and interpretable fraud detection pipeline for highly imbalanced credit card transaction data. It employed advanced sampling techniques like SMOTE and SMOTEENN to balance the dataset and evaluated a range of models...</p>
+      <p>👉 <a href="https://github.com/Vinylango25/Anomaly-Fraud-detection-in-Finance">GitHub</a> | <a href="https://medium.com/@vinylango90/anomaly-detection-in-credit-card-transactions-using-pyod-and-microsoft-automl-flaml-727a091487bd">Medium</a></p>
+    </td>
+  </tr>
 
-## 💼 Featured Projects
+  <tr>
+    <td style="vertical-align:top; padding:10px;">
+      <h3>🤖 Lending Automation - ML for Credit Scoring</h3>
+      <img src="cost.png" alt="Lending Automation" style="width:100%;">
+      <p>This project evaluated the application of machine learning models—Random Forest, XGBoost, and LightGBM—for automating credit scoring and lending decisions to streamline the loan approval process...</p>
+      <p>👉 <a href="https://github.com/Vinylango25/Credit-Scoring-Lending-automation">GitHub</a> | <a href="https://medium.com/@vinylango90/credit-scoring-lending-automation-6dabe30d53da">Medium</a></p>
+    </td>
 
-<div class="project-grid">
+    <td style="vertical-align:top; padding:10px;">
+      <h3>🌍 Air Quality Monitoring in Nicosia, Cyprus</h3>
+      <img src="dqo.png" alt="Air Quality Monitoring" style="width:100%;">
+      <p>This project focused on developing and evaluating ML models—Random Forest, ANN, and XGBoost—to calibrate low-cost gas sensors for urban air quality monitoring in line with EU data quality directives...</p>
+      <p>👉 <a href="https://github.com/Vinylango25/Air-Quality-in-Nicosia-Cyprus">GitHub</a> | <a href="https://medium.com/@vinylango90/sensor-calibration-and-air-quality-monitoring-in-nicosia-cyprus-e5072a4184aa">Medium</a></p>
+    </td>
+  </tr>
 
-<div class="project-card">
+  <tr>
+    <td style="vertical-align:top; padding:10px;">
+      <h3>📉 Customer Churn Analysis and Prediction</h3>
+      <img src="churn.png" alt="Churn Analysis" style="width:100%;">
+      <p>Developed a system to analyze customer churn using survival analysis, Kaplan-Meier curves, and Cox models. Integrated SHAP visualizations and built a Flask app to track churn risk in real-time...</p>
+      <p>👉 <a href="https://github.com/Vinylango25/Customer_Churn_Analysis_And_Prediction">GitHub</a></p>
+    </td>
 
-### 🏥 Healthcare Accessibility in Nairobi
-
-![Healthcare](fig6.png)
-
-This project analyzed healthcare infrastructure in Nairobi, identifying gaps in underserved regions using spatial and demographic data.  
-👉 [GitHub](https://github.com/Vinylango25/Healthcare-Accessibility-in-Nairobi) | [Medium](https://medium.com/@vinylango90/enhancing-healthcare-accessibility-in-nairobi-kenya-ee275471faa7)
-
-</div>
-
-<div class="project-card">
-
-### 🛡️ Anomaly & Fraud Detection in Finance
-
-![Fraud](fg7.png)
-
-Built a robust fraud detection pipeline using PyOD, FLAML, SMOTE, SHAP, and LIME.  
-👉 [GitHub](https://github.com/Vinylango25/Anomaly-Fraud-detection-in-Finance) | [Medium](https://medium.com/@vinylango90/anomaly-detection-in-credit-card-transactions-using-pyod-and-microsoft-automl-flaml-727a091487bd)
-
-</div>
-
-<div class="project-card">
-
-### 🤖 Lending Automation – ML Credit Scoring
-
-![Lending](cost.png)
-
-Evaluated and deployed Random Forest, XGBoost, LightGBM for real-time credit scoring.  
-👉 [GitHub](https://github.com/Vinylango25/Credit-Scoring-Lending-automation) | [Medium](https://medium.com/@vinylango90/credit-scoring-lending-automation-6dabe30d53da)
-
-</div>
-
-<div class="project-card">
-
-### 🌍 Air Quality Monitoring – Cyprus
-
-![Air Quality](dqo.png)
-
-Calibrated low-cost sensors using ML (RF, ANN, XGBoost) for EU-compliant air quality metrics.  
-👉 [GitHub](https://github.com/Vinylango25/Air-Quality-in-Nicosia-Cyprus) | [Medium](https://medium.com/@vinylango90/sensor-calibration-and-air-quality-monitoring-in-nicosia-cyprus-e5072a4184aa)
-
-</div>
-
-<div class="project-card">
-
-### 📉 Customer Churn & Lifetime Value
-
-![Churn](churn.png)
-
-Used survival analysis (Kaplan-Meier, Cox) & SHAP in a Flask web app for churn prediction.  
-👉 [GitHub](https://github.com/Vinylango25/Customer_Churn_Analysis_And_Prediction)
-
-</div>
-
-<div class="project-card">
-
-### 🩺 COVID-19 CT Scan Detection
-
-![CT Scan](https://user-images.githubusercontent.com/placeholder.png)
-
-CNN-based model ensemble for detecting COVID-19 from CT scans with 99% accuracy.  
-👉 [GitHub](https://github.com/Vinylango25/Covid-19-Detection-Deep-Learning)
-
-</div>
-
-</div>
+    <td style="vertical-align:top; padding:10px;">
+      <!-- Optionally add another project here or leave blank -->
+    </td>
+  </tr>
+</table>
 
 
-
-
-
-<tr>
-<td align="center">
   
 
 <img src="IMG_9019.jpg" alt="Vincent Kipkemoi" width="200" style="border-radius: 50%;" />
