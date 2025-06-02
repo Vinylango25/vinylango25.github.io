@@ -1,4 +1,237 @@
----
-layout: home
-# Index page
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kipkemoi Vincent Portfolio</title>
+  <style>
+    /* Reset & base styles */
+    body {
+      margin: 0;
+      padding: 20px 5vw;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      background: #121212;
+      color: #eee;
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
+    a {
+      color: #66ccff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    /* Container: wider than default */
+    .container {
+      max-width: 1400px; /* wide but not too wide */
+      margin: 0 auto;
+    }
+    /* Profile Image */
+    .profile-img {
+      width: 200px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+    /* Headings */
+    h1, h2, h3, h4 {
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #66ccff;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #444;
+      margin: 2rem 0;
+    }
+    /* Tables */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+    th, td {
+      border: 1px solid #444;
+      padding: 0.5rem 1rem;
+      text-align: left;
+      color: #ddd;
+    }
+    th {
+      background-color: #222;
+    }
+    /* Tech stack icons */
+    .tech-stack img {
+      margin: 0 5px 10px 0;
+      vertical-align: middle;
+      height: 30px;
+    }
+    /* Github stats images */
+    table img {
+      max-width: 100%;
+      height: auto;
+    }
+    /* Markdown style content */
+    p, ul, li {
+      line-height: 1.5;
+      color: #ddd;
+    }
+    ul {
+      padding-left: 1.2rem;
+      margin-top: 0.3rem;
+      margin-bottom: 1rem;
+    }
+    /* Smaller badges container */
+    .badges {
+      margin-bottom: 1rem;
+    }
+    /* Quote image */
+    .quote {
+      max-width: 100%;
+      margin: 2rem 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="IMG_9019.jpg" alt="Vincent Kipkemoi" class="profile-img" />
+
+    <h3>💫 Hi there! 👋 I'm Kipkemoi Vincent</h3>
+
+    <p>
+      I am a passionate Data Scientist, ML/AI Engineer & Data Analyst with expertise in transforming raw data into actionable insights and developing scalable data science/ ML solutions in production environments. With experience across fintech, environmental science, healthcare, and agri-tech, I build machine learning models, predictive systems, and analytical solutions that drive growth and optimize decision-making.
+    </p>
+
+    <p>Currently based in <strong>Nairobi, Kenya</strong>, open to opportunities <strong>worldwide</strong>.</p>
+
+    <hr />
+
+    <h3>🎯 My Mission</h3>
+    <p>
+      I’m passionate about using AI and data science to tackle real-world challenges — from enhancing financial security through fraud detection to improving healthcare accessibility in underserved communities. I strive to build scalable, interpretable ML solutions that create lasting impact.
+    </p>
+
+    <hr />
+
+    <h3>🤝 Collaboration & Communication</h3>
+    <p>
+      Skilled at working in diverse teams, translating complex technical concepts for non-technical stakeholders, and applying agile project management to deliver impactful solutions.
+    </p>
+
+    <hr />
+
+    <h3>🎓 Education</h3>
+    <ul>
+      <li>MPhil in Environmental Science: The Cyprus Institute, Nicosia Cyprus.</li>
+      <li>MSc in Mathematical Sciences(Data Science) : University of Western Cape/AIMS, Cape Town, South Africa.</li>
+      <li>BSc. Mathematics: University of Nairobi, Nairobi, Kenya.</li>
+    </ul>
+
+    <h1>📋 Professional Summary</h1>
+
+    <ul>
+      <li>5+ years experience delivering Data Science and ML solutions across sectors (Fintech, Climate, Healthcare).</li>
+      <li>Skilled in data analytics, predictive analytics, credit risk analysis, anomaly & fraud detection, credit scoring, time series forecasting, and scalable ML model deployment.</li>
+      <li>Proficient in Python, R, SQL, Scikit-learn, CNN, OpenCV, TensorFlow, RF, LSTM, Catboost, XGBoost, LightGBM, PyOD models and AWS.</li>
+      <li>Experienced with MLOps workflows: streamlit, Docker, Kubernetes, MLflow, FastAPI, and CI/CD pipelines.</li>
+      <li>Committed to leveraging advanced analytics for risk minimization, business growth, and social impact.</li>
+    </ul>
+
+    <hr />
+
+    <h2>🌍 Connect with Me</h2>
+    <p>
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="20" alt="LinkedIn" /> 
+      <a href="https://www.linkedin.com/in/kipkemoi-vincent-19307a94/" target="_blank" rel="noopener">LinkedIn Profile</a><br />
+      📫 <strong>Email:</strong> vincentl@aims.ac.za / vinylango90@gmail.com
+    </p>
+
+    <hr />
+
+    <h1>💼 Featured Projects</h1>
+
+    <h2>🏥 Healthcare Accessibility in Nairobi</h2>
+    <img src="fig6.png" alt="Healthcare Accessibility" />
+    <p>
+      This project conducted a comprehensive data-driven analysis of healthcare accessibility across Nairobi's sub-counties, examining population demographics, healthcare facility distribution, and service availability in relation to SDG Goal 3 (Good Health and Wellbeing). Through spatial and statistical analysis, the study identified key disparities in access, particularly in informal settlements, and proposed actionable, evidence-based recommendations to improve healthcare infrastructure, enhance service delivery, and support equitable access to medical resources for underserved communities. 👉 Read the full project on <a href="https://github.com/Vinylango25/Healthcare-Accessibility-in-Nairobi" target="_blank" rel="noopener">GitHub</a> or <a href="https://medium.com/@vinylango90/enhancing-healthcare-accessibility-in-nairobi-kenya-ee275471faa7" target="_blank" rel="noopener">Medium</a>
+    </p>
+
+    <hr />
+
+    <h2>🛡️ Anomaly and Fraud Detection in Finance</h2>
+    <img src="fg7.png" alt="Fraud Detection" />
+    <p>
+      This project developed a scalable and interpretable fraud detection pipeline for highly imbalanced credit card transaction data. It employed advanced sampling techniques like SMOTE and SMOTEENN to balance the dataset and evaluated a range of models including Logistic Regression, Random Forest, Gradient Boosting, LightGBM, KNN, and Isolation Forest. AutoML tools such as FLAML and PyOD enhanced model tuning and anomaly detection. Feature selection methods (RFE, Mutual Information) were applied to retain key predictors, and performance was assessed using precision, recall, F1-score, ROC-AUC, and confusion matrices. To ensure transparency, LIME and SHAP were used for model explainability, enabling clear interpretation of fraud predictions. 👉 Read the full project on <a href="https://github.com/Vinylango25/Anomaly-Fraud-detection-in-Finance" target="_blank" rel="noopener">Github</a> or <a href="https://medium.com/@vinylango90/anomaly-detection-in-credit-card-transactions-using-pyod-and-microsoft-automl-flaml-727a091487bd" target="_blank" rel="noopener">Medium</a>
+    </p>
+
+    <hr />
+
+    <h2>🤖 Lending Automation - ML for Credit Scoring</h2>
+    <img src="cost.png" alt="Credit Scoring" />
+    <p>
+      This project evaluated the application of machine learning models—specifically Random Forest, XGBoost, and LightGBM—for automating credit scoring and lending decisions in order to streamline the loan approval process, reduce manual intervention, and optimize operational efficiency. The models were trained on historical loan application data to predict creditworthiness, using engineered features that captured borrower behavior, financial indicators, and risk patterns. Comparative analysis focused on performance metrics such as precision, recall, F1-score, and ROC-AUC to determine each model's predictive power and reliability. In addition to model accuracy, emphasis was placed on computational efficiency and scalability to ensure the solution could be deployed in real-time lending environments. The outcome demonstrated that ML-driven credit scoring can significantly shorten processing time, reduce default risk, and enable data-driven lending strategies that improve customer experience and operational throughput. 👉 Read the full project on <a href="https://github.com/Vinylango25/Credit-Scoring-Lending-automation" target="_blank" rel="noopener">Github</a> or <a href="https://medium.com/@vinylango90/credit-scoring-lending-automation-6dabe30d53da" target="_blank" rel="noopener">Medium</a>
+    </p>
+
+    <hr />
+
+    <h2>🌍 Air Quality Monitoring in Nicosia, Cyprus</h2>
+    <img src="dqo.png" alt="Air Quality Monitoring" />
+    <p>
+      This project focused on developing and evaluating machine learning models—namely Random Forest, Artificial Neural Networks (ANN), and XGBoost—to calibrate low-cost gas sensors measuring pollutants such as CO, NO₂, O₃, and SO₂ for urban air quality monitoring. The primary objective was to improve sensor accuracy and achieve data quality standards compliant with EU regulations. Feature engineering and selection techniques were applied to enhance model inputs, while hyperparameter tuning optimized predictive performance. Models were assessed using metrics like RMSE, MAE, and R² to quantify calibration accuracy. Additionally, interpretability tools such as SHAP values elucidated the influence of environmental variables on pollutant measurements. The study demonstrated that ML-based calibration can significantly enhance the reliability of low-cost sensors, enabling cost-effective, high-resolution air quality surveillance. 👉 Read the full project on <a href="https://github.com/Vinylango25/Air-Quality-monitoring" target="_blank" rel="noopener">Github</a> or <a href="https://medium.com/@vinylango90/air-quality-monitoring-in-nicosia-cyprus-using-ml-models-6fc7c69dbd28" target="_blank" rel="noopener">Medium</a>
+    </p>
+
+    <hr />
+
+    <h2>💻 GitHub Statistics</h2>
+    <p>Here are my GitHub stats as of now:</p>
+    <table>
+      <tr>
+        <td>
+          <img src="https://github-readme-stats.vercel.app/api?username=Vinylango25&show_icons=true&theme=dark" alt="GitHub Stats" />
+        </td>
+        <td>
+          <img src="https://github-readme-streak-stats.herokuapp.com/?user=Vinylango25&theme=dark" alt="GitHub Streak" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Vinylango25&layout=compact&theme=dark" alt="Top Languages" />
+        </td>
+        <td>
+          <img src="https://github-readme-stats.vercel.app/api/wakatime?username=vinylango25&theme=dark" alt="Wakatime Stats" />
+        </td>
+      </tr>
+    </table>
+
+    <hr />
+
+    <h1>⚙️ Skills & Technologies</h1>
+    <div class="tech-stack">
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="Python" title="Python" />
+      <img src="https://cdn-icons-png.flaticon.com/512/919/919825.png" alt="R" title="R Language" />
+      <img src="https://cdn-icons-png.flaticon.com/512/919/919836.png" alt="SQL" title="SQL" />
+      <img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" alt="Scikit-learn" title="Scikit-learn" />
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968527.png" alt="TensorFlow" title="TensorFlow" />
+      <img src="https://cdn-icons-png.flaticon.com/512/919/919831.png" alt="Docker" title="Docker" />
+      <img src="https://cdn-icons-png.flaticon.com/512/919/919836.png" alt="AWS" title="AWS" />
+      <!-- Add other tech icons as needed -->
+    </div>
+
+    <hr />
+
+    <h2>🔗 Useful Links</h2>
+    <ul>
+      <li><a href="https://github.com/Vinylango25" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/kipkemoi-vincent-19307a94/" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://medium.com/@vinylango90" target="_blank" rel="noopener">Medium Articles</a></li>
+    </ul>
+  </div>
+</body>
+</html>
+
