@@ -1,52 +1,56 @@
-## 💼 Featured Projects
+
+  <h2>💼 Featured Projects</h2>
 
 <table style="width:100%; border-collapse:collapse; border:none;">
   <tr>
-    <td style="vertical-align:top; padding:10px; width:50%;">
+    <td style="vertical-align:top; width:50%; padding:15px;">
       <h3>🏥 Healthcare Accessibility in Nairobi</h3>
-      <img src="fig6.png" alt="Healthcare Project" style="width:100%;">
-      <p>This project conducted a comprehensive data-driven analysis of healthcare accessibility across Nairobi's sub-counties, examining population demographics, healthcare facility distribution, and service availability in relation to SDG Goal 3. It identified disparities in access and proposed evidence-based recommendations to improve healthcare infrastructure and equity.</p>
-      <p>👉 <a href="https://github.com/Vinylango25/Healthcare-Accessibility-in-Nairobi">GitHub</a> | <a href="https://medium.com/@vinylango90/enhancing-healthcare-accessibility-in-nairobi-kenya-ee275471faa7">Medium</a></p>
+      <img src="fig6.png" alt="Healthcare Project" style="width:100%; border-radius:5px;">
+      <p>This project conducted a comprehensive data-driven analysis of healthcare accessibility across Nairobi’s sub-counties, identifying disparities and proposing actionable solutions.</p>
+      <p>👉 <a href="https://github.com/Vinylango25/Healthcare-Accessibility-in-Nairobi">GitHub</a> | 
+      <a href="https://medium.com/@vinylango90/enhancing-healthcare-accessibility-in-nairobi-kenya-ee275471faa7">Medium</a></p>
     </td>
 
-    <td style="vertical-align:top; padding:10px; width:50%;">
+    <td style="vertical-align:top; width:50%; padding:15px;">
       <h3>🛡️ Anomaly and Fraud Detection in Finance</h3>
-      <img src="fg7.png" alt="Fraud Detection Project" style="width:100%;">
-      <p>Built a scalable fraud detection pipeline using SMOTE, PyOD, and AutoML tools like FLAML. Models included Logistic Regression, Random Forest, LightGBM, and Isolation Forest. Applied SHAP and LIME for transparency in predictions, allowing for interpretable fraud alerts in financial transactions.</p>
-      <p>👉 <a href="https://github.com/Vinylango25/Anomaly-Fraud-detection-in-Finance">GitHub</a> | <a href="https://medium.com/@vinylango90/anomaly-detection-in-credit-card-transactions-using-pyod-and-microsoft-automl-flaml-727a091487bd">Medium</a></p>
+      <img src="fg7.png" alt="Fraud Detection Project" style="width:100%; border-radius:5px;">
+      <p>Developed a scalable fraud detection pipeline using SMOTE, PyOD, AutoML tools (FLAML), and explainable AI (SHAP, LIME). Optimized model performance and interpretability for imbalanced data.</p>
+      <p>👉 <a href="https://github.com/Vinylango25/Anomaly-Fraud-detection-in-Finance">GitHub</a> | 
+      <a href="https://medium.com/@vinylango90/anomaly-detection-in-credit-card-transactions-using-pyod-and-microsoft-automl-flaml-727a091487bd">Medium</a></p>
     </td>
   </tr>
 
   <tr>
-    <td style="vertical-align:top; padding:10px;">
+    <td style="vertical-align:top; width:50%; padding:15px;">
       <h3>🤖 Lending Automation - ML for Credit Scoring</h3>
-      <img src="cost.png" alt="Lending Automation" style="width:100%;">
-      <p>Deployed Random Forest, XGBoost, and LightGBM to automate credit scoring using historical loan application data. Focused on reducing loan processing time and enhancing risk prediction, with high accuracy and deployment readiness for real-time lending systems.</p>
-      <p>👉 <a href="https://github.com/Vinylango25/Credit-Scoring-Lending-automation">GitHub</a> | <a href="https://medium.com/@vinylango90/credit-scoring-lending-automation-6dabe30d53da">Medium</a></p>
+      <img src="cost.png" alt="Credit Scoring Project" style="width:100%; border-radius:5px;">
+      <p>Used Random Forest, XGBoost, and LightGBM to automate loan approvals, reduce processing time, and minimize default risk. Models trained on financial indicators and historical loan data.</p>
+      <p>👉 <a href="https://github.com/Vinylango25/Credit-Scoring-Lending-automation">GitHub</a> | 
+      <a href="https://medium.com/@vinylango90/credit-scoring-lending-automation-6dabe30d53da">Medium</a></p>
     </td>
 
-    <td style="vertical-align:top; padding:10px;">
+    <td style="vertical-align:top; width:50%; padding:15px;">
       <h3>🌍 Air Quality Monitoring in Nicosia, Cyprus</h3>
-      <img src="dqo.png" alt="Air Quality Monitoring" style="width:100%;">
-      <p>Trained Random Forest and ANN models to calibrate low-cost air sensors monitoring CO, NO₂, O₃, and SO₂ in Nicosia. Improved sensor accuracy and data compliance with EU standards. Recommended a city-scale deployment framework for real-time monitoring.</p>
-      <p>👉 <a href="https://github.com/Vinylango25/Air-Quality-in-Nicosia-Cyprus">GitHub</a> | <a href="https://medium.com/@vinylango90/sensor-calibration-and-air-quality-monitoring-in-nicosia-cyprus-e5072a4184aa">Medium</a></p>
+      <img src="dqo.png" alt="Air Quality Monitoring Project" style="width:100%; border-radius:5px;">
+      <p>Developed ML calibration models for low-cost air quality sensors using Random Forest and ANN, improving data compliance with EU standards for pollutants like CO, NO₂, and O₃.</p>
+      <p>👉 <a href="https://github.com/Vinylango25/Air-Quality-in-Nicosia-Cyprus">GitHub</a> | 
+      <a href="https://medium.com/@vinylango90/sensor-calibration-and-air-quality-monitoring-in-nicosia-cyprus-e5072a4184aa">Medium</a></p>
     </td>
   </tr>
 
   <tr>
-    <td style="vertical-align:top; padding:10px;">
+    <td style="vertical-align:top; width:50%; padding:15px;">
       <h3>📉 Customer Churn Analysis and Prediction</h3>
-      <img src="churn.png" alt="Churn Analysis" style="width:100%;">
-      <p>Built a churn prediction system with survival analysis and machine learning. Kaplan-Meier and Cox models were used to estimate churn risk and CLV. Integrated with a Flask web app showcasing SHAP insights and dynamic risk gauges.</p>
+      <img src="churn.png" alt="Churn Analysis Project" style="width:100%; border-radius:5px;">
+      <p>Analyzed customer churn using survival analysis (Kaplan-Meier, Cox models) and Random Forest classification. Deployed with Flask app and SHAP visualizations for actionable business insights.</p>
       <p>👉 <a href="https://github.com/Vinylango25/Customer_Churn_Analysis_And_Prediction">GitHub</a></p>
     </td>
 
-    <td style="vertical-align:top; padding:10px;">
-      <!-- Optionally insert another project here or leave this cell empty -->
+    <td style="vertical-align:top; width:50%; padding:15px;">
+      <!-- You can insert another project here or leave this empty -->
     </td>
   </tr>
 </table>
-
 
   
 
