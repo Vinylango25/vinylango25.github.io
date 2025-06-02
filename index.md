@@ -1,5 +1,5 @@
 
-<div style="max-width:100%; padding:0 5vw;"> 
+<div style="max-width:150%; padding:0 5vw;"> 
 
 <img src="IMG_9019.jpg" alt="Vincent Kipkemoi" width="200" style="border-radius: 50%;" />
 ### 💫 Hi there! 👋 I'm Kipkemoi Vincent  
