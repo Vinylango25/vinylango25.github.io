@@ -1,3 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kipkemoi Vincent | Data Scientist</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+      color: #333;
+    }
+
+    header {
+      background-color: #111;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+      gap: 2rem;
+    }
+
+    .left, .right {
+      flex: 1 1 45%;
+      min-width: 300px;
+    }
+
+    img.profile {
+      width: 180px;
+      border-radius: 50%;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    h1, h2 {
+      color: #222;
+    }
+
+    .download-cv {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .skills, .contact {
+      margin-top: 2rem;
+    }
+
+    .projects {
+      background: white;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    .projects h2 {
+      margin-top: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #222;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="IMG_9019.jpg" alt="Vincent Kipkemoi" class="profile">
+  <h1>Hi, I'm Kipkemoi Vincent</h1>
+  <p>Data Scientist | ML/AI Engineer | Data Analyst</p>
+  <a href="CV_VincentLangat.pdf" class="download-cv" download>📄 Download CV</a>
+</header>
+
+<div class="container">
+  <div class="left">
+    <h2>About Me</h2>
+    <p>I’m a passionate Data Scientist with 5+ years experience building scalable, interpretable machine learning systems and analytics pipelines across sectors like fintech, healthcare, environmental science, and agriculture.</p>
+    
+    <h2>Mission</h2>
+    <p>Leverage data and AI to solve real-world challenges — from fraud detection to healthcare access. I aim to build ethical, impactful, and production-ready ML solutions.</p>
+
+    <div class="skills">
+      <h2>Tech Stack</h2>
+      <ul>
+        <li>Python, R, SQL, TensorFlow, PyTorch, Scikit-learn</li>
+        <li>XGBoost, LightGBM, CatBoost, PyOD, FLAML</li>
+        <li>AWS, GCP, Docker, Kubernetes, MLflow</li>
+        <li>Tableau, Preset, Streamlit, FastAPI, Django</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="right">
+    <h2>Education</h2>
+    <ul>
+      <li><strong>MPhil</strong> in Environmental Science — The Cyprus Institute</li>
+      <li><strong>MSc</strong> in Mathematical Sciences — AIMS/UWC</li>
+      <li><strong>BSc</strong> in Mathematics — University of Nairobi</li>
+    </ul>
+
+    <div class="contact">
+      <h2>Contact</h2>
+      <p><strong>Email:</strong> vincentl@aims.ac.za</p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/kipkemoi-vincent-19307a94/" target="_blank">View Profile</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/Vinylango25" target="_blank">Vinylango25</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="projects">
+  <h2>Featured Projects</h2>
+  <ul>
+    <li><strong><a href="https://github.com/Vinylango25/Healthcare-Accessibility-in-Nairobi" target="_blank">🏥 Healthcare Accessibility in Nairobi</a></strong>: Mapping healthcare gaps in informal settlements using spatial & demographic analysis.</li>
+    <li><strong><a href="https://github.com/Vinylango25/Anomaly-Fraud-detection-in-Finance" target="_blank">🛡️ Fraud Detection in Finance</a></strong>: Built interpretable anomaly detection models using PyOD, SHAP, SMOTE, FLAML.</li>
+    <li><strong><a href="https://github.com/Vinylango25/Credit-Scoring-Lending-automation" target="_blank">🤖 ML for Lending Automation</a></strong>: XGBoost & LGBM models to automate credit scoring and reduce default risk.</li>
+    <li><strong><a href="https://github.com/Vinylango25/Air-Quality-in-Nicosia-Cyprus" target="_blank">🌍 Air Quality Monitoring</a></strong>: Calibrated low-cost air sensors with ML models to improve pollution monitoring accuracy.</li>
+    <li><strong><a href="https://github.com/Vinylango25/Customer_Churn_Analysis_And_Prediction" target="_blank">📉 Churn Analysis</a></strong>: Predictive churn modeling with survival analysis & SHAP-enabled dashboards.</li>
+  </ul>
+</div>
+
+<footer>
+  <p>© 2025 Kipkemoi Vincent | Built with ❤️ and Python</p>
+</footer>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
 <img src="IMG_9019.jpg" alt="Vincent Kipkemoi" width="200" style="border-radius: 50%;" />
 ### 💫 Hi there! 👋 I'm Kipkemoi Vincent  
 
