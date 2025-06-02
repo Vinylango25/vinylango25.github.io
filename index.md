@@ -1,124 +1,101 @@
 
-  
+<style>
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.project-card {
+  width: 48%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 768px) {
+  .project-card {
+    width: 100%;
+  }
+}
+</style>
 
- 
- 
+## 💼 Featured Projects
 
-<img src="IMG_9019.jpg" alt="Vincent Kipkemoi" width="160" style="border-radius: 50%;" />
+<div class="project-grid">
 
-# 💫 Hi there! I'm Kipkemoi Vincent
+<div class="project-card">
 
-> Data Scientist | ML/AI Engineer | Data Analyst  
-> Based in **Nairobi, Kenya**, open to remote & global opportunities.
+### 🏥 Healthcare Accessibility in Nairobi
 
-[📄 Download My CV](CV_VincentLangat.pdf){: .btn}
+![Healthcare](fig6.png)
 
----
+This project analyzed healthcare infrastructure in Nairobi, identifying gaps in underserved regions using spatial and demographic data.  
+👉 [GitHub](https://github.com/Vinylango25/Healthcare-Accessibility-in-Nairobi) | [Medium](https://medium.com/@vinylango90/enhancing-healthcare-accessibility-in-nairobi-kenya-ee275471faa7)
 
-<table>
-<tr>
-<td valign="top" width="50%">
+</div>
 
-## 🎯 About Me
+<div class="project-card">
 
-I am a passionate data scientist with 5+ years of experience building scalable ML systems and analytics pipelines in **fintech, healthcare, agri-tech**, and **environmental science**.
+### 🛡️ Anomaly & Fraud Detection in Finance
 
-I leverage AI & data to solve real-world problems, from fraud detection to healthcare access. My goal is to develop transparent, ethical, and production-ready solutions that create social and business impact.
+![Fraud](fg7.png)
 
-### 🛠️ Tech Skills
+Built a robust fraud detection pipeline using PyOD, FLAML, SMOTE, SHAP, and LIME.  
+👉 [GitHub](https://github.com/Vinylango25/Anomaly-Fraud-detection-in-Finance) | [Medium](https://medium.com/@vinylango90/anomaly-detection-in-credit-card-transactions-using-pyod-and-microsoft-automl-flaml-727a091487bd)
 
-- **Languages & Tools:** Python, R, SQL, Scikit-learn, TensorFlow, PyTorch, LightGBM, XGBoost, CatBoost
-- **MLOps:** Docker, Kubernetes, Streamlit, MLflow, FastAPI, CI/CD
-- **Cloud:** AWS, GCP
-- **BI Tools:** Tableau, Power BI, Preset, Excel
-- **Other:** STATA, Matlab, SPSS, Flask, Django, Git
+</div>
 
-</td>
-<td valign="top" width="50%">
+<div class="project-card">
 
-## 🎓 Education
+### 🤖 Lending Automation – ML Credit Scoring
 
-- **MPhil** in Environmental Science  
-  _The Cyprus Institute, Cyprus_
-- **MSc** in Mathematical Sciences (Data Science)  
-  _AIMS/UWC, South Africa_
-- **BSc** in Mathematics  
-  _University of Nairobi, Kenya_
+![Lending](cost.png)
 
-## 📬 Contact
+Evaluated and deployed Random Forest, XGBoost, LightGBM for real-time credit scoring.  
+👉 [GitHub](https://github.com/Vinylango25/Credit-Scoring-Lending-automation) | [Medium](https://medium.com/@vinylango90/credit-scoring-lending-automation-6dabe30d53da)
 
-- 📧 **Email:** vincentl@aims.ac.za / vinylango90@gmail.com  
-- 💼 [LinkedIn](https://www.linkedin.com/in/kipkemoi-vincent-19307a94/)  
-- 💻 [GitHub](https://github.com/Vinylango25)  
+</div>
 
-</td>
-</tr>
-</table>
+<div class="project-card">
 
----
+### 🌍 Air Quality Monitoring – Cyprus
 
-## 🚀 Featured Projects
+![Air Quality](dqo.png)
 
-### [🏥 Healthcare Accessibility in Nairobi](https://github.com/Vinylango25/Healthcare-Accessibility-in-Nairobi)
-Used spatial and demographic data to assess healthcare infrastructure gaps in Nairobi's informal settlements.
+Calibrated low-cost sensors using ML (RF, ANN, XGBoost) for EU-compliant air quality metrics.  
+👉 [GitHub](https://github.com/Vinylango25/Air-Quality-in-Nicosia-Cyprus) | [Medium](https://medium.com/@vinylango90/sensor-calibration-and-air-quality-monitoring-in-nicosia-cyprus-e5072a4184aa)
 
-### [🛡️ Fraud Detection in Finance](https://github.com/Vinylango25/Anomaly-Fraud-detection-in-Finance)
-Developed scalable ML pipeline using PyOD, SHAP, AutoML to detect anomalies in credit card transactions.
+</div>
 
-### [🤖 ML for Lending Automation](https://github.com/Vinylango25/Credit-Scoring-Lending-automation)
-Built XGBoost & LGBM models to automate credit scoring, reduce loan default risk, and streamline approvals.
+<div class="project-card">
 
-### [🌍 Air Quality Monitoring – Cyprus](https://github.com/Vinylango25/Air-Quality-in-Nicosia-Cyprus)
-Calibrated low-cost gas sensors using ML models to meet EU standards for CO, NO₂, and O₃.
+### 📉 Customer Churn & Lifetime Value
 
-### [📉 Churn Prediction & Lifetime Value](https://github.com/Vinylango25/Customer_Churn_Analysis_And_Prediction)
-Used survival analysis (Kaplan-Meier, Cox model) + SHAP to build churn prediction dashboard.
+![Churn](churn.png)
 
----
+Used survival analysis (Kaplan-Meier, Cox) & SHAP in a Flask web app for churn prediction.  
+👉 [GitHub](https://github.com/Vinylango25/Customer_Churn_Analysis_And_Prediction)
 
-## 📊 GitHub Stats
+</div>
 
-<table>
+<div class="project-card">
+
+### 🩺 COVID-19 CT Scan Detection
+
+![CT Scan](https://user-images.githubusercontent.com/placeholder.png)
+
+CNN-based model ensemble for detecting COVID-19 from CT scans with 99% accuracy.  
+👉 [GitHub](https://github.com/Vinylango25/Covid-19-Detection-Deep-Learning)
+
+</div>
+
+</div>
+
+
+
+
+
 <tr>
 <td align="center">
   
-**Vinylango25**  
-<img src="https://streak-stats.demolab.com/?user=Vinylango25&theme=dark" alt="GitHub Streak" /><br/>
-<img src="https://github-readme-stats.vercel.app/api?username=Vinylango25&show_icons=true&theme=dark" /><br/>
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Vinylango25&layout=compact&theme=dark" />
-
-</td>
-<td align="center">
-
-**vinylango**  
-<img src="https://streak-stats.demolab.com/?user=vinylango&theme=dark" alt="GitHub Streak" /><br/>
-<img src="https://github-readme-stats.vercel.app/api?username=vinylango&show_icons=true&theme=dark" /><br/>
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=vinylango&layout=compact&theme=dark" />
-
-</td>
-</tr>
-</table>
-
----
-
-## 💡 Dev Quote of the Day
-
-![Quote](https://quotes-github-readme.vercel.app/api?type=horizontal)
-
----
-
-## 🧠 Let's Collaborate
-
-I'm open to exciting opportunities in **AI, ML, data science, and fintech**.  
-Feel free to [connect](https://www.linkedin.com/in/kipkemoi-vincent-19307a94/) or reach out via email.
-
-
-
-
-
-
-
-
 
 <img src="IMG_9019.jpg" alt="Vincent Kipkemoi" width="200" style="border-radius: 50%;" />
 ### 💫 Hi there! 👋 I'm Kipkemoi Vincent  
