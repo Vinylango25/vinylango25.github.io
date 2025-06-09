@@ -3510,3 +3510,10 @@ input, select, textarea {
 			}
 
 	}
+	/* Custom background section for credit scoring project */
+.style-credit {
+	background-color: #f4f7fb; /* Light blue-gray background */
+	color: #111111;           /* Dark text for readability */
+	padding: 4em 0;
+  }
+  
