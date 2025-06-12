@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+
 <!--
   Photon by HTML5 UP
   html5up.net | @ajlkn
@@ -6,198 +7,228 @@
 -->
 <html>
 <head>
-  <title>Kipkemoi Vincent Portfolio</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+<title>Kipkemoi Vincent Portfolio</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
+<link href="assets/css/main.css" rel="stylesheet"/>
+<noscript><link href="assets/css/noscript.css" rel="stylesheet"/></noscript>
 </head>
 <body class="is-preload">
+<style>
+  .tab-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
 
+  .tab-button:hover {
+    background-color: #0056b3;
+  }
+
+  .tab-content {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: none;
+    margin-top: 30px;
+  }
+
+  .tab-content.active {
+    display: block !important;
+    opacity: 1;
+  }
+
+  @media screen and (max-width: 600px) {
+    .tab-button {
+      display: block;
+      width: 90%;
+      margin: 10px auto;
+      font-size: 18px;
+    }
+  }
+</style>
+<div class="tab-container" style="text-align:center; margin-top: 2rem;">
+<button class="tab-button" onclick="showTab('about')">About Me</button>
+<button class="tab-button" onclick="showTab('education')">Education</button>
+<button class="tab-button" onclick="showTab('summary')">Professional Summary</button>
+<button class="tab-button" onclick="showTab('projects')">Projects</button>
+<button class="tab-button" onclick="showTab('contact')">Contact</button>
+</div>
 <!-- Personal Info Section -->
-<section id="five" class="main style2">
-  <div class="container">
-    <!-- <header class="major">
+<div class="tab-content" id="about"><section class="main style2" id="five">
+<div class="container">
+<!-- <header class="major">
      <h2>👨‍💻 About Me</h2>
     </header> -->
-
-    <div class="row gtr-150">
-
+<div class="row gtr-150">
 <!-- Column 2: Education -->
-      <div class="col-4 col-12-medium">
-	<span class="image fit">
-          <img src="images/IMG_9038.jpg" alt="Kipkemoi Vincent" style="width: 250px; border-radius: 70%; margin-bottom: 1rem;" />
-        </span>
-        <h3 style="color: #007BFF;"><strong>Kipkemoi Vincent</strong></h3>
-      </div>
-	 <!-- Column 3: Summary -->
-      <div class="col-4 col-12-medium">
-        <h3 style="color: #007BFF; margin-bottom: 5px;"><strong> 👨‍💻 About Me</strong></h3>
+<div class="col-4 col-12-medium">
+<span class="image fit">
+<img alt="Kipkemoi Vincent" src="images/IMG_9038.jpg" style="width: 250px; border-radius: 70%; margin-bottom: 1rem;"/>
+</span>
+<h3 style="color: #007BFF;"><strong>Kipkemoi Vincent</strong></h3>
+</div>
+<!-- Column 3: Summary -->
+<div class="col-4 col-12-medium">
+<h3 style="color: #007BFF; margin-bottom: 5px;"><strong> 👨‍💻 About Me</strong></h3>
 <p style="font-size: 16px; margin-top: 0;">
   Data Scientist, ML/AI Engineer, and Data Analyst passionate about transforming data into actionable insights. Currently based in Nairobi, Kenya, and open to global opportunities.
 </p>
-	<br><br>
-	<br>
-        <h3  style="color: #007BFF;"><strong>🎓 Education</strong></h3>
-        <ul style="font-size: 16px;">
-          <li>MPhil in Environmental Science; <br>The Cyprus Institute, Cyprus</li>
-          <li>MSc in Mathematical Sciences (Data Science); <br>University of Western Cape/AIMS, South Africa</li>
-          <li>BSc. Mathematics; <br>University of Nairobi, Kenya</li>
-        </ul>
-      </div>
-
-      <!-- Column 3: Summary -->
-      <div class="col-4 col-12-medium">
-        <h3 style="color: #007BFF;"><strong>📋 Professional Summary</strong></h3>
-         <ul style="font-size: 16px;">
-        <li>  5+ years of experience delivering Data Science and ML solutions across sectors (Fintech, Climate, <br> Healthcare).</li>
-        <li> Skilled in data analytics, predictive analytics, credit risk analysis, anomaly & fraud detection, credit scoring, <br> time series forecasting, and scalable ML model deployment.</li>
-        <li> Proficient in Python, R, SQL, Scikit-learn, CNN, OpenCV, TensorFlow, RF, LSTM, Catboost, XGBoost, LightGBM, <br> PyOD models, and AWS.</li>
-        <li> Experienced with MLOps workflows: Streamlit, Docker, Kubernetes, MLflow, FastAPI, and CI/CD pipelines.</li>
-	</ul>
-      </div>
-    </div>
+<br/><br/>
+<br/>
+<h3 style="color: #007BFF;"><strong>🎓 Education</strong></h3>
+<ul style="font-size: 16px;">
+<li>MPhil in Environmental Science; <br/>The Cyprus Institute, Cyprus</li>
+<li>MSc in Mathematical Sciences (Data Science); <br/>University of Western Cape/AIMS, South Africa</li>
+<li>BSc. Mathematics; <br/>University of Nairobi, Kenya</li>
+</ul>
+</div>
+<!-- Column 3: Summary -->
+<div class="col-4 col-12-medium">
+<h3 style="color: #007BFF;"><strong>📋 Professional Summary</strong></h3>
+<ul style="font-size: 16px;">
+<li>  5+ years of experience delivering Data Science and ML solutions across sectors (Fintech, Climate, <br/> Healthcare).</li>
+<li> Skilled in data analytics, predictive analytics, credit risk analysis, anomaly &amp; fraud detection, credit scoring, <br/> time series forecasting, and scalable ML model deployment.</li>
+<li> Proficient in Python, R, SQL, Scikit-learn, CNN, OpenCV, TensorFlow, RF, LSTM, Catboost, XGBoost, LightGBM, <br/> PyOD models, and AWS.</li>
+<li> Experienced with MLOps workflows: Streamlit, Docker, Kubernetes, MLflow, FastAPI, and CI/CD pipelines.</li>
+</ul>
+</div>
+</div>
 <div style="margin-bottom: 10px;"></div>
-</section>
-<section id="five" class="main style2">
-  <div class="container">
- <!-- Title for the whole section -->
+</div></section></div>
+<section class="main style2" id="five">
+<div class="container">
+<!-- Title for the whole section -->
 <h3 style="font-size: 35px;  margin-bottom: 30px;"><strong> Featured Projects</strong></h3>
-    <div class="row gtr-150">
-      <div class="col-6 col-12-medium">
-	       <h3 style="font-size: 20px;  margin-bottom: 20px;"><strong> 🤖 Credit Scoring & Lending Automation</strong></h3>
-	         <img src="images/im3.png" alt="Credit Scoring" style="width: 500px; height: 250px; margin-bottom: 1rem;" />
-		  <p style="font-size: 16px;">
+<div class="row gtr-150">
+<div class="col-6 col-12-medium">
+<h3 style="font-size: 20px;  margin-bottom: 20px;"><strong> 🤖 Credit Scoring &amp; Lending Automation</strong></h3>
+<img alt="Credit Scoring" src="images/im3.png" style="width: 500px; height: 250px; margin-bottom: 1rem;"/>
+<p style="font-size: 16px;">
 			This project involves building a machine learning pipeline for credit scoring and automating lending decisions. By combining feature engineering, predictive modeling, and business rule integration, the system streamlines loan approvals while managing credit risk effectively.
 		  </p>
-		  <p style="font-size: 16px;">
+<p style="font-size: 16px;">
 			Models such as RF, XGBoost and LightGBM were used and integrated with explainable AI. Data retrieval from DBeaver (PostgreSQL platform) through SQL data querrying and The lending decision engine was built using <strong>FastAPI</strong> for real-time deployment and scoring.
 		  </p>
-		  <p style="font-size: 16px;">
+<p style="font-size: 16px;">
 			Tools used: <strong>Python, SQL, Scikit-learn, LightGBM, SHAP, FastAPI</strong>. Focus areas included <strong>model explainability, risk segmentation, automation logic</strong>, and production-readiness.
 		  </p>
-		  <ul style="font-size: 16px;" class="actions special">
-			<li><a href="https://medium.com/@vinylango90/credit-scoring-lending-automation-6dabe30d53da" class="button primary" target="_blank">Read on Medium</a></li>
-			<li><a href="https://github.com/Vinylango25/Credit-Scoring-Lending-automation" class="button" target="_blank">View on GitHub</a></li>
-		  </ul>
-      </div>
-      <div class="col-6 col-12-medium">
-	<h3 style="font-size: 20px;  margin-bottom: 20px;"><strong> 🏥 Healthcare Accessibility in Nairobi</strong></h3>
-	<img src="images/im16.png" alt="Healthcare Map" style="width: 500px; height: 250px; margin-bottom: 1rem;" />
-        <p style="font-size: 16px;">
+<ul class="actions special" style="font-size: 16px;">
+<li><a class="button primary" href="https://medium.com/@vinylango90/credit-scoring-lending-automation-6dabe30d53da" target="_blank">Read on Medium</a></li>
+<li><a class="button" href="https://github.com/Vinylango25/Credit-Scoring-Lending-automation" target="_blank">View on GitHub</a></li>
+</ul>
+</div>
+<div class="col-6 col-12-medium">
+<h3 style="font-size: 20px;  margin-bottom: 20px;"><strong> 🏥 Healthcare Accessibility in Nairobi</strong></h3>
+<img alt="Healthcare Map" src="images/im16.png" style="width: 500px; height: 250px; margin-bottom: 1rem;"/>
+<p style="font-size: 16px;">
           This geospatial analysis project explores access to healthcare facilities in Nairobi by mapping population density, facility distribution, and travel time using road networks. It highlights spatial disparities in access to care.
         </p>
-        <p style="font-size: 16px;">
+<p style="font-size: 16px;">
           Using <strong>Python, Pandas, Geopandas, Folium, Matplotlib, Seaborn</strong>, and <strong>Jupyter Notebook</strong>, the project visualizes accessibility scores and identifies underserved zones with limited facility reach.
         </p>
-        <p style="font-size: 16px;">
+<p style="font-size: 16px;">
           The results provide data-driven insights for urban planners and policymakers to improve healthcare infrastructure and service delivery across Nairobi.
         </p>
-        <ul style="font-size: 16px;" class="actions special">
-	<li><a href="https://medium.com/@vinylango90/enhancing-healthcare-accessibility-in-nairobi-kenya-21dfff0a2ac8" class="button primary" target="_blank">Read on Medium</a></li>
-          <li><a href="https://github.com/Vinylango25/Healthcare-Accessibility-in-Nairobi" class="button" target="_blank">View on GitHub</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
+<ul class="actions special" style="font-size: 16px;">
+<li><a class="button primary" href="https://medium.com/@vinylango90/enhancing-healthcare-accessibility-in-nairobi-kenya-21dfff0a2ac8" target="_blank">Read on Medium</a></li>
+<li><a class="button" href="https://github.com/Vinylango25/Healthcare-Accessibility-in-Nairobi" target="_blank">View on GitHub</a></li>
+</ul>
+</div>
+</div>
+</div>
 </section>
-
-  <section id="five" class="main style2">
-	<div class="container">
-	  <div class="row gtr-150">
-		<div class="col-6 col-12-medium">
-			<h3 style="font-size: 20px;  margin-bottom: 20px;"><strong> 🌍 Air Quality Monitoring & Sensor Calibration</strong></h3>
-		<img src="images/im10.png" alt="Credit Scoring" style="width: 500px; height: 300px; margin-bottom: 1rem;" />
-					  <p style="font-size: 16px;">
+<section class="main style2" id="five">
+<div class="container">
+<div class="row gtr-150">
+<div class="col-6 col-12-medium">
+<h3 style="font-size: 20px;  margin-bottom: 20px;"><strong> 🌍 Air Quality Monitoring &amp; Sensor Calibration</strong></h3>
+<img alt="Credit Scoring" src="images/im10.png" style="width: 500px; height: 300px; margin-bottom: 1rem;"/>
+<p style="font-size: 16px;">
 						This project focused on calibrating low-cost air quality sensors and deploying them in Nicosia, Cyprus to monitor pollution patterns. We compared data from the low-cost sensors with reference-grade instruments to improve accuracy using statistical and machine learning models.
 					  </p>
-					  <p style="font-size: 16px;">
+<p style="font-size: 16px;">
 						I developed data pipelines for continuous collection, cleaning, and analysis of air quality parameters such as PM2.5, PM10, NO₂, and O₃. The calibrated sensors enabled real-time, hyperlocal air quality insights across the city, supporting environmental research and public health initiatives.
 					  </p>
-					  <p style="font-size: 16px;">
-						Tools & techniques used included Python (Pandas, Scikit-learn), R, linear regression, random forest, time-series analysis, and geospatial data visualization. This work contributes to scalable environmental monitoring solutions using affordable technology.
+<p style="font-size: 16px;">
+						Tools &amp; techniques used included Python (Pandas, Scikit-learn), R, linear regression, random forest, time-series analysis, and geospatial data visualization. This work contributes to scalable environmental monitoring solutions using affordable technology.
 					  </p>
-					  <ul style="font-size: 16px;" class="actions special">
-						<li><a href="https://medium.com/@vinylango90/sensor-calibration-and-air-quality-monitoring-in-nicosia-cyprus-e5072a4184aa" class="button primary" target="_blank">Read on Medium</a></li>
-						<li><a href="https://github.com/Vinylango25/Air-Quality-in-Nicosia-Cyprus" class="button" target="_blank">View on GitHub</a></li>
-					  </ul>
-		</div>
-		<div class="col-6 col-12-medium">
-			<h3 style="font-size: 20px;  margin-bottom: 20px;"><strong> 🛡️ Anomaly Detection in Credit Card Transactions</strong></h3>
-			       <img src="images/im2.png" alt="Anomaly Detection" style="width: 500px; height: 300px; margin-bottom: 1rem;" />
-					  <p style="font-size: 16px;">
+<ul class="actions special" style="font-size: 16px;">
+<li><a class="button primary" href="https://medium.com/@vinylango90/sensor-calibration-and-air-quality-monitoring-in-nicosia-cyprus-e5072a4184aa" target="_blank">Read on Medium</a></li>
+<li><a class="button" href="https://github.com/Vinylango25/Air-Quality-in-Nicosia-Cyprus" target="_blank">View on GitHub</a></li>
+</ul>
+</div>
+<div class="col-6 col-12-medium">
+<h3 style="font-size: 20px;  margin-bottom: 20px;"><strong> 🛡️ Anomaly Detection in Credit Card Transactions</strong></h3>
+<img alt="Anomaly Detection" src="images/im2.png" style="width: 500px; height: 300px; margin-bottom: 1rem;"/>
+<p style="font-size: 16px;">
 						This project explores fraud detection using unsupervised and automated machine learning techniques on credit card transaction data. By combining the power of the PyOD library with Microsoft AutoML (FLAML), I implemented a robust, scalable pipeline for anomaly detection.
 					  </p>
-					  <p style="font-size: 16px;">
+<p style="font-size: 16px;">
 						I evaluated multiple models including Isolation Forest, AutoEncoder, IForest, and HBOS, and integrated AutoML to fine-tune hyperparameters with minimal human intervention. The solution was able to detect outliers with high precision, even in highly imbalanced datasets.
 					  </p>
-					  <p style="font-size: 16px;">
+<p style="font-size: 16px;">
 						Key tools used: <strong>Python, PyOD, FLAML, Pandas, Scikit-learn</strong>. Focus areas included <strong>model selection, threshold optimization, explainability</strong>, and <strong>visualization of fraud patterns</strong>.
 					  </p>
-					  <ul style="font-size: 16px;" class="actions special">
-						<li><a href="https://medium.com/@vinylango90/anomaly-detection-in-credit-card-transactions-using-pyod-and-microsoft-automl-flaml-727a091487bd" class="button primary" target="_blank">Read on Medium</a></li>
-						<li><a href="https://github.com/Vinylango25/Anomaly-Fraud-detection-in-Finance" class="button" target="_blank">View on GitHub</a></li>
-					  </ul>
-		</div>
-	  </div>
-	</div>
-  </section>
-  
-
-			  
-			  
-		<!-- Three -->
-<section id="five" class="main style2">
-	<div class="container">
-	<h3 style="font-size: 35px;  margin-bottom: 30px;"><strong> Other Featured Projects </strong></h3>
-	  <div class="row gtr-150">
-  
-		<!-- Project 1: COVID-19 CT Scan Detection -->
-		<div class="col-4 col-12-medium">
-		  <span class="image fit">
-			<img src="images/im5.png" alt="COVID-19 CT Scan Detection" style="width: 330px; height: 220px; margin-bottom: 1rem;" />
-		  </span>
-		  <h3 style="font-size: 20px;"> 🩺 COVID-19 Detection </h3>
-		  <p style="font-size: 16px;">
+<ul class="actions special" style="font-size: 16px;">
+<li><a class="button primary" href="https://medium.com/@vinylango90/anomaly-detection-in-credit-card-transactions-using-pyod-and-microsoft-automl-flaml-727a091487bd" target="_blank">Read on Medium</a></li>
+<li><a class="button" href="https://github.com/Vinylango25/Anomaly-Fraud-detection-in-Finance" target="_blank">View on GitHub</a></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Three -->
+<div class="tab-content" id="projects" style="display:none;"><section class="main style2" id="five">
+<div class="container">
+<h3 style="font-size: 35px;  margin-bottom: 30px;"><strong> Other Featured Projects </strong></h3>
+<div class="row gtr-150">
+<!-- Project 1: COVID-19 CT Scan Detection -->
+<div class="col-4 col-12-medium">
+<span class="image fit">
+<img alt="COVID-19 CT Scan Detection" src="images/im5.png" style="width: 330px; height: 220px; margin-bottom: 1rem;"/>
+</span>
+<h3 style="font-size: 20px;"> 🩺 COVID-19 Detection </h3>
+<p style="font-size: 16px;">
 			Tested power of Deep learning CNNs to classify COVID-19 from chest CT scans. Achieved high accuracy using a custom architecture trained on augmented datasets.
 		  </p>
-		  <ul  style="font-size: 16px;" class="actions special">
-			<li><a href="https://medium.com/@vinylango90/deep-learning-based-detection-of-covid-19-from-ct-scans-using-convolutional-neural-networks-a09ca1a6f9ce" class="button" target="_blank">Read on Medium</a></li>
-		  </ul>
-		</div>
-  
-		<!-- Project 2: Customer Churn Prediction -->
-		<div class="col-4 col-12-medium">
-		  <span class="image fit">
-			<img src="images/im6.png" alt="Customer Churn Prediction" style="width: 330px; height: 220px; margin-bottom: 1rem;" />
-		  </span>
-		  <h3 style="font-size: 20px;"> 📉 Customer Churn Prediction</h3>
-		  <p style="font-size: 16px;">
+<ul class="actions special" style="font-size: 16px;">
+<li><a class="button" href="https://medium.com/@vinylango90/deep-learning-based-detection-of-covid-19-from-ct-scans-using-convolutional-neural-networks-a09ca1a6f9ce" target="_blank">Read on Medium</a></li>
+</ul>
+</div>
+<!-- Project 2: Customer Churn Prediction -->
+<div class="col-4 col-12-medium">
+<span class="image fit">
+<img alt="Customer Churn Prediction" src="images/im6.png" style="width: 330px; height: 220px; margin-bottom: 1rem;"/>
+</span>
+<h3 style="font-size: 20px;"> 📉 Customer Churn Prediction</h3>
+<p style="font-size: 16px;">
 			Built ML models to predict customer churn for telecom data. Focused on interpretability and actionable business insights using classification techniques.
 		  </p>
-		  <ul  style="font-size: 16px;" class="actions special">
-			<li><a href="https://github.com/Vinylango25/Customer_Churn_Analysis_And_Prediction" class="button" target="_blank">View on GitHub</a></li>
-		  </ul>
-		</div>
-  
-		<!-- Project 3: Sales Time Series Analysis -->
-		<div class="col-4 col-12-medium">
-		  <span class="image fit">
-			<img src="images/im7.png" alt="Sales Forecasting" style="width: 330px; height: 220px; margin-bottom: 1rem;" />
-		  </span>
-		  <h3 style="font-size: 20px;"> 📊 Sales Time Series Forecasting</h3>
-		  <p style="font-size: 16px;">
+<ul class="actions special" style="font-size: 16px;">
+<li><a class="button" href="https://github.com/Vinylango25/Customer_Churn_Analysis_And_Prediction" target="_blank">View on GitHub</a></li>
+</ul>
+</div>
+<!-- Project 3: Sales Time Series Analysis -->
+<div class="col-4 col-12-medium">
+<span class="image fit">
+<img alt="Sales Forecasting" src="images/im7.png" style="width: 330px; height: 220px; margin-bottom: 1rem;"/>
+</span>
+<h3 style="font-size: 20px;"> 📊 Sales Time Series Forecasting</h3>
+<p style="font-size: 16px;">
 			Performed sales forecasting using ARIMA, SARIMA, and Prophet. Included feature engineering and seasonality modeling for improved retail decision-making.
 		  </p>
-		  <ul  style="font-size: 16px;" class="actions special">
-			<li><a href="https://github.com/Vinylango25/Sales_Time_Series_Analysis" class="button" target="_blank">View on GitHub</a></li>
-		  </ul>
-		</div>
-  
-	  </div>
-	</div>
-  </section>
-  
+<ul class="actions special" style="font-size: 16px;">
+<li><a class="button" href="https://github.com/Vinylango25/Sales_Time_Series_Analysis" target="_blank">View on GitHub</a></li>
+</ul>
+</div>
+</div>
+</div>
+</section></div>
 <!-- Four -->
 <!--<section id="four" class="main style2 special">
 	<div class="container">
@@ -217,10 +248,8 @@
 	  </ul>
 	</div>
   </section> -->
-  
-
-		<!-- Five -->
-		<!--
+<!-- Five -->
+<!--
 			<section id="five" class="main style1">
 				<div class="container">
 					<header class="major special">
@@ -536,45 +565,60 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 				</div>
 			</section>
 		-->
+<!-- Footer -->
+<div class="tab-content" id="contact" style="display:none;"><section id="footer">
+<ul class="icons">
+<li style="font-size: 16px;">
+<a class="icon brands alt fa-github" href="https://github.com/Vinylango25" rel="noopener" target="_blank">
+<span class="label">GitHub</span>
+</a>
+</li>
+<li style="font-size: 16px;">
+<a class="icon brands alt fa-linkedin-in" href="https://www.linkedin.com/in/kipkemoi-vincent-19307a94/" rel="noopener" target="_blank">
+<span class="label">LinkedIn</span>
+</a>
+</li>
+<li style="font-size: 16px;">
+<a class="icon brands alt fa-medium" href="https://medium.com/@vinylango90" rel="noopener" target="_blank">
+<span class="label">Medium</span>
+</a>
+</li>
+<li style="font-size: 16px;">
+<a class="icon solid alt fa-envelope" href="mailto:vincentl@aims.ac.za">
+<span class="label">Email</span>
+</a>
+</li>
+</ul>
+<ul class="copyright" style="font-size: 16px;">
+<li>© Kipkemoi Vincent</li>
+<li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+</ul>
+</section></div>
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
 
-		<!-- Footer -->
-<section id="footer">
-	<ul class="icons">
-	  <li style="font-size: 16px;">
-		<a href="https://github.com/Vinylango25" class="icon brands alt fa-github" target="_blank" rel="noopener">
-		  <span class="label">GitHub</span>
-		</a>
-	  </li>
-	  <li style="font-size: 16px;">
-		<a href="https://www.linkedin.com/in/kipkemoi-vincent-19307a94/" class="icon brands alt fa-linkedin-in" target="_blank" rel="noopener">
-		  <span class="label">LinkedIn</span>
-		</a>
-	  </li>
-	  <li style="font-size: 16px;">
-		<a href="https://medium.com/@vinylango90" class="icon brands alt fa-medium" target="_blank" rel="noopener">
-		  <span class="label">Medium</span>
-		</a>
-	  </li>
-	  <li style="font-size: 16px;">
-		<a href="mailto:vincentl@aims.ac.za" class="icon solid alt fa-envelope">
-		  <span class="label">Email</span>
-		</a>
-	  </li>
-	</ul>
-	<ul style="font-size: 16px;" class="copyright">
-	  <li>&copy; Kipkemoi Vincent</li>
-	  <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-	</ul>
-  </section>
-  
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
 
-	</body>
+<script>
+  function showTab(id) {
+    const contents = document.getElementsByClassName("tab-content");
+    for (let i = 0; i < contents.length; i++) {
+      contents[i].classList.remove("active");
+      contents[i].style.display = "none";
+    }
+    const tab = document.getElementById(id);
+    tab.style.display = "block";
+    setTimeout(() => tab.classList.add("active"), 10);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    showTab("about");
+  });
+</script>
+</body>
 </html>
