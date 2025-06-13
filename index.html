@@ -14,8 +14,53 @@
 </head>
 <body class="is-preload">
 
+<nav style="text-align:center; margin-top: 30px;">
+  <button class="tablink" onclick="openTab(event, 'about')">About Me</button>
+  <button class="tablink" onclick="openTab(event, 'education')">Education</button>
+  <button class="tablink" onclick="openTab(event, 'summary')">Professional Summary</button>
+  <button class="tablink" onclick="openTab(event, 'projects')">Projects</button>
+  <button class="tablink" onclick="openTab(event, 'contact')">Contact</button>
+</nav>
+
+<style>
+  .tablink {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 5px;
+    border-radius: 6px;
+  }
+  .tablink:hover {
+    background-color: #0056b3;
+  }
+  .tab-content {
+    display: none;
+    padding: 30px 0;
+  }
+</style>
+
+<script>
+  function openTab(evt, tabId) {
+    var i, x, tablinks;
+    x = document.getElementsByClassName("tab-content");
+    for (i = 0; i < x.length; i++) x[i].style.display = "none";
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) tablinks[i].classList.remove("active");
+    document.getElementById(tabId).style.display = "block";
+    evt.currentTarget.classList.add("active");
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector(".tablink").click();
+  });
+</script>
+
+
 <!-- Personal Info Section -->
-<section id="five" class="main style2">
+<div class="tab-content" id="about"><section id="five" class="main style2">
   <div class="container">
     <!-- <header class="major">
      <h2>👨‍💻 About Me</h2>
@@ -58,7 +103,7 @@
     </div>
 <div style="margin-bottom: 10px;"></div>
 </section>
-<section id="five" class="main style2">
+<div class="tab-content" id="about"><section id="five" class="main style2">
   <div class="container">
  <!-- Title for the whole section -->
 <h3 style="font-size: 35px;  margin-bottom: 30px;"><strong> Featured Projects</strong></h3>
@@ -101,7 +146,7 @@
   </div>
 </section>
 
-  <section id="five" class="main style2">
+  <div class="tab-content" id="about"><section id="five" class="main style2">
 	<div class="container">
 	  <div class="row gtr-150">
 		<div class="col-6 col-12-medium">
@@ -146,7 +191,7 @@
 			  
 			  
 		<!-- Three -->
-<section id="five" class="main style2">
+<div class="tab-content" id="about"><section id="five" class="main style2">
 	<div class="container">
 	<h3 style="font-size: 35px;  margin-bottom: 30px;"><strong> Other Featured Projects </strong></h3>
 	  <div class="row gtr-150">
@@ -220,7 +265,7 @@
 
 		<!-- Five -->
 		<!--
-			<section id="five" class="main style1">
+			<div class="tab-content" id="about"><section id="five" class="main style1">
 				<div class="container">
 					<header class="major special">
 						<h2>Elements</h2>
@@ -574,5 +619,16 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
-	</body>
+	
+<div class="tab-content" id="contact">
+  <section class="main style2">
+    <div class="container">
+      <h3 style="font-size: 24px;">📬 Contact Me</h3>
+      <p>Email: <a href="mailto:vincentl@aims.ac.za">vincentl@aims.ac.za</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/kipkemoi-vincent-19307a94/" target="_blank">Connect Here</a></p>
+    </div>
+  </section>
+</div>
+
+</body>
 </html>
