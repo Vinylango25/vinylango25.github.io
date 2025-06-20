@@ -5,101 +5,102 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/main.css" />
-  <link rel="stylesheet" href="assets/css/tabulous.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <style>
-    .animate {
-      animation-duration: 0.75s;
-      animation-fill-mode: backwards;
+    .tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0;
     }
-    .animate.fade { animation-name: animate-fade; }
-    .animate.pop { animation-name: animate-pop; }
-
-    @keyframes animate-fade {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    .tabs button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
     }
-
-    @keyframes animate-pop {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
+    .tabs button:hover {
+      background-color: #0056b3;
+    }
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
     }
   </style>
-  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
 <body class="is-preload">
 
-<!-- Tabs Wrapper -->
-<div id="tabs" class="animate pop">
-  <ul>
-    <li><a href="#tab1">👨‍💻 About Me</a></li>
-    <li><a href="#tab2">🌟 Featured Projects</a></li>
-    <li><a href="#tab3">🧪 Other Projects</a></li>
-  </ul>
-  
-  <div id="tab1">
-    <!-- About Me Section -->
-    <section class="main style2 animate fade">
-      <div class="container">
-        <div class="row gtr-150">
-          <div class="col-4 col-12-medium">
-            <span class="image fit">
-              <img src="images/im2.png" alt="Kipkemoi Vincent" style="width: 250px; border-radius: 70%; margin-bottom: 1rem;" />
-            </span>
-            <h3 style="color: #007BFF;"><strong>Kipkemoi Vincent</strong></h3>
-          </div>
-          <div class="col-4 col-12-medium">
-            <h3 style="color: #007BFF;"><strong> 👨‍💻 About Me</strong></h3>
-            <p>Data Scientist, ML/AI Engineer, and Data Analyst passionate about transforming data into actionable insights. Currently based in Nairobi, Kenya, and open to global opportunities.</p>
-            <h3 style="color: #007BFF;"><strong>🎓 Education</strong></h3>
-            <ul>
-              <li>MPhil in Environmental Science; The Cyprus Institute</li>
-              <li>MSc in Mathematical Sciences (Data Science); AIMS South Africa</li>
-              <li>BSc. Mathematics; University of Nairobi</li>
-            </ul>
-          </div>
-          <div class="col-4 col-12-medium">
-            <h3 style="color: #007BFF;"><strong>📋 Professional Summary</strong></h3>
-            <ul>
-              <li>5+ years delivering Data Science and ML solutions across sectors.</li>
-              <li>Skilled in analytics, fraud detection, forecasting, and scalable ML.</li>
-              <li>Expert in Python, R, SQL, CNN, XGBoost, FastAPI, AWS.</li>
-              <li>Experience with MLOps: Streamlit, Docker, MLflow, CI/CD.</li>
-            </ul>
-          </div>
+<section id="main" class="main style2">
+  <div class="container">
+    <div class="tabs">
+      <button onclick="showTab('about')">About Me</button>
+      <button onclick="showTab('education')">Education</button>
+      <button onclick="showTab('summary')">Summary</button>
+      <button onclick="showTab('projects')">Projects</button>
+    </div>
+
+    <div id="about" class="tab-content active">
+      <div class="row gtr-150">
+        <div class="col-4 col-12-medium">
+          <span class="image fit">
+            <img src="images/im2.png" alt="Kipkemoi Vincent" style="width: 250px; border-radius: 70%; margin-bottom: 1rem;" />
+          </span>
+          <h3 style="color: #007BFF;"><strong>Kipkemoi Vincent</strong></h3>
+        </div>
+        <div class="col-8 col-12-medium">
+          <h3 style="color: #007BFF;"><strong> 👨‍💻 About Me</strong></h3>
+          <p style="font-size: 16px; margin-top: 0;">
+            Data Scientist, ML/AI Engineer, and Data Analyst passionate about transforming data into actionable insights. Currently based in Nairobi, Kenya, and open to global opportunities.
+          </p>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
 
-  <div id="tab2">
-    <!-- Featured Projects Section -->
-    <section class="main style2 animate fade">
-      <div class="container">
-        <h3><strong>Featured Projects</strong></h3>
-        <!-- Insert your featured project HTML content here -->
-        <p>Credit Scoring, Healthcare Mapping, Anomaly Detection in Finance...</p>
-      </div>
-    </section>
-  </div>
+    <div id="education" class="tab-content">
+      <h3 style="color: #007BFF;"><strong>🎓 Education</strong></h3>
+      <ul style="font-size: 16px;">
+        <li>MPhil in Environmental Science; <br>The Cyprus Institute, Cyprus</li>
+        <li>MSc in Mathematical Sciences (Data Science); <br>University of Western Cape/AIMS, South Africa</li>
+        <li>BSc. Mathematics; <br>University of Nairobi, Kenya</li>
+      </ul>
+    </div>
 
-  <div id="tab3">
-    <!-- Other Projects Section -->
-    <section class="main style2 animate fade">
-      <div class="container">
-        <h3><strong>Other Featured Projects</strong></h3>
-        <!-- Insert your other project HTML content here -->
-        <p>COVID-19 CT Scan Classification, Customer Churn, Sales Forecasting...</p>
-      </div>
-    </section>
-  </div>
-</div>
+    <div id="summary" class="tab-content">
+      <h3 style="color: #007BFF;"><strong>📋 Professional Summary</strong></h3>
+      <ul style="font-size: 16px;">
+        <li>5+ years of experience delivering Data Science and ML solutions across sectors (Fintech, Climate, Healthcare).</li>
+        <li>Skilled in data analytics, predictive analytics, credit risk analysis, anomaly & fraud detection, credit scoring, time series forecasting, and scalable ML model deployment.</li>
+        <li>Proficient in Python, R, SQL, Scikit-learn, CNN, OpenCV, TensorFlow, RF, LSTM, Catboost, XGBoost, LightGBM, PyOD models, and AWS.</li>
+        <li>Experienced with MLOps workflows: Streamlit, Docker, Kubernetes, MLflow, FastAPI, and CI/CD pipelines.</li>
+      </ul>
+    </div>
 
-<!-- Footer -->
+    <div id="projects" class="tab-content">
+      <h3 style="font-size: 35px;  margin-bottom: 30px;"><strong>Featured Projects</strong></h3>
+      <!-- Existing project content here (unchanged) -->
+    </div>
+  </div>
+</section>
+
 <section id="footer">
   <ul class="icons">
-    <li><a href="https://github.com/Vinylango25" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
-    <li><a href="https://linkedin.com/in/kipkemoi-vincent-19307a94" class="icon brands fa-linkedin-in" target="_blank"><span class="label">LinkedIn</span></a></li>
-    <li><a href="mailto:vincentl@aims.ac.za" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+    <li><a href="https://github.com/Vinylango25" class="icon brands alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+    <li><a href="https://www.linkedin.com/in/kipkemoi-vincent-19307a94/" class="icon brands alt fa-linkedin-in" target="_blank"><span class="label">LinkedIn</span></a></li>
+    <li><a href="https://medium.com/@vinylango90" class="icon brands alt fa-medium" target="_blank"><span class="label">Medium</span></a></li>
+    <li><a href="mailto:vincentl@aims.ac.za" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
   </ul>
   <ul class="copyright">
     <li>&copy; Kipkemoi Vincent</li>
@@ -107,14 +108,15 @@
   </ul>
 </section>
 
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/tabulous.js"></script>
 <script>
-  $(function () {
-    $('#tabs').tabulous({ effect: 'scaleUp' });
-  });
+  function showTab(tabId) {
+    const tabs = document.querySelectorAll('.tab-content');
+    tabs.forEach(tab => tab.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+  }
 </script>
+
+<script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/jquery.scrolly.min.js"></script>
 <script src="assets/js/browser.min.js"></script>
 <script src="assets/js/breakpoints.min.js"></script>
