@@ -29,18 +29,19 @@
       padding: 10px 20px;
       background-color: transparent;
     }
-  .tabs button {
-  background: none;
-  border: none;
-  outline: none;
-  padding: 0;
-  margin: 0;
-  font: inherit;
-  color: #007BFF;
-  cursor: pointer;
-  border-radius: 0;
-  box-shadow: none;
-}
+ .tabs button {
+      height: 30px;                  /* example fixed height */
+  line-height: 30px;             /* same as height to center text */
+   padding: 0 15px; 
+      font-size: 10px;
+      cursor: pointer;
+      background-color: #006d77;
+      color: white;
+      outline: none;
+      border: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
 
 .tabs button:hover {
   text-decoration: underline;
