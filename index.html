@@ -27,10 +27,7 @@
       gap: 10px;
       margin: 0;
       padding: 10px 20px;
-      background-color: #f8f9fa;
-      border: 1px solid #dee2e6;
-      border-radius: 6px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      background-color: transparent;
     }
     .tabs button {
       padding: 10px 20px;
@@ -41,11 +38,13 @@
       border: none;
       border-radius: 4px;
       transition: background-color 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
     }
     .tabs button:hover {
       background-color: #0062cc;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .tabs button.active {
+      background-color: #008080;
     }
     .tab-content {
       display: none;
@@ -59,6 +58,23 @@
       to {opacity: 1;}
     }
   </style>
+  <script>
+    function showTab(tabId) {
+      var contents = document.querySelectorAll('.tab-content');
+      var buttons = document.querySelectorAll('.tabs button');
+
+      contents.forEach(function(content) {
+        content.classList.remove('active');
+      });
+
+      buttons.forEach(function(button) {
+        button.classList.remove('active');
+      });
+
+      document.getElementById(tabId).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
 </head>
 <body class="is-preload">
 <section id="main" class="main style2">
@@ -71,6 +87,7 @@
     </div>
   </div>
 </section>
+
 
 
 
