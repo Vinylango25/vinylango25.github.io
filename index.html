@@ -58,6 +58,37 @@
     .tab-content.active {
       display: block;
     }
+    .skills-section {
+      margin: 40px 20px;
+    }
+    .skills-tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .skills-tabs button {
+      padding: 10px 15px;
+      background: #004085;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .skills-tabs button.active {
+      background: #008080;
+    }
+    .skills-content {
+      display: none;
+    }
+    .skills-content.active {
+      display: block;
+      text-align: center;
+    }
+    .skills-content img {
+      margin: 8px;
+    }
     @keyframes fadeIn {
       from {opacity: 0;}
       to {opacity: 1;}
@@ -86,6 +117,7 @@
   <div class="container">
     <div class="tabs">
       <button onclick="showTab('about')">About Me</button>
+      <button onclick="showTab('skills')">Skills</button>
       <button onclick="showTab('education')">Education</button>
       <button onclick="showTab('summary')">Summary</button>
       <button onclick="showTab('projects')">Projects</button>
@@ -174,8 +206,63 @@
   </div>
 </section>
 
+  <section id="main" class="main style2">
+    <div id="skills" class="tab-content">
+      <h3 style="color: #007BFF; text-align: center;"><strong>💻 Tech Skills</strong></h3>
+      <div class="skills-section">
+        <div class="skills-tabs">
+          <button onclick="showSkillsCategory('ml-skills')" class="active">Machine Learning</button>
+          <button onclick="showSkillsCategory('viz-skills')">Visualization</button>
+          <button onclick="showSkillsCategory('data-eng-skills')">Data Engineering</button>
+          <button onclick="showSkillsCategory('cv-skills')">Computer Vision</button>
+          <button onclick="showSkillsCategory('mlops-skills')">MLOps</button>
+        </div>
+        <div id="ml-skills" class="skills-content active">
+          <img src="https://img.shields.io/badge/TensorFlow-orange?style=flat&logo=tensorflow" height="30">
+          <img src="https://img.shields.io/badge/PyTorch-red?style=flat&logo=pytorch" height="30">
+          <img src="https://img.shields.io/badge/Scikit--Learn-yellow?style=flat&logo=scikit-learn" height="30">
+          <img src="https://img.shields.io/badge/XGBoost-orange?style=flat&logo=xgboost" height="30">
+          <img src="https://img.shields.io/badge/CatBoost-blue?style=flat&logo=catboost" height="30">
+          <img src="https://img.shields.io/badge/LightGBM-green?style=flat&logo=lightgbm" height="30">
+          <img src="https://img.shields.io/badge/Sktime-blue?style=flat" height="30">
+          <img src="https://img.shields.io/badge/LSTM-red?style=flat" height="30">
+        </div>
+        <div id="viz-skills" class="skills-content">
+          <img src="https://img.shields.io/badge/Power%20BI-yellow?style=flat&logo=power-bi" height="30">
+          <img src="https://img.shields.io/badge/Tableau-blueviolet?style=flat&logo=tableau" height="30">
+          <img src="https://img.shields.io/badge/Excel-green?style=flat&logo=microsoft-excel" height="30">
+          <img src="https://img.shields.io/badge/Preset-black?style=flat" height="30">
+        </div>
+        <div id="data-eng-skills" class="skills-content">
+          <img src="https://img.shields.io/badge/SQL-orange?style=flat&logo=postgresql" height="30">
+          <img src="https://img.shields.io/badge/Django-green?style=flat&logo=django" height="30">
+          <img src="https://img.shields.io/badge/Flask-black?style=flat&logo=flask" height="30">
+          <img src="https://img.shields.io/badge/FastAPI-blue?style=flat&logo=fastapi" height="30">
+          <img src="https://img.shields.io/badge/DBeaver-darkred?style=flat" height="30">
+        </div>
+        <div id="cv-skills" class="skills-content">
+          <img src="https://img.shields.io/badge/FLAML-orange?style=flat" height="30">
+          <img src="https://img.shields.io/badge/Gurobi-red?style=flat" height="30">
+          <img src="https://img.shields.io/badge/CPLEX-darkblue?style=flat" height="30">
+        </div>
+        <div id="mlops-skills" class="skills-content">
+          <img src="https://img.shields.io/badge/Docker-blue?style=flat&logo=docker" height="30">
+          <img src="https://img.shields.io/badge/Kubernetes-darkblue?style=flat&logo=kubernetes" height="30">
+          <img src="https://img.shields.io/badge/AWS-yellow?style=flat&logo=amazon-aws" height="30">
+          <img src="https://img.shields.io/badge/Git-black?style=flat&logo=git" height="30">
+          <img src="https://img.shields.io/badge/LATEX-blue?style=flat&logo=latex" height="30">
+          <img src="https://img.shields.io/badge/Looker-purple?style=flat&logo=looker" height="30">
+        </div>
+      </div>
+    </div>
+</section>
 
-    <div id="summary" class="tab-content">
+
+   
+  
+  
+  
+  <div id="summary" class="tab-content">
       <h3 style="color: #007BFF;"><strong>📋 Professional Summary</strong></h3>
       <ul style="font-size: 16px;">
         <li>5+ years of experience delivering Data Science and ML solutions across sectors (Fintech, Climate, Healthcare).</li>
