@@ -8,25 +8,34 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    section {
+      margin: 50px 40px;
+    }
     .tabs {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       gap: 10px;
-      margin: 30px 0;
+      margin: 20px 0 10px;
+      height: auto;
     }
     .tabs button {
       padding: 10px 20px;
-      font-size: 12px;
+      font-size: 14px;
       cursor: pointer;
-      background-color: #007BFF;
+      background-color: #004085;
       color: white;
       border: none;
-      border-radius: 2px;
+      border-radius: 4px;
       transition: background-color 0.3s ease;
+      box-shadow: none;
     }
     .tabs button:hover {
-      background-color: #0056b3;
+      background-color: #0062cc;
     }
     .tab-content {
       display: none;
@@ -50,7 +59,7 @@
       <button onclick="showTab('summary')">Summary</button>
       <button onclick="showTab('projects')">Projects</button>
     </div>
-    </div>
+  </div>
 </section>
 
 
