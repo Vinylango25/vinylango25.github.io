@@ -11,58 +11,71 @@
     body {
       margin: 0;
       padding: 0;
+      padding-top: 60px; /* ensures content isn't hidden behind fixed tabs */
     }
+
     section.main.style2#main {
       padding-top: 30px;
       margin-top: 0;
     }
+
     section#main .container {
       margin-top: 0;
       padding-top: 0;
     }
+
     .tabs {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  display: flex;
-  gap: 10px;
-  z-index: 1000;
-}
- .tabs button {
-      height: 30px;                  /* example fixed height */
-  line-height: 30px;             /* same as height to center text */
-   padding: 0 15px; 
-      font-size: 10px;
-      cursor: pointer;
-      background-color: #006d77;
-      color: white;
-      outline: none;
-      border: none;
-      border-radius: 4px;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 10px 20px;
+      background-color: #f4f4f4;
+      z-index: 1000;
+      animation: slideDown 0.5s ease-in-out;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      border-bottom-left-radius: 8px;
     }
 
-.tabs button:hover {
-  text-decoration: underline;
-  color: #0056b3;
-}
+    .tabs button {
+      background: transparent;
+      color: #333;
+      border: none;
+      padding: 6px 14px;
+      font-size: 13px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .tabs button:hover {
+      background-color: rgba(0, 0, 0, 0.07);
+      transform: translateY(1px);
+    }
+
     .tabs button.active {
       background-color: #008080;
+      color: white;
     }
+
     .tab-content {
       display: none;
       animation: fadeIn 0.5s ease-in-out;
-    margin-top: 5rem;   /* reduced top margin */
-  margin-right: 3rem;
-  margin-bottom: 1.5rem;
-  margin-left: 3rem;
+      margin: 5rem 3rem 1.5rem 3rem;
     }
+
     .tab-content.active {
       display: block;
     }
+
     .skills-section {
       margin: 10px 10px;
     }
+
     .skills-tabs {
       display: flex;
       justify-content: center;
@@ -70,6 +83,7 @@
       gap: 10px;
       margin-bottom: 20px;
     }
+
     .skills-tabs button {
       padding: 10px 15px;
       background: #004085;
@@ -78,23 +92,39 @@
       border-radius: 4px;
       cursor: pointer;
     }
+
     .skills-tabs button.active {
       background: #008080;
     }
+
     .skills-content {
       display: none;
     }
+
     .skills-content.active {
       display: block;
       text-align: center;
     }
+
     .skills-content img {
       margin: 8px;
       height: 60px;
     }
+
     @keyframes fadeIn {
       from {opacity: 0;}
       to {opacity: 1;}
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
   </style>
   <script>
