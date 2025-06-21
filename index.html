@@ -12,24 +12,25 @@
       margin: 0;
       padding: 0;
     }
-    section.main.style2 {
-      padding-top: 10px !important;
-      margin-top: 10px !important;
+    section.main.style2#main {
+      padding-top: 10px;
+      margin-top: 0;
     }
-    .container {
+    section#main .container {
       margin-top: 0;
       padding-top: 0;
-    }
-    section {
-      margin: 50px 40px;
     }
     .tabs {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       gap: 10px;
-      margin: 20px 0 10px;
-      height: auto;
+      margin: 0;
+      padding: 10px 20px;
+      background-color: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     .tabs button {
       padding: 10px 20px;
@@ -39,11 +40,12 @@
       color: white;
       border: none;
       border-radius: 4px;
-      transition: background-color 0.3s ease;
-      box-shadow: none;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
     }
     .tabs button:hover {
       background-color: #0062cc;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
     .tab-content {
       display: none;
@@ -69,6 +71,7 @@
     </div>
   </div>
 </section>
+
 
 
 
