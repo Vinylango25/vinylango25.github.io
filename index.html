@@ -29,21 +29,17 @@
       padding: 10px 20px;
       background-color: transparent;
     }
-   .tabs button {
-  background: none;
-  border: none;
-  padding: 0;
-  margin: 0;
+  .tabs button {
+  all: unset; /* Reset all inherited button styles */
   font-size: 14px;
-  color: inherit;
   cursor: pointer;
-  outline: none;
+  color: #007BFF; /* Or any color you want */
   transition: color 0.3s ease;
 }
-    .tabs button:hover {
-      background-color: #0062cc;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
+.tabs button:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
     .tabs button.active {
       background-color: #008080;
     }
