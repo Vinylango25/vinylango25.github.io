@@ -30,12 +30,18 @@
       background-color: transparent;
     }
   .tabs button {
-  all: unset; /* Reset all inherited button styles */
-  font-size: 14px;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: #007BFF;
   cursor: pointer;
-  color: #007BFF; /* Or any color you want */
-  transition: color 0.3s ease;
+  border-radius: 0;
+  box-shadow: none;
 }
+
 .tabs button:hover {
   text-decoration: underline;
   color: #0056b3;
