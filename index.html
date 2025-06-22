@@ -12,19 +12,16 @@
       margin: 0;
       padding: 0;
       padding-top: 20px; /* ensures content isn't hidden behind fixed tabs */
-background-color: #123954;
+      background-color: #123954;
     }
-
     section.main.style2#main {
       padding-top: 30px;
       margin-top: 0;
     }
-
     section#main .container {
       margin-top: 0;
       padding-top: 0;
     }
-
     .tabs {
       position: fixed;
       top: 0;
@@ -41,85 +38,73 @@ background-color: #123954;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
       border-bottom-left-radius: 8px;
     }
-
     .tabs button {
       color: #333;
       border: none;
-       height: 30px;                  /* example fixed height */
-  line-height: 30px;             /* same as height to center text */
-   padding: 0 15px; 
-   background-color: #006d77;
+      height: 30px;
+      line-height: 30px;
+      padding: 0 15px;
+      background-color: #006d77;
       font-size: 11.5px;
       border-radius: 4px;
       cursor: pointer;
-      text-transform: capitalize; 
+      text-transform: capitalize;
       transition: background-color 0.3s ease, transform 0.2s ease;
     }
-
     .tabs button:hover {
       background-color: rgba(0, 0, 0, 0.07);
       transform: translateY(1px);
     }
-
     .tabs button.active {
       background-color: #008080;
       color: white;
     }
-
     .tab-content {
       display: none;
       animation: fadeIn 0.5s ease-in-out;
       margin: 5rem 3rem 1.5rem 3rem;
     }
-
     .tab-content.active {
       display: block;
     }
-
-    .skills-section {
-      margin: 10px 10px;
+    /* Chatbot specific styles */
+    #chatbox {
+      max-width: 600px;
+      margin: auto;
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 8px;
+      color: #000;
     }
-
-    .skills-tabs {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 20px;
+    #messages {
+      height: 300px;
+      overflow-y: auto;
+      background: white;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+      white-space: pre-wrap;
     }
-
-    .skills-tabs button {
-      padding: 10px 15px;
-      background: #004085;
-      color: #fff;
-      border: none;
+    #userInput {
+      width: 80%;
+      padding: 8px;
       border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    #sendBtn {
+      width: 18%;
+      padding: 8px;
+      background-color: #008080;
+      color: white;
+      border: none;
       cursor: pointer;
+      border-radius: 4px;
+      margin-left: 2%;
     }
-
-    .skills-tabs button.active {
-      background: #008080;
-    }
-
-    .skills-content {
-      display: none;
-    }
-
-    .skills-content.active {
-      display: block;
-      text-align: center;
-    }
-
-    .skills-content img {
-      margin: 8px;
-      height: 60px;
-    }
-
     @keyframes fadeIn {
       from {opacity: 0;}
       to {opacity: 1;}
     }
-
     @keyframes slideDown {
       from {
         transform: translateY(-20px);
@@ -147,18 +132,57 @@ background-color: #123954;
       document.getElementById(tabId).classList.add('active');
       event.target.classList.add('active');
     }
+
+    async function sendMessage() {
+      const input = document.getElementById('userInput');
+      const messages = document.getElementById('messages');
+      const userText = input.value.trim();
+      if (!userText) return;
+
+      // Show user message
+      const userMessageDiv = document.createElement('div');
+      userMessageDiv.textContent = 'You: ' + userText;
+      userMessageDiv.style.fontWeight = 'bold';
+      messages.appendChild(userMessageDiv);
+
+      input.value = '';
+      messages.scrollTop = messages.scrollHeight;
+
+      try {
+        const response = await fetch('https://your-render-url.com/chat', {  /* <-- REPLACE this URL */
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: userText })
+        });
+        const data = await response.json();
+
+        const botMessageDiv = document.createElement('div');
+        botMessageDiv.textContent = 'Bot: ' + data.reply;
+        botMessageDiv.style.marginBottom = '10px';
+        messages.appendChild(botMessageDiv);
+        messages.scrollTop = messages.scrollHeight;
+      } catch (err) {
+        const errorDiv = document.createElement('div');
+        errorDiv.textContent = 'Error: Could not reach chatbot API.';
+        errorDiv.style.color = 'red';
+        messages.appendChild(errorDiv);
+        messages.scrollTop = messages.scrollHeight;
+      }
+    }
   </script>
 </head>
 <body class="is-preload">
 <section id="main" class="main style2">
   <div class="container">
     <div class="tabs">
-      <button onclick="showTab('about')">About Me</button>
+      <button onclick="showTab('about')" class="active">About Me</button>
       <button onclick="showTab('education')">Education</button>
       <button onclick="showTab('skills')">Skills</button>
       <button onclick="showTab('experience')">Experience</button>
       <button onclick="showTab('projects')">Projects</button>
       <button onclick="showTab('contact')">Contact</button>
+      <!-- New Chatbot Tab -->
+      <button onclick="showTab('chatbot')">Chatbot</button>
     </div>
   </div>
 
@@ -486,6 +510,16 @@ background-color: #123954;
       <div class="col-4 col-12-medium">
       </div>
 
+    </div>
+  </div>
+
+	<!-- Chatbot Tab Content -->
+  <div id="chatbot" class="tab-content">
+    <h3 style="color: #007BFF;"><strong>Chatbot 🤖</strong></h3>
+    <div id="chatbox">
+      <div id="messages"></div>
+      <input id="userInput" type="text" placeholder="Type your message here..." />
+      <button id="sendBtn" onclick="sendMessage()">Send</button>
     </div>
   </div>
   
