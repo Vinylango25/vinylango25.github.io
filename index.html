@@ -115,6 +115,23 @@
         opacity: 1;
       }
     }
+	  .animated-img {
+    opacity: 0;
+    transform: scale(1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 1.2s ease;
+    animation: fadeIn 1s ease forwards;
+  }
+
+  .animated-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
   </style>
   <script>
     function showTab(tabId) {
@@ -375,7 +392,7 @@
       <div class="col-4 col-12-medium">
         <h3 style="font-size: 20px;">🤖 Lending Automation - ML for Credit Scoring</h3>
 	 <span class="image fit">
-          <img src="images/credit2.png" alt="Healthcare Accessibility" style="max-width: 95%; height: 200px; margin-bottom: 1rem;" />
+          <img src="images/credit2.png" alt="Healthcare Accessibility"  class="animated-img" style="max-width: 95%; height: 200px; margin-bottom: 1rem;" />
         </span>
         <p style="font-size: 16px;">
           This project delivers an automated loan approval system using ML models like Random Forest, XGBoost, and LightGBM. It replaces manual decisions with fast, scalable processes. Key tasks included cleaning data, feature engineering, and evaluating model fairness—enabling personalized lending, dynamic pricing, and more accurate, data-driven credit scoring.
