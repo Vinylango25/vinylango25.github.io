@@ -226,15 +226,36 @@
 
 <!-- Other sections... -->
 
-<!-- ✨ Typing Script at bottom -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script>
+  const roleColors = [
+    "teal", 
+    "rebeccapurple", 
+    "darkgoldenrod", 
+    "deepskyblue", 
+    "darkorange"
+  ];
+
+  const roleTitles = [
+    "Data Scientist", 
+    "ML/AI Engineer", 
+    "Data Analyst", 
+    "Credit Analyst",
+    "Risk Analyst"
+  ];
+
   new Typed("#typing-role", {
-    strings: ["Data Scientist", "ML/AI Engineer", "Data Analyst", "Credit and Risk Analyst"],
-    typeSpeed: 50,
-    backSpeed: 30,
-    loop: true
+    strings: roleTitles,
+    typeSpeed: 60,
+    backSpeed: 35,
+    loop: true,
+    smartBackspace: true,
+    preStringTyped: function (arrayPos) {
+      document.getElementById("typing-role").style.color = roleColors[arrayPos % roleColors.length];
+    }
   });
 </script>
+
   
   <div id="education" class="tab-content">
     <h3 style="font-size: 35px; margin-bottom: 30px;"><strong>🎓 Education</strong></h3>
