@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+ <!-- ✨ Typing effect -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <style>
     body {
       margin: 0;
@@ -133,7 +135,7 @@
     }
   }
   </style>
-  <script>
+ <script>
     function showTab(tabId) {
       var contents = document.querySelectorAll('.tab-content');
       var buttons = document.querySelectorAll('.tabs button');
@@ -156,7 +158,6 @@
       const userText = input.value.trim();
       if (!userText) return;
 
-      // Show user message
       const userMessageDiv = document.createElement('div');
       userMessageDiv.textContent = 'You: ' + userText;
       userMessageDiv.style.fontWeight = 'bold';
@@ -166,7 +167,7 @@
       messages.scrollTop = messages.scrollHeight;
 
       try {
-        const response = await fetch('http://localhost:8000/chat', {  /* <-- REPLACE this URL */
+        const response = await fetch('http://localhost:8000/chat', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ message: userText })
@@ -188,6 +189,7 @@
     }
   </script>
 </head>
+
 <body class="is-preload">
 <section id="main" class="main style2">
   <div class="container">
@@ -201,27 +203,37 @@
     </div>
   </div>
 
+  <!-- ✅ Updated Hero/About Section -->
   <div id="about" class="tab-content active">
-      <div class="row gtr-150">
-        <div class="col-4 col-12-medium">
-          <span class="image fit">
-            <img src="images/im2.png" alt="Kipkemoi Vincent" style="width: 200px; border-radius: 70%; margin-bottom: 1rem;" />
-          </span>
-          <h3 style="color: #007BFF;"><strong>Kipkemoi Vincent</strong></h3>
-        </div>
-        <div class="col-8 col-12-medium">
-          <h3 style="color: #007BFF;"><strong> 👨‍💻 About Me</strong></h3>
-          <p style="font-size: 16px; margin-top: 0;">
-            A highly skilled Data Scientist with over 5 years experience in machine learning, data analytics, and predictive modeling. I specialize in anomaly & fraud detection, credit scoring, and developing scalable machine Learning models for capital markets. With a strong background in Python, SQL, and data visualization, I excel at transforming complex datasets into actionable insights across diverse sectors, including climate, fintech, healthcare, and agri-tech.
-          </p>
-         <p style="font-size: 16px;">
-            Passionate about leveraging advanced analytics to optimize decision-making, minimize risks, and deliver data-driven solutions for business growth. I'm enthusiastic about driving impact through data, and continuously refining processes to improve efficiency and innovation. I am open to remote or Nairobi-based opportunities.
-          </p>
-        </div>
+    <div class="row gtr-150">
+      <div class="col-4 col-12-medium">
+        <span class="image fit">
+          <img src="images/im2.png" alt="Kipkemoi Vincent" style="width: 200px; border-radius: 70%; margin-bottom: 1rem;" />
+        </span>
+        <h3 style="color: #007BFF;"><strong> 👨‍💻 <span id="typing-role"></span></strong></h3>
       </div>
-
+      <div class="col-8 col-12-medium">
+        <p style="font-size: 16px; margin-top: 0;">
+          A highly skilled Data Scientist with over 5 years experience in machine learning, data analytics, and predictive modeling. I specialize in anomaly & fraud detection, credit scoring, and developing scalable machine learning models for capital markets. With a strong background in Python, SQL, and data visualization, I excel at transforming complex datasets into actionable insights across diverse sectors, including climate, fintech, healthcare, and agri-tech.
+        </p>
+        <p style="font-size: 16px;">
+          Passionate about leveraging advanced analytics to optimize decision-making, minimize risks, and deliver data-driven solutions for business growth. I'm enthusiastic about driving impact through data, and continuously refining processes to improve efficiency and innovation. I am open to remote or Nairobi-based opportunities.
+        </p>
+      </div>
     </div>
+  </div>
 
+<!-- Other sections... -->
+
+<!-- ✨ Typing Script at bottom -->
+<script>
+  new Typed("#typing-role", {
+    strings: ["Data Scientist", "ML Engineer", "Backend Developer", "Fintech Enthusiast"],
+    typeSpeed: 50,
+    backSpeed: 30,
+    loop: true
+  });
+</script>
   
   <div id="education" class="tab-content">
     <h3 style="font-size: 35px; margin-bottom: 30px;"><strong>🎓 Education</strong></h3>
