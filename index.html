@@ -528,20 +528,16 @@
 </div>
 
 <script>
-  let scrollStep = 0;
   function scrollLeft() {
     const container = document.getElementById('scroll-container');
-    const maxScroll = container.scrollWidth - container.clientWidth;
-    container.scrollLeft = Math.max(0, container.scrollLeft - 460);
+    container.scrollBy({ left: -460, behavior: 'smooth' });
   }
 
   function scrollRight() {
     const container = document.getElementById('scroll-container');
-    const maxScroll = container.scrollWidth - container.clientWidth;
-    container.scrollLeft = Math.min(maxScroll, container.scrollLeft + 460);
+    container.scrollBy({ left: 460, behavior: 'smooth' });
   }
 </script>
-
 
   
 
