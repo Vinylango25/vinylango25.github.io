@@ -419,11 +419,12 @@
 
   <div style="position: relative;">
     <!-- Navigation Tabs -->
-    <button onclick="scrollLeft()" style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); z-index: 10; background-color: #004d4d; color: white; border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer;">&lt;</button>
-    <button onclick="scrollRight()" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); z-index: 10; background-color: #004d4d; color: white; border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer;">&gt;</button>
+    <button id="scroll-left" style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); z-index: 10; background-color: #004d4d; color: white; border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer;">&lt;</button>
+    <button id="scroll-right" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); z-index: 10; background-color: #004d4d; color: white; border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer;">&gt;</button>
 
-    <div id="scroll-container" style="overflow-x: scroll; white-space: nowrap; padding: 30px 40px; scroll-behavior: smooth;">
+    <div id="scroll-container" style="overflow-x: auto; white-space: nowrap; padding: 30px 40px; scroll-behavior: smooth;">
       <div id="card-wrapper" style="display: inline-flex; gap: 40px; padding-left: 10px;">
+
 
       <!-- CARD TEMPLATE: Copy and update content as needed -->
       <div style="flex: 0 0 auto; width: 450px; background: #008b8b; border-radius: 10px; padding: 10px; color: white; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; white-space: normal;">
@@ -527,15 +528,13 @@
 </div>
 
 <script>
-  function scrollLeft() {
-    const container = document.getElementById('scroll-container');
-    container.scrollBy({ left: -460, behavior: 'smooth' });
-  }
+  document.getElementById('scroll-left').addEventListener('click', () => {
+    document.getElementById('scroll-container').scrollBy({ left: -500, behavior: 'smooth' });
+  });
 
-  function scrollRight() {
-    const container = document.getElementById('scroll-container');
-    container.scrollBy({ left: 460, behavior: 'smooth' });
-  }
+  document.getElementById('scroll-right').addEventListener('click', () => {
+    document.getElementById('scroll-container').scrollBy({ left: 500, behavior: 'smooth' });
+  });
 </script>
 
   
