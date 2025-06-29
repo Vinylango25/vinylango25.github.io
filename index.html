@@ -527,6 +527,15 @@
   </div>
 </div>
 
+<style>
+  #scroll-left:hover,
+  #scroll-right:hover {
+    background-color: #006666;
+    transform: translateY(-50%) scale(1.1);
+    transition: all 0.3s ease;
+  }
+</style>
+
 <script>
   document.getElementById('scroll-left').addEventListener('click', () => {
     document.getElementById('scroll-container').scrollBy({ left: -500, behavior: 'smooth' });
