@@ -1,43 +1,62 @@
-# Chirpy Starter
+# 🎨 Vincent Langat's Personal Portfolio
 
-[![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp;
-[![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
+Welcome to the official repository of my personal portfolio website — a fully responsive, scrollable, and interactive platform that showcases my work, projects, and technical skill set as a Data Scientist and AI Engineer.
 
-When installing the [**Chirpy**][chirpy] theme through [RubyGems.org][gem], Jekyll can only read files in the folders
-`_data`, `_layouts`, `_includes`, `_sass` and `assets`, as well as a small part of options of the `_config.yml` file
-from the theme's gem. If you have ever installed this theme gem, you can use the command
-`bundle info --path jekyll-theme-chirpy` to locate these files.
+🔗 **Live Website**: [vinylango25.github.io](https://vinylango25.github.io)
 
-The Jekyll team claims that this is to leave the ball in the user’s court, but this also results in users not being
-able to enjoy the out-of-the-box experience when using feature-rich themes.
+---
 
-To fully use all the features of **Chirpy**, you need to copy the other critical files from the theme's gem to your
-Jekyll site. The following is a list of targets:
+## 🧩 About This Project
 
-```shell
-.
-├── _config.yml
-├── _plugins
-├── _tabs
-└── index.html
-```
+In this project, I created my personal website to house and showcase selected data science, machine learning, and AI projects. The portfolio presents my technical experience and professional background in a modern, clean, and mobile-friendly layout.
 
-To save you time, and also in case you lose some files while copying, we extract those files/configurations of the
-latest version of the **Chirpy** theme and the [CD][CD] workflow to here, so that you can start writing in minutes.
+This website serves as both an interactive résumé and a central hub for sharing detailed write-ups, GitHub repositories, and demos of my work.
 
-## Usage
+---
 
-Check out the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy/wiki).
+## ✨ Features
 
-## Contributing
+- Responsive design for mobile, tablet, and desktop
+- Horizontally scrollable project showcase with smooth navigation
+- Animated UI elements and interactive buttons
+- Clean typography and color palette optimized for readability
+- Easy integration of new projects and media
 
-This repository is automatically updated with new releases from the theme repository. If you encounter any issues or want to contribute to its improvement, please visit the [theme repository][chirpy] to provide feedback.
+---
 
-## License
+## 🛠️ Tech Stack
 
-This work is published under [MIT][mit] License.
+- **HTML5**
+- **CSS3** (Inline styles + Flexbox)
+- **JavaScript** (DOM manipulation for scroll functionality)
+- **GitHub Pages** for deployment and hosting
 
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
-[CD]: https://en.wikipedia.org/wiki/Continuous_deployment
-[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
+---
+
+## 📁 Project Sections
+
+The site includes cards highlighting selected projects such as:
+
+- ML-powered credit scoring
+- Anomaly detection in finance
+- Air quality monitoring using sensor data
+- A custom LLM-powered AI chatbot
+- Healthcare accessibility analysis
+- Deep learning for COVID-19 detection
+- Customer churn and sales forecasting
+- And this very website!
+
+Each card links to detailed Medium posts and GitHub repositories.
+
+---
+
+## 🚀 Setup & Deployment
+
+You can clone and run this project locally or deploy your own version via GitHub Pages.
+
+### To run locally:
+
+```bash
+git clone https://github.com/Vinylango25/vinylango25.github.io.git
+cd vinylango25.github.io
+# Then open index.html in your browser
