@@ -423,7 +423,7 @@
     <button onclick="scrollRight()" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); z-index: 10; background-color: #004d4d; color: white; border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer;">&gt;</button>
 
     <div id="scroll-container" style="overflow-x: auto; white-space: nowrap; padding: 30px 40px; scroll-behavior: smooth;">
-      <div style="display: inline-flex; gap: 40px; padding-left: 10px;">
+      <div id="card-wrapper" style="display: inline-flex; gap: 40px; padding-left: 10px;">
 
 
       <!-- CARD TEMPLATE: Copy and update content as needed -->
@@ -528,16 +528,20 @@
 </div>
 
 <script>
+  let scrollStep = 0;
   function scrollLeft() {
     const container = document.getElementById('scroll-container');
-    container.scrollLeft -= 460; // Approx one card + spacing
+    const maxScroll = container.scrollWidth - container.clientWidth;
+    container.scrollLeft = Math.max(0, container.scrollLeft - 460);
   }
 
   function scrollRight() {
     const container = document.getElementById('scroll-container');
-    container.scrollLeft += 460;
+    const maxScroll = container.scrollWidth - container.clientWidth;
+    container.scrollLeft = Math.min(maxScroll, container.scrollLeft + 460);
   }
 </script>
+
 
   
 
