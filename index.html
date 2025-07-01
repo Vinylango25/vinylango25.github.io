@@ -10,33 +10,33 @@
  <!-- ✨ Typing effect -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <style>
-    body {
+   /* Reset all elements */
+  * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
     background-color: #002244;
     color: #ffffff;
   }
 
-  /* Reset ALL sections globally */
-  section {
+  section, div, header, footer {
     margin: 0;
     padding: 0;
   }
 
-  /* Your specific section */
-  section.main.style2#main {
-    margin: 0;
-    padding: 0;
+  .container {
+    margin: 0 auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
   }
 
-  /* Container inside the section */
+  section.main.style2#main,
   section#main .container {
-    margin: 0;
-    padding: 0;
-  }
-
-  /* Reset divs, headers, footers too */
-  div, header, footer {
     margin: 0;
     padding: 0;
   }
