@@ -10,35 +10,47 @@
  <!-- ✨ Typing effect -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <style>
-   /* Reset all elements */
-  * {
+ /* 🔁 Reset EVERYTHING including html root */
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #002244;
+    color: #ffffff;
+  }
+
+  /* 🔒 Force all box models to behave */
+  *, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
 
-  body {
-    background-color: #002244;
-    color: #ffffff;
-  }
-
-  section, div, header, footer {
-    margin: 0;
-    padding: 0;
-  }
-
-  .container {
-    margin: 0 auto !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    max-width: 100% !important;
+  /* 🧱 Kill common layout containers */
+  .container, .wrapper, .inner {
+    margin: 0 !important;
+    padding: 0 !important;
     width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
   }
 
-  section.main.style2#main,
-  section#main .container {
+  /* 🧱 Also make sure sections don’t offset */
+  section {
     margin: 0;
     padding: 0;
+  }
+
+  section#main,
+  section.main.style2#main {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Optional: remove horizontal scroll if hidden overflow happens */
+  body {
+    overflow-x: hidden;
   }
     .tabs {
       position: fixed;
