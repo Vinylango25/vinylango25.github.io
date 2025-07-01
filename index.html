@@ -9,51 +9,22 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
  <!-- ✨ Typing effect -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
- <style>
- /* 🔁 Reset EVERYTHING including html root */
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    background-color:#023144
-;
-    color: #ffffff;
-  }
-
-  /* 🔒 Force all box models to behave */
-  *, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  /* 🧱 Kill common layout containers */
-  .container, .wrapper, .inner {
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box;
-  }
-
-  /* 🧱 Also make sure sections don’t offset */
-  section {
-    margin: 0;
-    padding: 0;
-  }
-
-  section#main,
-  section.main.style2#main {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  /* Optional: remove horizontal scroll if hidden overflow happens */
-  body {
-    overflow-x: hidden;
-  }
+  <style>
+    body {
+      color: #1a1a1a; /* dark gray text for readability */
+      margin: 0;
+      padding: 0;
+      padding-top: 20px; /* ensures content isn't hidden behind fixed tabs */
+      background-color: #123954;
+    }
+    section.main.style2#main {
+      padding-top: 30px;
+      margin-top: 0;
+    }
+    section#main .container {
+      margin-top: 0;
+      padding-top: 0;
+    }
     .tabs {
       position: fixed;
       top: 0;
@@ -64,8 +35,7 @@
       flex-wrap: wrap;
       gap: 17px;
       padding: 10px 20px;
-      background-color:#023144
-;
+      background-color: #0a2b45;
       z-index: 1000;
       animation: slideDown 0.5s ease-in-out;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
@@ -77,6 +47,7 @@
       height: 25px;
       line-height: 25px;
       padding: 0 15px;
+      background-color: #0a2b45;
       font-size: 12.5px;
       border-radius: 4px;
       cursor: pointer;
@@ -88,6 +59,7 @@
       transform: translateY(1px);
     }
     .tabs button.active {
+      background-color: #0a2b45;
       color: white;
     }
     .tab-content {
@@ -125,8 +97,7 @@
     #sendBtn {
       width: 18%;
       padding: 8px;
-      background-color:#023144
-;
+      background-color: #008080;
       color: white;
       border: none;
       cursor: pointer;
@@ -165,12 +136,6 @@
     }
   }
   </style>
-
-
-
-
-
-    
  <script>
     function showTab(tabId) {
       var contents = document.querySelectorAll('.tab-content');
@@ -241,28 +206,7 @@
 
 <!-- ✅ About Section: Two Equal Columns -->
 <div id="about" class="tab-content active">
-
-  <div style="text-align: center; margin-bottom: 40px;">
-  <h3 style="
-    font-size: 30px;
-    color: #008b8b;
-    position: relative;
-    display: inline-block;
-    margin: 0 auto 10px auto;
-  ">
-    <strong>About Me</strong>
-    <span style="
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: -10%;
-      width: 120%;
-      height: 2px;
-      background-color: white;
-      display: block;
-    "></span>
-  </h3>
- </div>
+  <h3 style="font-size: 30px; margin-bottom: 30px;"><strong> </strong></h3>
 
   <div class="row" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
 
@@ -328,29 +272,9 @@
 </script>
 
   
-  <div id="education" class="tab-content" >
-<div style="text-align: center; margin-bottom: 40px;">
-  <h3 style="
-    font-size: 30px;
-    color: #008b8b;
-    position: relative;
-    display: inline-block;
-    margin: 0 auto 10px auto;
-  ">
-    <strong>Education</strong>
-    <span style="
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: -10%;
-      width: 120%;
-      height: 2px;
-      background-color: white;
-      display: block;
-    "></span>
-  </h3>
-</div>
-<div class="row gtr-150">
+  <div id="education" class="tab-content">
+    <h3 style="font-size: 30px; margin-bottom: 30px; color: #008b8b !important;"><strong>🎓 Education</strong></h3>
+    <div class="row gtr-150">
 
       <!-- Cyprus Institute -->
       <div class="col-4 col-12-medium">
@@ -399,27 +323,7 @@
   
 
  <div id="skills" class="tab-content">
-  <div style="text-align: center; margin-bottom: 40px;">
-  <h3 style="
-    font-size: 30px;
-    color: #008b8b;
-    position: relative;
-    display: inline-block;
-    margin: 0 auto 10px auto;
-  ">
-    <strong>Expertise</strong>
-    <span style="
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: -10%;
-      width: 120%;
-      height: 2px;
-      background-color: white;
-      display: block;
-    "></span>
-  </h3>
-</div>
+  <h3 style="font-size: 30px; margin-bottom: 30px;"><strong>🧰 Expertise</strong></h3>
   <div class="row gtr-150">
 
     <!-- Expertise Column 1 -->
@@ -477,28 +381,8 @@
 
   
 
-<div id="experience" class="tab-content" >
-<div style="text-align: center; margin-bottom: 40px;">
-  <h3 style="
-    font-size: 30px;
-    color: #008b8b;
-    position: relative;
-    display: inline-block;
-    margin: 0 auto 10px auto;
-  ">
-    <strong>Recent Roles</strong>
-    <span style="
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: -10%;
-      width: 120%;
-      height: 2px;
-      background-color: white;
-      display: block;
-    "></span>
-  </h3>
-</div>
+<div id="experience" class="tab-content">
+<h3 style="font-size: 30px; margin-bottom: 30px;"><strong>💼 Recent Roles</strong></h3>
     <div class="row gtr-150">
 
       <!-- Position: Data Scientist (Prospect 33) -->
@@ -542,28 +426,8 @@
     
       
 
-<div id="projects" class="tab-content" >
-  <div style="text-align: center; margin-bottom: 40px;">
-  <h3 style="
-    font-size: 30px;
-    color: #008b8b;
-    position: relative;
-    display: inline-block;
-    margin: 0 auto 10px auto;
-  ">
-    <strong>Projects</strong>
-    <span style="
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: -10%;
-      width: 120%;
-      height: 2px;
-      background-color: white;
-      display: block;
-    "></span>
-  </h3>
-</div>
+<div id="projects" class="tab-content">
+  <h3 style="font-size: 35px; margin-bottom: 20px; color: white;"><strong>📁 Projects</strong></h3>
 <div style="position: relative;">
     <!-- Navigation Tabs -->
     <button id="scroll-left" style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); z-index: 10; background-color: #004d4d; color: white; border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer;">&lt;</button>
@@ -574,8 +438,8 @@
 
 
     <!-- Portfolio Website Project -->
-        <div style="flex: 0 0 auto; width: 450px; background:  #032B3F; border-radius: 10px; padding: 10px; color: white; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; white-space: normal;">
-          <h3 style="font-size: 20px;">🌐  My Personal Portfolio Website</h3>
+        <div style="flex: 0 0 auto; width: 450px; background:  #002244; border-radius: 10px; padding: 10px; color: white; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; white-space: normal;">
+          <h3 style="font-size: 20px;">🌐 Interactive Portfolio Website with Project Scroller</h3>
           <img src="images/portfolio.png" alt="Portfolio Website" class="animated-img"  style="width: 420px; height: 250px; margin-bottom: 1rem;" />
           <p style="font-size: 15px; line-height: 1.4;">
             In this project, I created my personal website that houses a portfolio of my work and highlights key projects in data science and AI. The website demonstrates my proficiency in front-end development using HTML, CSS, and JavaScript, with a focus on building responsive and user-friendly layouts. Through this project, I developed skills in web design, layout structuring, and interactive user interface development, all aimed at presenting information clearly and effectively.
@@ -588,7 +452,7 @@
 
 
       <!-- CARD TEMPLATE: Copy and update content as needed -->
-      <div style="flex: 0 0 auto; width: 450px; background: #032B3F; border-radius: 10px; padding: 10px; color: white; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; white-space: normal;">
+      <div style="flex: 0 0 auto; width: 450px; background:  #002244; border-radius: 10px; padding: 10px; color: white; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; white-space: normal;">
         <h3 style="font-size: 20px;">🤖 Lending Automation - ML for Credit Scoring</h3>
         <img src="images/credit2.png" alt="Credit Scoring"  class="animated-img"  style="width: 420px; height: 250px; margin-bottom: 1rem;" />
         <p style="font-size: 15px; line-height: 1.4;">
@@ -602,7 +466,7 @@
 
       <!-- Repeat this entire <div> for each project -->
 
-      <div style="flex: 0 0 auto; width: 450px; background:  #032B3F; border-radius: 10px; padding: 10px; color: white; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; white-space: normal;">
+      <div style="flex: 0 0 auto; width: 450px; background:  #002244; border-radius: 10px; padding: 10px; color: white; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; white-space: normal;">
         <h3 style="font-size: 20px;">🛡️ Anomaly and Fraud Detection in Finance</h3>
         <img src="images/fraud.png" alt="Anomaly Detection" class="animated-img"  style="width: 420px; height: 250px; margin-bottom: 1rem;" />
         <p style="font-size: 15px; line-height: 1.4;">
@@ -614,7 +478,7 @@
         </ul>
       </div>
 
-      <div style="flex: 0 0 auto; width: 450px; background: #032B3F; border-radius: 10px; padding: 10px; color: white; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; white-space: normal;">
+      <div style="flex: 0 0 auto; width: 450px; background: #002244; border-radius: 10px; padding: 10px; color: white; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; white-space: normal;">
         <h3 style="font-size: 20px;">🌍 Air Quality Monitoring in Nicosia, Cyprus</h3>
         <img src="images/air.png" alt="Air Quality Monitoring" class="animated-img"  style="width: 420px; height: 250px; margin-bottom: 1rem;" />
         <p style="font-size: 15px; line-height: 1.4;">
@@ -626,7 +490,7 @@
         </ul>
       </div>
 
-      <div style="flex: 0 0 auto; width: 450px; background:#032B3F; border-radius: 10px; padding: 10px; color: white; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; white-space: normal;">
+      <div style="flex: 0 0 auto; width: 450px; background: #002244; border-radius: 10px; padding: 10px; color: white; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; white-space: normal;">
         <h3 style="font-size: 20px;">🔮 Vincent Chatbot – Personalized AI Assistant</h3>
         <img src="images/llm.png" alt="Vincent Chatbot" class="animated-img"  style="width: 420px; height: 250px; margin-bottom: 1rem;" />
         <p style="font-size: 15px; line-height: 1.4;">
@@ -637,7 +501,7 @@
         </ul>
       </div>
 
-      <div style="flex: 0 0 auto; width: 450px; background: #032B3F; border-radius: 10px; padding: 10px; color: white; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; white-space: normal;">
+      <div style="flex: 0 0 auto; width: 450px; background: #002244; border-radius: 10px; padding: 10px; color: white; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; white-space: normal;">
         <h3 style="font-size: 20px;">🏥 Healthcare Accessibility in Nairobi, Kenya</h3>
         <img src="images/health.png" alt="Healthcare Accessibility" class="animated-img"  style="width: 420px; height: 250px; margin-bottom: 1rem;" />
         <p style="font-size: 15px; line-height: 1.4;">
@@ -649,7 +513,7 @@
         </ul>
       </div>
 
-      <div style="flex: 0 0 auto; width: 450px; background:  #032B3F; border-radius: 10px; padding: 10px; color: white; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; white-space: normal;">
+      <div style="flex: 0 0 auto; width: 450px; background:  #002244; border-radius: 10px; padding: 10px; color: white; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; white-space: normal;">
         <h3 style="font-size: 20px;">🩺 COVID-19 Detection using Deep Learning</h3>
         <img src="images/covid.png" alt="COVID-19 Detection"  class="animated-img"  style="width: 420px; height: 250px; margin-bottom: 1rem;" />
         <p style="font-size: 15px; line-height: 1.4;">
@@ -661,7 +525,7 @@
         </ul>
       </div>
 
-      <div style="flex: 0 0 auto; width: 450px; background:  #032B3F; border-radius: 10px; padding: 10px; color: white; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; white-space: normal;">
+      <div style="flex: 0 0 auto; width: 450px; background:  #002244; border-radius: 10px; padding: 10px; color: white; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; white-space: normal;">
         <h3 style="font-size: 20px;">📉 Customer Churn Prediction</h3>
         <img src="images/churn.png" alt="Customer Churn" class="animated-img"  style="width: 420px; height: 250px; margin-bottom: 1rem;" />
         <p style="font-size: 15px; line-height: 1.4;">
@@ -672,7 +536,7 @@
         </ul>
       </div>
 
-      <div style="flex: 0 0 auto; width: 450px; background:  #032B3F; border-radius: 10px; padding: 10px; color: white; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; white-space: normal;">
+      <div style="flex: 0 0 auto; width: 450px; background:  #002244; border-radius: 10px; padding: 10px; color: white; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; white-space: normal;">
         <h3 style="font-size: 20px;">📊 Sales Forecasting</h3>
         <img src="images/sales.png" alt="Sales Forecasting" class="animated-img"  style="width: 420px; height: 250px; margin-bottom: 1rem;" />
         <p style="font-size: 15px; line-height: 1.4;">
@@ -720,7 +584,7 @@
        
 
 
-   <div id="contact" class="tab-content" >
+   <div id="contact" class="tab-content">
   <h3 style="font-size: 30px; margin-bottom: 30px;"><strong>📞 Get In Touch</strong></h3>
   <div class="row gtr-150">
 
