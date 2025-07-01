@@ -10,8 +10,8 @@
  <!-- ✨ Typing effect -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
-<style>
-  /* 🔁 Reset EVERYTHING including html root */
+ <style>
+ /* 🔁 Reset EVERYTHING including html root */
   html, body {
     margin: 0;
     padding: 0;
@@ -19,17 +19,16 @@
     width: 100%;
     background-color: #002244;
     color: #ffffff;
-    overflow-x: hidden;
   }
 
-  /* 🔒 Box model reset */
+  /* 🔒 Force all box models to behave */
   *, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
 
-  /* 🔧 Reset layout containers */
+  /* 🧱 Kill common layout containers */
   .container, .wrapper, .inner {
     margin: 0 !important;
     padding: 0 !important;
@@ -38,148 +37,116 @@
     box-sizing: border-box;
   }
 
-  section, section#main, section.main.style2#main {
+  /* 🧱 Also make sure sections don’t offset */
+  section {
+    margin: 0;
+    padding: 0;
+  }
+
+  section#main,
+  section.main.style2#main {
     margin: 0 !important;
     padding: 0 !important;
   }
 
-  /* ✅ Make #about full-width and consistent */
-  #about {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0;
-    background-color: #002244;
+  /* Optional: remove horizontal scroll if hidden overflow happens */
+  body {
+    overflow-x: hidden;
   }
-
-  #about .row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: 0 20px; /* optional side space */
-    box-sizing: border-box;
-  }
-
-  #about .row > div {
-    flex: 1 1 45%;
-    max-width: 45%;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-
-  /* 🟦 Tab navigation bar */
-  .tabs {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-    gap: 17px;
-    padding: 10px 20px;
-    background-color: #002244;
-    z-index: 1000;
-    animation: slideDown 0.5s ease-in-out;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    border-bottom-left-radius: 8px;
-  }
-
-  .tabs button {
-    color: #ccc;
-    border: none;
-    height: 25px;
-    line-height: 25px;
-    padding: 0 15px;
-    background-color: #002244;
-    font-size: 12.5px;
-    border-radius: 4px;
-    cursor: pointer;
-    text-transform: capitalize;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-
-  .tabs button:hover {
-    background-color: rgba(255, 255, 255, 0.07);
-    transform: translateY(1px);
-  }
-
-  .tabs button.active {
-    background-color: #002244;
-    color: white;
-  }
-
-  /* 🧾 Tab content area */
-  .tab-content {
-    display: none;
-    animation: fadeIn 0.5s ease-in-out;
-    margin: 5rem 3rem 1.5rem 3rem;
-  }
-
-  .tab-content.active {
-    display: block;
-  }
-
-  /* 🤖 Chatbot section */
-  #chatbox {
-    max-width: 600px;
-    margin: auto;
-    background: #f0f0f0;
-    padding: 10px;
-    border-radius: 8px;
-    color: #000;
-  }
-
-  #messages {
-    height: 300px;
-    overflow-y: auto;
-    background: white;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
-    white-space: pre-wrap;
-  }
-
-  #userInput {
-    width: 80%;
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-  }
-
-  #sendBtn {
-    width: 18%;
-    padding: 8px;
-    background-color: #008080;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-    margin-left: 2%;
-  }
-
-  /* 🔄 Animations */
-  @keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-  }
-
-  @keyframes slideDown {
-    from {
-      transform: translateY(-20px);
-      opacity: 0;
+    .tabs {
+      position: fixed;
+      top: 0;
+      right: 0px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 17px;
+      padding: 10px 20px;
+      background-color: #002244;
+      z-index: 1000;
+      animation: slideDown 0.5s ease-in-out;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      border-bottom-left-radius: 8px;
     }
-    to {
-      transform: translateY(0);
-      opacity: 1;
+    .tabs button {
+      color: #333;
+      border: none;
+      height: 25px;
+      line-height: 25px;
+      padding: 0 15px;
+      background-color: #002244;
+      font-size: 12.5px;
+      border-radius: 4px;
+      cursor: pointer;
+      text-transform: capitalize;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
-  }
-
-  /* 🖼️ Profile image hover */
-  .animated-img {
+    .tabs button:hover {
+      background-color: rgba(0, 0, 0, 0.07);
+      transform: translateY(1px);
+    }
+    .tabs button.active {
+      background-color:#002244;
+      color: white;
+    }
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+      margin: 5rem 3rem 1.5rem 3rem;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    /* Chatbot specific styles */
+    #chatbox {
+      max-width: 600px;
+      margin: auto;
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 8px;
+      color: #000;
+    }
+    #messages {
+      height: 300px;
+      overflow-y: auto;
+      background: white;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+      white-space: pre-wrap;
+    }
+    #userInput {
+      width: 80%;
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    #sendBtn {
+      width: 18%;
+      padding: 8px;
+      background-color: #008080;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      margin-left: 2%;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes slideDown {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+	  .animated-img {
     opacity: 0;
     transform: scale(1);
     transition: transform 0.6s ease, box-shadow 0.6s ease, opacity 1.5s ease;
@@ -187,14 +154,19 @@
   }
 
   .animated-img:hover {
-    transform: scale(1.05);
-    box-shadow: 10px 10px 20px rgba(0, 139, 139, 0.5);
-  }
+  transform: scale(1.05);
+  box-shadow: 10px 10px 20px rgba(0, 139, 139, 0.5);
+}
 
   @keyframes fadeIn {
-    to { opacity: 1; }
+    to {
+      opacity: 1;
+    }
   }
-</style>
+  </style>
+
+
+
 
 
     
@@ -267,7 +239,8 @@
   </div>
 
 <!-- ✅ About Section: Two Equal Columns -->
-<div id="about" class="tab-content active" style="background-color: #002244;">
+<div id="about" class="tab-content active" style="background-color: #002244; width: 100vw; height: 100vh;">
+
   <div style="text-align: center; margin-bottom: 40px;">
   <h3 style="
     font-size: 30px;
