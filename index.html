@@ -11,29 +11,35 @@
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <style>
     body {
-    color:#1a1a1a;
-      margin: 0;
-      padding: 0;
-      padding-top: 0px; /* ensures content isn't hidden behind fixed tabs */
-padding-right: 0px;
-padding-bottom: 0px;
-padding-left: 0px;
-      background-color: #002244;
-    }
-    section.main.style2#main {
-      padding-top: 0px;
-      margin-top: 0;
-      margin-right: 0;
-margin-bottom: 0;
-margin-left: 0;
-    }
-    section#main .container {
-      margin-top: 0;
-margin-right: 0;
-margin-bottom: 0;
-margin-left: 0;
-      padding-top: 0;
-    }
+    margin: 0;
+    padding: 0;
+    background-color: #002244;
+    color: #ffffff;
+  }
+
+  /* Reset ALL sections globally */
+  section {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Your specific section */
+  section.main.style2#main {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Container inside the section */
+  section#main .container {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Reset divs, headers, footers too */
+  div, header, footer {
+    margin: 0;
+    padding: 0;
+  }
     .tabs {
       position: fixed;
       top: 0;
