@@ -143,17 +143,17 @@
       box-shadow: 10px 10px 20px rgba(0, 139, 139, 0.5);
     }
 
-    /* ✅ Responsive Design */
-    @media (max-width: 768px) {
-      .row {
-        flex-direction: column !important;
-      }
+   @media (max-width: 768px) {
+  .row:not(.tabs) {
+    flex-direction: column !important;
+  }
 
-      .row > div {
-        max-width: 100% !important;
-        flex: 1 1 100% !important;
-        padding: 10px !important;
-      }
+  .row:not(.tabs) > div {
+    max-width: 100% !important;
+    flex: 1 1 100% !important;
+    padding: 10px !important;
+  }
+
 
       .tab-content {
         margin: 3rem 1rem 1rem 1rem !important;
@@ -281,11 +281,11 @@
     <!-- Right Column -->
     <div style="flex: 1 1 45%; max-width: 45%; padding: 20px; box-sizing: border-box;">
       <p style="font-size: 16px; margin-top: 0;">
-        I am a seasoned Data Scientist with over 5 years of experience in delivering data science and machine learning solutions across diverse sectors including climate, fintech, healthcare, agri-tech, and capital markets.
+       I am a seasoned Data Scientist with over 5 years of experience in delivering data science and machine learning solutions across diverse sectors including climate, fintech, healthcare, agri-tech, and capital markets. I am skilled in designing and automating scalable ML systems, specializing in model versioning, CI/CD, and cloud-native tools like Docker, Kubernetes, and MLflow. I focus on turning complex models into production-ready solutions that deliver insights and drive business impact. 
       </p>
-      <p style="font-size: 16px;">
-        Passionate about leveraging advanced analytics to optimize decision-making, minimize risks, and deliver data-driven solutions for business growth. I am open to remote or Nairobi-based opportunities.
-      </p>
+     <p style="font-size: 16px;">
+       Passionate about leveraging advanced analytics to optimize decision-making, minimize risks, and deliver data-driven solutions for business growth. I'm enthusiastic about driving impact through data, and continuously refining processes to improve efficiency and innovation. I am open to remote or Nairobi-based opportunities. 
+     </p>
     </div>
 
   </div>
