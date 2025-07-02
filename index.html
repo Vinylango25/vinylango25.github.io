@@ -1,3 +1,17 @@
+  
+  
+   
+  
+   
+
+
+   
+     
+    
+
+ 
+   
+ 
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -7,24 +21,29 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
- <!-- ✨ Typing effect -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <style>
     body {
-      color: #1a1a1a; /* dark gray text for readability */
+      color: #1a1a1a;
       margin: 0;
       padding: 0;
-      padding-top: 10px; /* ensures content isn't hidden behind fixed tabs */
+      padding-top: 10px;
       background-color: #032B3F;
     }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 15px;
+      box-sizing: border-box;
+    }
+
     section.main.style2#main {
       padding-top: 30px;
       margin-top: 0;
     }
-    section#main .container {
-      margin-top: 0;
-      padding-top: 0;
-    }
+
     .tabs {
       position: fixed;
       top: 0;
@@ -41,6 +60,7 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
       border-bottom-left-radius: 8px;
     }
+
     .tabs button {
       color: #333;
       border: none;
@@ -54,23 +74,27 @@
       text-transform: capitalize;
       transition: background-color 0.3s ease, transform 0.2s ease;
     }
+
     .tabs button:hover {
       background-color: rgba(0, 0, 0, 0.07);
       transform: translateY(1px);
     }
+
     .tabs button.active {
       background-color: #032B3F;
       color: white;
     }
+
     .tab-content {
       display: none;
       animation: fadeIn 0.5s ease-in-out;
       margin: 5rem 3rem 1.5rem 3rem;
     }
+
     .tab-content.active {
       display: block;
     }
-    /* Chatbot specific styles */
+
     #chatbox {
       max-width: 600px;
       margin: auto;
@@ -79,6 +103,7 @@
       border-radius: 8px;
       color: #000;
     }
+
     #messages {
       height: 300px;
       overflow-y: auto;
@@ -88,12 +113,14 @@
       margin-bottom: 10px;
       white-space: pre-wrap;
     }
+
     #userInput {
       width: 80%;
       padding: 8px;
       border-radius: 4px;
       border: 1px solid #ccc;
     }
+
     #sendBtn {
       width: 18%;
       padding: 8px;
@@ -104,10 +131,12 @@
       border-radius: 4px;
       margin-left: 2%;
     }
+
     @keyframes fadeIn {
       from {opacity: 0;}
       to {opacity: 1;}
     }
+
     @keyframes slideDown {
       from {
         transform: translateY(-20px);
@@ -118,25 +147,64 @@
         opacity: 1;
       }
     }
-	  .animated-img {
-    opacity: 0;
-    transform: scale(1);
-    transition: transform 0.6s ease, box-shadow 0.6s ease, opacity 1.5s ease;
-    animation: fadeIn 1s ease forwards;
-  }
 
-  .animated-img:hover {
-  transform: scale(1.05);
-  box-shadow: 10px 10px 20px rgba(0, 139, 139, 0.5);
-}
-
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
+    .animated-img {
+      opacity: 0;
+      transform: scale(1);
+      transition: transform 0.6s ease, box-shadow 0.6s ease, opacity 1.5s ease;
+      animation: fadeIn 1s ease forwards;
     }
-  }
+
+    .animated-img:hover {
+      transform: scale(1.05);
+      box-shadow: 10px 10px 20px rgba(0, 139, 139, 0.5);
+    }
+
+    /* ✅ Responsive Design */
+    @media (max-width: 768px) {
+      .row {
+        flex-direction: column !important;
+      }
+
+      .row > div {
+        max-width: 100% !important;
+        flex: 1 1 100% !important;
+        padding: 10px !important;
+      }
+
+      .tab-content {
+        margin: 3rem 1rem 1rem 1rem !important;
+      }
+
+      .tabs {
+        justify-content: center !important;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .tabs button {
+        font-size: 14px;
+        padding: 8px;
+        width: 100%;
+        text-align: center;
+        height: auto;
+      }
+
+      #userInput, #sendBtn {
+        width: 100% !important;
+        margin: 5px 0 !important;
+      }
+
+      #chatbox {
+        padding: 5px !important;
+      }
+
+      #messages {
+        height: 250px !important;
+      }
+    }
   </style>
- <script>
+  <script>
     function showTab(tabId) {
       var contents = document.querySelectorAll('.tab-content');
       var buttons = document.querySelectorAll('.tabs button');
@@ -204,80 +272,47 @@
     </div>
   </div>
 
-<!-- ✅ About Section: Two Equal Columns -->
-<div id="about" class="tab-content active" >
+<!-- ✅ About Section -->
+<div id="about" class="tab-content active">
   <div style="text-align: center; margin-bottom: 40px;">
-  <h3 style="
-    font-size: 30px;
-    color: #008b8b;
-    position: relative;
-    display: inline-block;
-    margin: 0 auto 10px auto;
-  ">
-    <strong>About Me</strong>
-    <span style="
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: -10%;
-      width: 120%;
-      height: 2px;
-      background-color: white;
-      display: block;
-    "></span>
-  </h3>
- </div>
+    <h3 style="font-size: 30px; color: #008b8b; position: relative; display: inline-block; margin: 0 auto 10px auto;">
+      <strong>About Me</strong>
+      <span style="position: absolute; bottom: -10px; left: -10%; width: 120%; height: 2px; background-color: white; display: block;"></span>
+    </h3>
+  </div>
 
   <div class="row" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
 
-    <!-- Left Column (Profile Image + Name) -->
-<div style="flex: 1 1 45%; max-width: 45%; padding: 10px; box-sizing: border-box; text-align: center;">
-  <span class="image fit">
-    <img src="images/im2.jpg" alt="Kipkemoi Vincent" style="width: 240px; border-radius: 100%; margin: 0 auto 1rem auto; display: block;" />
-  </span>
-<h3 style="font-size: 25px; color: #007BFF;"><strong>Kipkemoi Vincent</strong></h3>
-        <ul style="font-size: 16px; list-style: none; padding-left: 0;">
-	 <li><strong>Location:</strong> Nairobi, Kenya</li>
-          <li><strong>Phone:</strong> <a href="tel:+254712345678">+254 712 230 453</a></li>
-        </ul>
-      
-</div>
+    <!-- Left Column -->
+    <div style="flex: 1 1 45%; max-width: 45%; padding: 10px; box-sizing: border-box; text-align: center;">
+      <span class="image fit">
+        <img src="images/im2.jpg" alt="Kipkemoi Vincent" style="width: 100%; max-width: 240px; border-radius: 100%; margin: 0 auto 1rem auto; display: block;" />
+      </span>
+      <h3 style="font-size: 25px; color: #007BFF;"><strong>Kipkemoi Vincent</strong></h3>
+      <ul style="font-size: 16px; list-style: none; padding-left: 0;">
+        <li><strong>Location:</strong> Nairobi, Kenya</li>
+        <li><strong>Phone:</strong> <a href="tel:+254712345678">+254 712 230 453</a></li>
+      </ul>
+    </div>
 
-
-    <!-- Right Column (About Text) -->
+    <!-- Right Column -->
     <div style="flex: 1 1 45%; max-width: 45%; padding: 20px; box-sizing: border-box;">
       <p style="font-size: 16px; margin-top: 0;">
-        I am  a seasoned Data Scientist with over 5 years of experience in delivering data science and machine learning solutions across diverse sectors including climate, fintech, healthcare, agri-tech, and capital markets. I am skilled in designing and automating scalable ML systems, specializing in model versioning, CI/CD, and cloud-native tools like Docker, Kubernetes, and MLflow. I focus on turning complex models into production-ready solutions that deliver insights and drive business impact.
+        I am a seasoned Data Scientist with over 5 years of experience in delivering data science and machine learning solutions across diverse sectors including climate, fintech, healthcare, agri-tech, and capital markets.
       </p>
       <p style="font-size: 16px;">
-        Passionate about leveraging advanced analytics to optimize decision-making, minimize risks, and deliver data-driven solutions for business growth. I'm enthusiastic about driving impact through data, and continuously refining processes to improve efficiency and innovation. I am open to remote or Nairobi-based opportunities.
+        Passionate about leveraging advanced analytics to optimize decision-making, minimize risks, and deliver data-driven solutions for business growth. I am open to remote or Nairobi-based opportunities.
       </p>
     </div>
 
   </div>
 </div>
 
+<!-- 🔜 Other tab-content sections like education, skills, etc. go here -->
 
-
-<!-- Other sections... -->
-
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script>
-  const roleColors = [
-    "darkgoldenrod", 
-    "darkgoldenrod", 
-    "darkgoldenrod", 
-    "darkgoldenrod", 
-    "darkgoldenrod"
-  ];
-
-  const roleTitles = [
-    "Data Scientist", 
-    "ML/AI Engineer", 
-    "Data Analyst", 
-    "Credit Analyst",
-    "Risk Analyst"
-  ];
+  const roleColors = ["darkgoldenrod", "darkgoldenrod", "darkgoldenrod", "darkgoldenrod", "darkgoldenrod"];
+  const roleTitles = ["Data Scientist", "ML/AI Engineer", "Data Analyst", "Credit Analyst", "Risk Analyst"];
 
   new Typed("#typing-role", {
     strings: roleTitles,
@@ -290,6 +325,8 @@
     }
   });
 </script>
+
+
 
   
   <div id="education" class="tab-content">
