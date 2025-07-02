@@ -244,14 +244,14 @@
 
 <body class="is-preload">
 <section id="main" class="main style2">
-  <div class="container">
-    <div class="tabs">
-      <button onclick="showTab('about')" class="active">About Me</button>
-      <button onclick="showTab('education')">Education</button>
-      <button onclick="showTab('skills')">Skills</button>
-      <button onclick="showTab('experience')">Experience</button>
-      <button onclick="showTab('projects')">Projects</button>
-      <button onclick="showTab('contact')">Contact</button>
+  <div class="container" style="overflow-x: auto; white-space: nowrap;">
+    <div class="tabs" style="display: inline-flex; white-space: nowrap; gap: 10px; min-width: max-content;">
+      <button onclick="showTab('about', event)" class="active">About Me</button>
+      <button onclick="showTab('education', event)">Education</button>
+      <button onclick="showTab('skills', event)">Skills</button>
+      <button onclick="showTab('experience', event)">Experience</button>
+      <button onclick="showTab('projects', event)">Projects</button>
+      <button onclick="showTab('contact', event)">Contact</button>
     </div>
   </div>
 
