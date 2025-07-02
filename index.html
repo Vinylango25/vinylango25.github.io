@@ -30,44 +30,43 @@
       margin-top: 0;
     }
 
-   .tabs {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow-x: auto;
-  white-space: nowrap;
-  display: flex;
-  justify-content: flex-start;
-  gap: 10px;
-  padding: 10px;
-  background-color: #032B3F;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-  scrollbar-width: none; /* Firefox */
-}
-
-.tabs::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
-}
-
-.tabs button {
-  display: inline-block;
-  color: #fff;
-  border: none;
-  padding: 8px 16px;
-  background-color: rgba(255, 255, 255, 0.1);
-  font-size: 14px;
-  border-radius: 4px;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: background 0.3s;
-}
-
-.tabs button.active,
-.tabs button:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-}
+ .tabs {
+      position: fixed;
+      top: 0;
+      right: 0px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 17px;
+      padding: 10px 20px;
+      background-color:#032B3F;
+      z-index: 1000;
+      animation: slideDown 0.5s ease-in-out;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      border-bottom-left-radius: 8px;
+    }
+    .tabs button {
+      color: #333;
+      border: none;
+      height: 25px;
+      line-height: 25px;
+      padding: 0 15px;
+      background-color: #032B3F;
+      font-size: 12.5px;
+      border-radius: 4px;
+      cursor: pointer;
+      text-transform: capitalize;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .tabs button:hover {
+      background-color: rgba(0, 0, 0, 0.07);
+      transform: translateY(1px);
+    }
+    .tabs button.active {
+      background-color: #032B3F;
+      color: white;
+    }
 
     .tab-content {
       display: none;
