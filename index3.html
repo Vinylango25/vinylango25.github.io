@@ -1,581 +1,788 @@
 <!DOCTYPE HTML>
-<!--
-  Photon by HTML5 UP
-  html5up.net | @ajlkn
-  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 <head>
   <title>Kipkemoi Vincent Portfolio</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/main.css" />
-  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+ <!-- ✨ Typing effect -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <style>
+    body {
+      color: #1a1a1a; /* dark gray text for readability */
+      margin: 0;
+      padding: 0;
+      padding-top: 10px; /* ensures content isn't hidden behind fixed tabs */
+      background-color: #032B3F;
+    }
+    section.main.style2#main {
+      padding-top: 30px;
+      margin-top: 0;
+    }
+    section#main .container {
+      margin-top: 0;
+      padding-top: 0;
+    }
+    .tabs {
+      position: fixed;
+      top: 0;
+      right: 0px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 17px;
+      padding: 10px 20px;
+      background-color:#032B3F;
+      z-index: 1000;
+      animation: slideDown 0.5s ease-in-out;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      border-bottom-left-radius: 8px;
+    }
+    .tabs button {
+      color: #333;
+      border: none;
+      height: 25px;
+      line-height: 25px;
+      padding: 0 15px;
+      background-color: #032B3F;
+      font-size: 12.5px;
+      border-radius: 4px;
+      cursor: pointer;
+      text-transform: capitalize;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .tabs button:hover {
+      background-color: rgba(0, 0, 0, 0.07);
+      transform: translateY(1px);
+    }
+    .tabs button.active {
+      background-color: #032B3F;
+      color: white;
+    }
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+      margin: 5rem 3rem 1.5rem 3rem;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    /* Chatbot specific styles */
+    #chatbox {
+      max-width: 600px;
+      margin: auto;
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 8px;
+      color: #000;
+    }
+    #messages {
+      height: 300px;
+      overflow-y: auto;
+      background: white;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+      white-space: pre-wrap;
+    }
+    #userInput {
+      width: 80%;
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    #sendBtn {
+      width: 18%;
+      padding: 8px;
+      background-color: #008080;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      margin-left: 2%;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes slideDown {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+	  .animated-img {
+    opacity: 0;
+    transform: scale(1);
+    transition: transform 0.6s ease, box-shadow 0.6s ease, opacity 1.5s ease;
+    animation: fadeIn 1s ease forwards;
+  }
+
+  .animated-img:hover {
+  transform: scale(1.05);
+  box-shadow: 10px 10px 20px rgba(0, 139, 139, 0.5);
+}
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  </style>
+ <script>
+    function showTab(tabId) {
+      var contents = document.querySelectorAll('.tab-content');
+      var buttons = document.querySelectorAll('.tabs button');
+
+      contents.forEach(function(content) {
+        content.classList.remove('active');
+      });
+
+      buttons.forEach(function(button) {
+        button.classList.remove('active');
+      });
+
+      document.getElementById(tabId).classList.add('active');
+      event.target.classList.add('active');
+    }
+
+    async function sendMessage() {
+      const input = document.getElementById('userInput');
+      const messages = document.getElementById('messages');
+      const userText = input.value.trim();
+      if (!userText) return;
+
+      const userMessageDiv = document.createElement('div');
+      userMessageDiv.textContent = 'You: ' + userText;
+      userMessageDiv.style.fontWeight = 'bold';
+      messages.appendChild(userMessageDiv);
+
+      input.value = '';
+      messages.scrollTop = messages.scrollHeight;
+
+      try {
+        const response = await fetch('http://localhost:8000/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: userText })
+        });
+        const data = await response.json();
+
+        const botMessageDiv = document.createElement('div');
+        botMessageDiv.textContent = 'Bot: ' + data.reply;
+        botMessageDiv.style.marginBottom = '10px';
+        messages.appendChild(botMessageDiv);
+        messages.scrollTop = messages.scrollHeight;
+      } catch (err) {
+        const errorDiv = document.createElement('div');
+        errorDiv.textContent = 'Error: Could not reach chatbot API.';
+        errorDiv.style.color = 'red';
+        messages.appendChild(errorDiv);
+        messages.scrollTop = messages.scrollHeight;
+      }
+    }
+  </script>
 </head>
+
 <body class="is-preload">
-
-<!-- Personal Info Section -->
-<section id="five" class="main style2">
+<section id="main" class="main style2">
   <div class="container">
-    <!-- <header class="major">
-     <h2>👨‍💻 About Me</h2>
-    </header> -->
+    <div class="tabs">
+      <button onclick="showTab('about')" class="active">About Me</button>
+      <button onclick="showTab('education')">Education</button>
+      <button onclick="showTab('skills')">Skills</button>
+      <button onclick="showTab('experience')">Experience</button>
+      <button onclick="showTab('projects')">Projects</button>
+      <button onclick="showTab('contact')">Contact</button>
+    </div>
+  </div>
 
+<!-- ✅ About Section: Two Equal Columns -->
+<div id="about" class="tab-content active" >
+  <div style="text-align: center; margin-bottom: 40px;">
+  <h3 style="
+    font-size: 30px;
+    color: #008b8b;
+    position: relative;
+    display: inline-block;
+    margin: 0 auto 10px auto;
+  ">
+    <strong>About Me</strong>
+    <span style="
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: -10%;
+      width: 120%;
+      height: 2px;
+      background-color: white;
+      display: block;
+    "></span>
+  </h3>
+ </div>
+
+  <div class="row" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+
+    <!-- Left Column (Profile Image + Name) -->
+<div style="flex: 1 1 45%; max-width: 45%; padding: 10px; box-sizing: border-box; text-align: center;">
+  <span class="image fit">
+    <img src="images/im2.jpg" alt="Kipkemoi Vincent" style="width: 240px; border-radius: 100%; margin: 0 auto 1rem auto; display: block;" />
+  </span>
+<h3 style="font-size: 25px; color: #007BFF;"><strong>Kipkemoi Vincent</strong></h3>
+        <ul style="font-size: 16px; list-style: none; padding-left: 0;">
+	 <li><strong>Location:</strong> Nairobi, Kenya</li>
+          <li><strong>Phone:</strong> <a href="tel:+254712345678">+254 712 230 453</a></li>
+        </ul>
+      
+</div>
+
+
+    <!-- Right Column (About Text) -->
+    <div style="flex: 1 1 45%; max-width: 45%; padding: 20px; box-sizing: border-box;">
+      <p style="font-size: 16px; margin-top: 0;">
+        I am  a seasoned Data Scientist with over 5 years of experience in delivering data science and machine learning solutions across diverse sectors including climate, fintech, healthcare, agri-tech, and capital markets. I am skilled in designing and automating scalable ML systems, specializing in model versioning, CI/CD, and cloud-native tools like Docker, Kubernetes, and MLflow. I focus on turning complex models into production-ready solutions that deliver insights and drive business impact.
+      </p>
+      <p style="font-size: 16px;">
+        Passionate about leveraging advanced analytics to optimize decision-making, minimize risks, and deliver data-driven solutions for business growth. I'm enthusiastic about driving impact through data, and continuously refining processes to improve efficiency and innovation. I am open to remote or Nairobi-based opportunities.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- Other sections... -->
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+  const roleColors = [
+    "darkgoldenrod", 
+    "darkgoldenrod", 
+    "darkgoldenrod", 
+    "darkgoldenrod", 
+    "darkgoldenrod"
+  ];
+
+  const roleTitles = [
+    "Data Scientist", 
+    "ML/AI Engineer", 
+    "Data Analyst", 
+    "Credit Analyst",
+    "Risk Analyst"
+  ];
+
+  new Typed("#typing-role", {
+    strings: roleTitles,
+    typeSpeed: 60,
+    backSpeed: 35,
+    loop: true,
+    smartBackspace: true,
+    preStringTyped: function (arrayPos) {
+      document.getElementById("typing-role").style.color = roleColors[arrayPos % roleColors.length];
+    }
+  });
+</script>
+
+  
+  <div id="education" class="tab-content">
+<div style="text-align: center; margin-bottom: 40px;">
+  <h3 style="
+    font-size: 30px;
+    color: #008b8b;
+    position: relative;
+    display: inline-block;
+    margin: 0 auto 10px auto;
+  ">
+    <strong>Education</strong>
+    <span style="
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: -10%;
+      width: 120%;
+      height: 2px;
+      background-color: white;
+      display: block;
+    "></span>
+  </h3>
+</div>
+<div class="row gtr-150">
+
+      <!-- Cyprus Institute -->
+      <div class="col-4 col-12-medium">
+        <span class="image fit">
+          <img src="images/cyi.jpg" alt="The Cyprus Institute" class="animated-img" style="max-width: 95%; height: 220px; margin-bottom: 1rem;" />
+        </span>
+        <h3 style="font-size: 20px;">MPhil in Environmental Sciences</h3>
+        <p style="font-size: 16px;">
+          The Cyprus Institute, Nicosia, Cyprus<br>
+          <strong>Thesis:</strong> Practicalities in Machine Learning Calibration of Measurements from Low Cost Gas Sensors.<br>
+          <strong>Scholarship:</strong> Cyprus Institute Merit Scholarship<br>
+          <strong>Grade:</strong> 84%
+        </p>
+      </div>
+
+      <!-- AIMS/University of Western Cape -->
+      <div class="col-4 col-12-medium">
+        <span class="image fit">
+          <img src="images/aims.jpg" alt="AIMS South Africa" class="animated-img" style="max-width: 95%; height: 220px; margin-bottom: 1rem;" />
+        </span>
+        <h3 style="font-size: 20px;">MSc in Mathematical Sciences (Data Science)</h3>
+        <p style="font-size: 16px;">
+          University of Western Cape / AIMS, South Africa<br>
+          <strong>Thesis:</strong> ML on High-Resolution Aerial Imagery for Vegetation Mapping.<br>
+          <strong>Scholarship:</strong> MasterCard Foundation Scholarship<br>
+          <strong>Grade:</strong> Good Pass [70-84%]
+        </p>
+      </div>
+
+      <!-- University of Nairobi -->
+      <div class="col-4 col-12-medium">
+        <span class="image fit">
+          <img src="images/uon.png" alt="University of Nairobi" class="animated-img" style="max-width: 95%; height: 220px; margin-bottom: 1rem;" />
+        </span>
+        <h3 style="font-size: 20px;">BSc. in Mathematics (Statistics & Operations Research)</h3>
+        <p style="font-size: 16px;">
+          University of Nairobi, Kenya<br>
+          <strong>Scholarship:</strong> Finlays undergraduate Scholarship<br>
+          <strong>Grade:</strong> First Class Honours
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  
+
+ <div id="skills" class="tab-content">
+  <div style="text-align: center; margin-bottom: 40px;">
+  <h3 style="
+    font-size: 30px;
+    color: #008b8b;
+    position: relative;
+    display: inline-block;
+    margin: 0 auto 10px auto;
+  ">
+    <strong>Expertise</strong>
+    <span style="
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: -10%;
+      width: 120%;
+      height: 2px;
+      background-color: white;
+      display: block;
+    "></span>
+  </h3>
+</div>
+  <div class="row gtr-150">
+
+    <!-- Expertise Column 1 -->
+    <div class="col-6 col-12-medium">
+   <h4 style="color: #007BFF;"><strong>🧾 Programming Ecosystem & Tools</strong></h4>
+      <ul style="font-size: 16px;">
+        <li>Languages: <strong>Python</strong>, <strong>R</strong>, <strong>SQL</strong>, <strong>MATLAB</strong>,<strong>Gretl</strong>, <strong>SageMath</strong>.</li>
+        <li>Development Tools: <strong>Jupyter</strong>, <strong>VS Code</strong>, <strong>Git</strong>.</li>
+        <li>Data platforms:<strong>MongoDB</strong>, <strong>DBeaver</strong>, <strong>PostgreSQL</strong> ,<strong>MySQL</strong> ,<strong>Preset</strong>, <strong>Looker</strong>.</li>
+        <li>Documentation: <strong>LaTeX</strong> and  <strong>Overleaf</strong>  for technical reporting writing and collaboration.</li>
+      </ul>
+      <h4 style="color: #007BFF;"><strong>📊 Data Analysis & Visualization</strong></h4>
+      <ul style="font-size: 16px;">
+        <li>Advanced exploratory data analysis (EDA) and data cleaning using <strong>Pandas</strong>, <strong>NumPy</strong>, and <strong>R</strong>.</li>
+	<li>Proficient in data visualization using <strong>Matplotlib</strong>, <strong>Seaborn</strong>, <strong>Bokeh</strong>,  and <strong>Plotly</strong>.</li>
+        <li>Interactive dashboard development with <strong>Tableau</strong>, <strong>Power BI</strong>, <strong>Preset</strong>, and <strong>Streamlit</strong>.</li>
+        <li>Time series forecasting using <strong>ARIMA</strong>,  <strong>SARIMA</strong>, <strong>Prophet</strong>, and <strong>LSTM</strong>, <strong>XGBoost</strong>.</li>
+      </ul>
+
+     <h4 style="color: #007BFF;"><strong>🧠 Generative AI & LLMs</strong></h4>
+      <ul style="font-size: 16px;">
+        <li>Builting GenAI systems using <strong>GPT</strong>, <strong>Mistral</strong>, and <strong>LLaMA</strong> via <strong>OpenAI</strong> and <strong>Hugging Face</strong>.</li>
+        <li>Implementing semantic search and knowledge retrieval with <strong>FAISS</strong>, <strong>Chroma</strong>, and <strong>LangChain</strong>.</li>
+        <li>Proficient in vector databases and prompt engineering for finance and compliance workflows.</li>
+        <li>Experienced in integrating LLMs with APIs for anomaly and fraud detection systems.</li>
+      </ul>
+
+    </div>
+
+    <!-- Expertise Column 2 -->
+    <div class="col-6 col-12-medium">
+ <h4 style="color: #007BFF;"><strong>🔍 Machine Learning & AI</strong></h4>
+      <ul style="font-size: 16px;">
+        <li>Frameworks: <strong>scikit-learn</strong>, <strong>TensorFlow</strong>, <strong>Keras</strong>, <strong>PyTorch</strong> in both supervised and unsupervised contexts.</li>
+        <li>Training and deploying ML models including <strong>Logistic Regression</strong>, <strong>SVR</strong>, <strong>Random Forest</strong>, <strong>ANN</strong>, <strong>XGBoost</strong>, <strong>CatBoost</strong>, and <strong>LightGBM</strong>.</li>
+        <li>Using <strong>PyOD</strong> library for outlier/anomaly detection with methods like <strong>Isolation Forest</strong>, <strong>LOF</strong>, and <strong>PCA</strong>.</li>
+        <li>Experience with AutoML and hyperparameter optimization using <strong>FLAML</strong> and <strong>Optuna</strong>.</li>
+        <li>Applying XAI methods including <strong>Feature Importance</strong>, <strong>SHAP</strong>, <strong>LIME</strong>, and <strong>Gradient-based</strong> explanations.</li>
+        <li><strong>Computer Vision</strong>: Deep learning models, CNN (multiple architectures), and <strong>NLP</strong> applications.</li>
+        <li>Time series modeling with <strong>Sktime</strong>, and real-time air quality forecasting.</li>
+      </ul>
+
+      <h4 style="color: #007BFF;"><strong>🚀 Data Engineering & MLOps</strong></h4>
+      <ul style="font-size: 16px;">
+        <li>Designing end-to-end ML pipelines using <strong>FastAPI</strong>, <strong>MLflow</strong>, and <strong>Docker</strong>.</li>
+        <li>Deploying scalable APIs and dashboards using <strong>Django</strong>, <strong>Flask</strong>, <strong>Render</strong>, and <strong>AWS EC2/S3</strong>.</li>
+        <li>CI/CD, container orchestration with <strong>Kubernetes</strong>, and cloud-native ML operations.</li>
+        <li>Hands-on experience with <strong>GCP BigQuery</strong> and cross-cloud interoperability.</li>
+      </ul>
+
+    </div>
+
+  </div>
+</div>
+
+  
+
+<div id="experience" class="tab-content">
+<div style="text-align: center; margin-bottom: 40px;">
+  <h3 style="
+    font-size: 30px;
+    color: #008b8b;
+    position: relative;
+    display: inline-block;
+    margin: 0 auto 10px auto;
+  ">
+    <strong>Recent Roles</strong>
+    <span style="
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: -10%;
+      width: 120%;
+      height: 2px;
+      background-color: white;
+      display: block;
+    "></span>
+  </h3>
+</div>
     <div class="row gtr-150">
 
-<!-- Column 2: Education -->
-      <div class="col-4 col-12-medium">
-	<span class="image fit">
-          <img src="images/im2.png" alt="Kipkemoi Vincent" style="width: 250px; border-radius: 70%; margin-bottom: 1rem;" />
-        </span>
-        <h3 style="color: #007BFF;"><strong>Kipkemoi Vincent</strong></h3>
-      </div>
-	 <!-- Column 3: Summary -->
-      <div class="col-4 col-12-medium">
-        <h3 style="color: #007BFF; margin-bottom: 5px;"><strong> 👨‍💻 About Me</strong></h3>
-<p style="font-size: 16px; margin-top: 0;">
-  Data Scientist, ML/AI Engineer, and Data Analyst passionate about transforming data into actionable insights. Currently based in Nairobi, Kenya, and open to global opportunities.
-</p>
-	<br><br>
-	<br>
-        <h3  style="color: #007BFF;"><strong>🎓 Education</strong></h3>
+      <!-- Position: Data Scientist (Prospect 33) -->
+      <div class="col-6 col-12-medium">
+        <h3 style="font-size: 20px; color: #007BFF;"><strong>Data Scientist (R&D)</strong></h3>
+        <p style="font-size: 16px; margin-bottom: 5px;"><strong>Prospect 33</strong>, New York, Remote<br>Feb 2025 – Date</p>
+        <p style="font-size: 16px;"> Responsible for research, development, and deployment of semi-supervised, active learning-based anomaly detection models tailored for financial and operational datasets. Emphasized adaptive model tuning through domain expert feedback loops to maintain high precision and reduce false positive rates in complex capital market environments.</p>
         <ul style="font-size: 16px;">
-          <li>MPhil in Environmental Science; <br>The Cyprus Institute, Cyprus</li>
-          <li>MSc in Mathematical Sciences (Data Science); <br>University of Western Cape/AIMS, South Africa</li>
-          <li>BSc. Mathematics; <br>University of Nairobi, Kenya</li>
+          <li>Developed and deployed an active-learning-based Isolation Forest model that incorporated domain-specific client feedback and expert insights to iteratively improve accuracy and reduce false positives.</li>
+          <li>Co-developed DIVA and LEAP, flagship fraud and anomaly detection platforms at Prospect 33 for capital markets, improving detection accuracy and accelerating time-to-value.</li>
+          <li>Enhanced backend and frontend capabilities within the LEAP application using Python, Django, and Django REST Framework to improve performance, scalability, and developer efficiency.</li>
+          <li>Developed an explainability framework integrating SHAP, LIME, and gradient-based methods, enabling clear, localized insights into anomaly detection decisions to boost stakeholder trust and regulatory alignment.</li>
+          <li>Engaged with stakeholders to gather and prioritize product requirements, aligning business needs with development efforts.</li>
+        </ul>
+
+      </div>
+
+      <!-- Position: Data Scientist (Twino/Moneza) -->
+      <div class="col-6 col-12-medium">
+        <h3 style="font-size: 20px; color: #007BFF;"><strong>Data Scientist</strong></h3>
+        <p style="font-size: 16px; margin-bottom: 5px;"><strong>Twino (Moneza Kenya)</strong>, Westlands, Nairobi, Kenya<br>Jul 2022 – Jan 2025</p>
+        <p style="font-size: 16px;">Responsible for developing and managing loan portfolio credit scoring models for payday loans (PDL) and buy now pay later (BNPL) products. Analyzed trends and risks, generated actionable reports, implemented risk rules, and collaborated with teams to ensure data accuracy and minimize fraud.</p>
+        <ul style="font-size: 16px;">
+          <li>Developed and deployed credit scoring (XGBoost) and fraud detection (CatBoost) models using TransUnion and SEON data, significantly improving loan approval accuracy and strengthening fraud prevention measures.</li>
+          <li>Created an automated loan default dashboard tracking daily, weekly, and monthly default rates, enabling proactive risk monitoring and delivering actionable insights.</li>
+          <li>Automated payment and debt collection reporting for back-office teams using PostgreSQL, streamlining operations and improving data-driven decision-making.</li>
+          <li>Gained in-depth expertise in SQL querying using DBeaver and PostgreSQL. Integrated insights into Preset for automated dashboards, enhancing real-time reporting.</li>
+          <li>Led and mentored a team of junior analysts, driving the successful delivery of data-driven solutions in business intelligence, fraud detection, and credit risk analysis.</li>
+          <li>Partnered cross-functionally to align technical solutions with business objectives, integrating fraud detection, credit risk, and compliance strategies for impactful outcomes.</li>
         </ul>
       </div>
 
-      <!-- Column 3: Summary -->
-      <div class="col-4 col-12-medium">
-        <h3 style="color: #007BFF;"><strong>📋 Professional Summary</strong></h3>
-         <ul style="font-size: 16px;">
-        <li>  5+ years of experience delivering Data Science and ML solutions across sectors (Fintech, Climate, <br> Healthcare).</li>
-        <li> Skilled in data analytics, predictive analytics, credit risk analysis, anomaly & fraud detection, credit scoring, <br> time series forecasting, and scalable ML model deployment.</li>
-        <li> Proficient in Python, R, SQL, Scikit-learn, CNN, OpenCV, TensorFlow, RF, LSTM, Catboost, XGBoost, LightGBM, <br> PyOD models, and AWS.</li>
-        <li> Experienced with MLOps workflows: Streamlit, Docker, Kubernetes, MLflow, FastAPI, and CI/CD pipelines.</li>
-	</ul>
-      </div>
     </div>
-<div style="margin-bottom: 10px;"></div>
-</section>
-<br>
-<section id="five" class="main style2">
-  <div class="container">
- <!-- Title for the whole section -->
-<h3 style="font-size: 35px;  margin-bottom: 30px;"><strong> Featured Projects</strong></h3>
-    <div class="row gtr-150">
-      <div class="col-6 col-12-medium">
-	       <h3 style="font-size: 20px;  margin-bottom: 20px;"><strong> 🤖 Credit Scoring & Lending Automation</strong></h3>
-	         <img src="images/im3.png" alt="Credit Scoring" style="max-width: 95%; height: 300px; margin-bottom: 1rem;" />
-		  <p style="font-size: 16px;">
-			This project involves building a machine learning pipeline for credit scoring and automating lending decisions. By combining feature engineering, predictive modeling, and business rule integration, the system streamlines loan approvals while managing credit risk effectively.
-		  </p>
-		  <p style="font-size: 16px;">
-			Models such as RF, XGBoost and LightGBM were used and integrated with explainable AI. Data retrieval from DBeaver (PostgreSQL platform) through SQL data querrying and The lending decision engine was built using <strong>FastAPI</strong> for real-time deployment and scoring.
-		  </p>
-		  <p style="font-size: 16px;">
-			Tools used: <strong>Python, SQL, Scikit-learn, LightGBM, SHAP, FastAPI</strong>. Focus areas included <strong>model explainability, risk segmentation, automation logic</strong>, and production-readiness.
-		  </p>
-		  <ul style="font-size: 16px;" class="actions special">
-			<li><a href="https://medium.com/@vinylango90/credit-scoring-lending-automation-6dabe30d53da" class="button primary" target="_blank">Read on Medium</a></li>
-			<li><a href="https://github.com/Vinylango25/Credit-Scoring-Lending-automation" class="button" target="_blank">View on GitHub</a></li>
-		  </ul>
+  </div>
+
+
+
+     
+
+
+    
+      
+
+<div id="projects" class="tab-content">
+  <div style="text-align: center; margin-bottom: 40px;">
+  <h3 style="
+    font-size: 30px;
+    color: #008b8b;
+    position: relative;
+    display: inline-block;
+    margin: 0 auto 10px auto;
+  ">
+    <strong>Projects</strong>
+    <span style="
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: -10%;
+      width: 120%;
+      height: 2px;
+      background-color: white;
+      display: block;
+    "></span>
+  </h3>
+</div>
+<div style="position: relative;">
+    <!-- Navigation Tabs -->
+    <button id="scroll-left" style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); z-index: 10; background-color: #004d4d; color: white; border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer;">&lt;</button>
+    <button id="scroll-right" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); z-index: 10; background-color: #004d4d; color: white; border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer;">&gt;</button>
+
+    <div id="scroll-container" style="overflow-x: auto; white-space: nowrap; padding: 30px 40px; scroll-behavior: smooth;">
+      <div id="card-wrapper" style="display: inline-flex; gap: 40px; padding-left: 10px;">
+
+
+    <!-- Portfolio Website Project -->
+        <div style="flex: 0 0 auto; width: 450px; background:  #032B3F; border-radius: 10px; padding: 10px; color: white; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; white-space: normal;">
+          <h3 style="font-size: 20px;">🌐  My Personal Portfolio Website</h3>
+          <img src="images/portfolio.png" alt="Portfolio Website" class="animated-img"  style="width: 420px; height: 250px; margin-bottom: 1rem;" />
+          <p style="font-size: 15px; line-height: 1.4;">
+            In this project, I created my personal website that houses a portfolio of my work and highlights key projects in data science and AI. The website demonstrates my proficiency in front-end development using HTML, CSS, and JavaScript, with a focus on building responsive and user-friendly layouts. Through this project, I developed skills in web design, layout structuring, and interactive user interface development, all aimed at presenting information clearly and effectively.
+          </p>
+		<ul style="font-size: 15px; list-style-type: none; padding-left: 0; display: flex; gap: 10px; flex-wrap: wrap;">
+            <li><a href="https://vinylango25.github.io/" class="button primary" target="_blank">Visit Website</a></li>
+	     <li><a href="https://github.com/Vinylango25/Vinylango25.github.io" class="button" target="_blank">View on GitHub</a></li>
+          </ul>
+        </div>
+
+
+      <!-- CARD TEMPLATE: Copy and update content as needed -->
+      <div style="flex: 0 0 auto; width: 450px; background:  #032B3F; border-radius: 10px; padding: 10px; color: white; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; white-space: normal;">
+        <h3 style="font-size: 20px;">🤖 Lending Automation - ML for Credit Scoring</h3>
+        <img src="images/credit2.png" alt="Credit Scoring"  class="animated-img"  style="width: 420px; height: 250px; margin-bottom: 1rem;" />
+        <p style="font-size: 15px; line-height: 1.4;">
+          This project delivers an automated loan approval system using ML models like Random Forest, XGBoost, and LightGBM. It replaces manual decisions with fast, scalable processes. Key tasks included cleaning data, feature engineering, and evaluating model fairness—enabling personalized lending, dynamic pricing, and more accurate, data-driven credit scoring.
+        </p>
+        <ul style="font-size: 15px; list-style-type: none; padding-left: 0; display: flex; gap: 10px; flex-wrap: wrap;">
+          <li><a href="https://medium.com/@vinylango90/credit-scoring-lending-automation-6dabe30d53da" class="button primary" target="_blank">Read on Medium</a></li>
+          <li><a href="https://github.com/Vinylango25/Credit-Scoring-Lending-automation" class="button" target="_blank">View on GitHub</a></li>
+        </ul>
       </div>
-      <div class="col-6 col-12-medium">
-	<h3 style="font-size: 20px;  margin-bottom: 20px;"><strong> 🏥 Healthcare Accessibility in Nairobi</strong></h3>
-	<img src="images/im16.png" alt="Healthcare Map" style="max-width: 95%; height: 300px; margin-bottom: 1rem;" />
-        <p style="font-size: 16px;">
-          This geospatial analysis project explores access to healthcare facilities in Nairobi by mapping population density, facility distribution, and travel time using road networks. It highlights spatial disparities in access to care.
+
+      <!-- Repeat this entire <div> for each project -->
+
+      <div style="flex: 0 0 auto; width: 450px; background:  #032B3F; border-radius: 10px; padding: 10px; color: white; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; white-space: normal;">
+        <h3 style="font-size: 20px;">🛡️ Anomaly and Fraud Detection in Finance</h3>
+        <img src="images/fraud.png" alt="Anomaly Detection" class="animated-img"  style="width: 420px; height: 250px; margin-bottom: 1rem;" />
+        <p style="font-size: 15px; line-height: 1.4;">
+         This project uses PyOD and FLAML AutoML to detect anomalies in imbalanced credit card datasets. Models like Isolation Forest and Autoencoders are evaluated using precision, recall, and ROC-AUC. Sampling techniques (SMOTE, oversampling) enhance model performance, producing a high-precision fraud detection pipeline for robust financial risk management.
         </p>
-        <p style="font-size: 16px;">
-          Using <strong>Python, Pandas, Geopandas, Folium, Matplotlib, Seaborn</strong>, and <strong>Jupyter Notebook</strong>, the project visualizes accessibility scores and identifies underserved zones with limited facility reach.
+        <ul style="font-size: 15px; list-style-type: none; padding-left: 0; display: flex; gap: 10px; flex-wrap: wrap;">
+          <li><a href="https://medium.com/@vinylango90/anomaly-detection-in-credit-card-transactions-using-pyod-and-microsoft-automl-flaml-727a091487bd" class="button primary" target="_blank">Read on Medium</a></li>
+          <li><a href="https://github.com/Vinylango25/Anomaly-Fraud-detection-in-Finance" class="button" target="_blank">View on GitHub</a></li>
+        </ul>
+      </div>
+
+      <div style="flex: 0 0 auto; width: 450px; background: #032B3F; border-radius: 10px; padding: 10px; color: white; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; white-space: normal;">
+        <h3 style="font-size: 20px;">🌍 Air Quality Monitoring in Nicosia, Cyprus</h3>
+        <img src="images/air.png" alt="Air Quality Monitoring" class="animated-img"  style="width: 420px; height: 250px; margin-bottom: 1rem;" />
+        <p style="font-size: 15px; line-height: 1.4;">
+           This project calibrates low-cost air sensors using ML models like XGBoost and ANN to match reference-grade accuracy. It analyzes six months of data to study sampling strategies, calibration frequency, and environmental interference. Results support affordable, large-scale urban air quality monitoring that meets EU and EPA standards.
         </p>
-        <p style="font-size: 16px;">
-          The results provide data-driven insights for urban planners and policymakers to improve healthcare infrastructure and service delivery across Nairobi.
+        <ul style="font-size: 15px; list-style-type: none; padding-left: 0; display: flex; gap: 10px; flex-wrap: wrap;">
+          <li><a href="https://medium.com/@vinylango90/sensor-calibration-and-air-quality-monitoring-in-nicosia-cyprus-e5072a4184aa" class="button primary" target="_blank">Read on Medium</a></li>
+          <li><a href="https://github.com/Vinylango25/Air-Quality-in-Nicosia-Cyprus" class="button" target="_blank">View on GitHub</a></li>
+        </ul>
+      </div>
+
+      <div style="flex: 0 0 auto; width: 450px; background: #032B3F; border-radius: 10px; padding: 10px; color: white; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; white-space: normal;">
+        <h3 style="font-size: 20px;">🔮 Vincent Chatbot – Personalized AI Assistant</h3>
+        <img src="images/llm.png" alt="Vincent Chatbot" class="animated-img"  style="width: 420px; height: 250px; margin-bottom: 1rem;" />
+        <p style="font-size: 15px; line-height: 1.4;">
+           This project builds an AI chatbot powered by large language models to answer questions about Vincent’s professional profile. Using vector embeddings and FastAPI, it enables contextual responses based on uploaded documents. Deployed on Render.com, it demonstrates skills in NLP, API development, and cloud deployment for personalized AI applications.
         </p>
-        <ul style="font-size: 16px;" class="actions special">
-	<li><a href="https://medium.com/@vinylango90/enhancing-healthcare-accessibility-in-nairobi-kenya-21dfff0a2ac8" class="button primary" target="_blank">Read on Medium</a></li>
+        <ul style="font-size: 15px; list-style-type: none; padding-left: 0;">
+          <li><a href="https://github.com/Vinylango25/vincent-chatbot" class="button" target="_blank">View on GitHub</a></li>
+        </ul>
+      </div>
+
+      <div style="flex: 0 0 auto; width: 450px; background: #032B3F; border-radius: 10px; padding: 10px; color: white; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; white-space: normal;">
+        <h3 style="font-size: 20px;">🏥 Healthcare Accessibility in Nairobi, Kenya</h3>
+        <img src="images/health.png" alt="Healthcare Accessibility" class="animated-img"  style="width: 420px; height: 250px; margin-bottom: 1rem;" />
+        <p style="font-size: 15px; line-height: 1.4;">
+           This project evaluates healthcare access in Nairobi using demographic and facility data. Anchored in SDG 3, it identifies service gaps by analyzing population coverage, operational hours, and accessibility. Insights support policy interventions aimed at strengthening healthcare delivery and promoting well-being for all city residents.
+        </p>
+        <ul style="font-size: 15px; list-style-type: none; padding-left: 0; display: flex; gap: 10px; flex-wrap: wrap;">
+          <li><a href="https://medium.com/@vinylango90/enhancing-healthcare-accessibility-in-nairobi-kenya-21dfff0a2ac8" class="button primary" target="_blank">Read on Medium</a></li>
           <li><a href="https://github.com/Vinylango25/Healthcare-Accessibility-in-Nairobi" class="button" target="_blank">View on GitHub</a></li>
         </ul>
       </div>
+
+      <div style="flex: 0 0 auto; width: 450px; background:  #032B3F; border-radius: 10px; padding: 10px; color: white; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; white-space: normal;">
+        <h3 style="font-size: 20px;">🩺 COVID-19 Detection using Deep Learning</h3>
+        <img src="images/covid.png" alt="COVID-19 Detection"  class="animated-img"  style="width: 420px; height: 250px; margin-bottom: 1rem;" />
+        <p style="font-size: 15px; line-height: 1.4;">
+           This project uses CNNs (ResNet50, DenseNet169, MobileNetV2) to detect COVID-19 from chest CT scans. Through preprocessing, augmentation, and ensemble modeling, it achieves high accuracy. Transfer learning boosts performance on real-world data, providing fast and reliable diagnosis support for clinical decision-making in pandemic response.
+        </p>
+        <ul style="font-size: 15px; list-style-type: none; padding-left: 0; display: flex; gap: 10px; flex-wrap: wrap;">
+          <li><a href="https://medium.com/@vinylango90/deep-learning-based-detection-of-covid-19-from-ct-scans-using-convolutional-neural-networks-a09ca1a6f9ce" class="button primary" target="_blank">Read on Medium</a></li>
+          <li><a href="https://github.com/Vinylango25/Covid-19-Detection-Deep-Learning" class="button" target="_blank">View on GitHub</a></li>
+        </ul>
+      </div>
+
+      <div style="flex: 0 0 auto; width: 450px; background:  #032B3F; border-radius: 10px; padding: 10px; color: white; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; white-space: normal;">
+        <h3 style="font-size: 20px;">📉 Customer Churn Prediction</h3>
+        <img src="images/churn.png" alt="Customer Churn" class="animated-img"  style="width: 420px; height: 250px; margin-bottom: 1rem;" />
+        <p style="font-size: 15px; line-height: 1.4;">
+           This project predicts customer churn using survival analysis and ML models, enabling telecoms to target at-risk users. It analyzes historical behavior to estimate churn risk and customer lifetime value. An interactive tool supports data-driven retention strategies, helping reduce attrition and improve loyalty through personalized interventions.
+        </p>
+        <ul style="font-size: 15px; list-style-type: none; padding-left: 0;">
+          <li><a href="https://github.com/Vinylango25/Customer_Churn_Analysis_And_Prediction" class="button" target="_blank">View on GitHub</a></li>
+        </ul>
+      </div>
+
+      <div style="flex: 0 0 auto; width: 450px; background:  #032B3F; border-radius: 10px; padding: 10px; color: white; box-sizing: border-box; overflow-wrap: break-word; word-break: break-word; white-space: normal;">
+        <h3 style="font-size: 20px;">📊 Sales Forecasting</h3>
+        <img src="images/sales.png" alt="Sales Forecasting" class="animated-img"  style="width: 420px; height: 250px; margin-bottom: 1rem;" />
+        <p style="font-size: 15px; line-height: 1.4;">
+         This project analyzes sales data using ARIMA, SARIMA, and Prophet to forecast trends and seasonality. The workflow includes preprocessing, stationarity testing, model tuning, and evaluation. Insights help optimize inventory, resource planning, and decision-making—reducing forecast errors and improving operational efficiency through accurate, data-driven sales forecasting.
+        </p>
+        <ul style="font-size: 15px; list-style-type: none; padding-left: 0;">
+          <li><a href="https://github.com/Vinylango25/Sales_Time_Series_Analysis" class="button" target="_blank">View on GitHub</a></li>
+        </ul>
+      </div>
+
+    </div>
     </div>
   </div>
+</div>
+
+<style>
+  #scroll-left:hover,
+  #scroll-right:hover {
+    background-color: #006666;
+    transform: translateY(-50%) scale(1.1);
+    transition: all 0.3s ease;
+  }
+</style>
+
+<script>
+  document.getElementById('scroll-left').addEventListener('click', () => {
+    document.getElementById('scroll-container').scrollBy({ left: -500, behavior: 'smooth' });
+  });
+
+  document.getElementById('scroll-right').addEventListener('click', () => {
+    document.getElementById('scroll-container').scrollBy({ left: 500, behavior: 'smooth' });
+  });
+</script>
+
+  
+
+
+  
+  
+
+  
+
+
+
+       
+
+
+   <div id="contact" class="tab-content">
+  <h3 style="font-size: 30px; margin-bottom: 30px;"><strong>📞 Get In Touch</strong></h3>
+  <div class="row gtr-150">
+
+    <!-- Contact Form Column -->
+    <div class="col-6 col-12-medium">
+      <p style="font-size: 16px;">Let's discuss your next data science project</p>
+      <form method="POST" action="https://formsubmit.co/vincentl@aims.ac.za" style="margin-bottom: 40px;">
+        <!-- Optional: Turn off CAPTCHA and set email subject -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="New Contact Form Submission from Portfolio">
+        <input type="hidden" name="_template" value="box">
+
+        <div class="row gtr-50">
+          <div class="col-6 col-12-small">
+            <input type="text" name="name" placeholder="Your Name" required style="width: 100%; padding: 10px;" />
+          </div>
+          <div class="col-6 col-12-small">
+            <input type="email" name="email" placeholder="Your Email" required style="width: 100%; padding: 10px;" />
+          </div>
+          <div class="col-12">
+            <textarea name="message" placeholder="Your Message" rows="6" required style="width: 100%; padding: 10px;"></textarea>
+          </div>
+          <div class="col-12">
+            <ul class="actions special">
+              <li><input type="submit" value="Send Message" class="button primary" /></li>
+            </ul>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Newsletter and Connect Column -->
+    <div class="col-6 col-12-medium">
+      <!-- Newsletter Section -->
+      <h3 style="font-size: 28px; margin-bottom: 20px;"><strong>📰 Weekly Newsletter</strong></h3>
+      <p style="font-size: 16px;">Stay updated with data science insights</p>
+      <form method="POST" action="https://formsubmit.co/vincentl@aims.ac.za">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="New Newsletter Subscriber">
+        <input type="hidden" name="_template" value="table">
+
+        <div class="row gtr-50">
+          <div class="col-8 col-12-small">
+            <input type="email" name="newsletter-email" placeholder="Your Email" required style="width: 100%; padding: 10px;" />
+          </div>
+          <div class="col-4 col-12-small">
+            <input type="submit" value="Subscribe" class="button" style="width: 100%;" />
+          </div>
+        </div>
+      </form>
+
+      <!-- Connect With Me -->
+      <h3 style="font-size: 28px; margin-top: 40px; margin-bottom: 20px;"><strong>🔗 Connect With Me</strong></h3>
+      <ul class="icons" style="font-size: 20px;">
+        <li><a href="https://linkedin.com/in/kipkemoi-vincent-19307a94" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+        <li><a href="https://github.com/Vinylango25" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+        <li><a href="mailto:vincentl@aims.ac.za" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
 </section>
-<br>
 
-  <section id="five" class="main style2">
-	<div class="container">
-	  <div class="row gtr-150">
-		<div class="col-6 col-12-medium">
-			<h3 style="font-size: 20px;  margin-bottom: 20px;"><strong> 🌍 Air Quality Monitoring & Sensor Calibration</strong></h3>
-		<img src="images/im10.png" alt="Credit Scoring" style="max-width: 95%; height: 300px; margin-bottom: 1rem;" />
-					  <p style="font-size: 16px;">
-						This project focused on calibrating low-cost air quality sensors and deploying them in Nicosia, Cyprus to monitor pollution patterns. We compared data from the low-cost sensors with reference-grade instruments to improve accuracy using statistical and machine learning models.
-					  </p>
-					  <p style="font-size: 16px;">
-						I developed data pipelines for continuous collection, cleaning, and analysis of air quality parameters such as PM2.5, PM10, NO₂, and O₃. The calibrated sensors enabled real-time, hyperlocal air quality insights across the city, supporting environmental research and public health initiatives.
-					  </p>
-					  <p style="font-size: 16px;">
-						Tools & techniques used included Python (Pandas, Scikit-learn), R, linear regression, random forest, time-series analysis, and geospatial data visualization. This work contributes to scalable environmental monitoring solutions using affordable technology.
-					  </p>
-					  <ul style="font-size: 16px;" class="actions special">
-						<li><a href="https://medium.com/@vinylango90/sensor-calibration-and-air-quality-monitoring-in-nicosia-cyprus-e5072a4184aa" class="button primary" target="_blank">Read on Medium</a></li>
-						<li><a href="https://github.com/Vinylango25/Air-Quality-in-Nicosia-Cyprus" class="button" target="_blank">View on GitHub</a></li>
-					  </ul>
-		</div>
-		<div class="col-6 col-12-medium">
-			<h3 style="font-size: 20px;  margin-bottom: 20px;"><strong> 🛡️ Anomaly Detection in Credit Card Transactions</strong></h3>
-			       <img src="images/lp.png" alt="Anomaly Detection" style="width: 520px; height: 300px; margin-bottom: 1rem;" />
-					  <p style="font-size: 16px;">
-						This project explores fraud detection using unsupervised and automated machine learning techniques on credit card transaction data. By combining the power of the PyOD library with Microsoft AutoML (FLAML), I implemented a robust, scalable pipeline for anomaly detection.
-					  </p>
-					  <p style="font-size: 16px;">
-						I evaluated multiple models including Isolation Forest, AutoEncoder, IForest, and HBOS, and integrated AutoML to fine-tune hyperparameters with minimal human intervention. The solution was able to detect outliers with high precision, even in highly imbalanced datasets.
-					  </p>
-					  <p style="font-size: 16px;">
-						Key tools used: <strong>Python, PyOD, FLAML, Pandas, Scikit-learn</strong>. Focus areas included <strong>model selection, threshold optimization, explainability</strong>, and <strong>visualization of fraud patterns</strong>.
-					  </p>
-					  <ul style="font-size: 16px;" class="actions special">
-						<li><a href="https://medium.com/@vinylango90/anomaly-detection-in-credit-card-transactions-using-pyod-and-microsoft-automl-flaml-727a091487bd" class="button primary" target="_blank">Read on Medium</a></li>
-						<li><a href="https://github.com/Vinylango25/Anomaly-Fraud-detection-in-Finance" class="button" target="_blank">View on GitHub</a></li>
-					  </ul>
-		</div>
-	  </div>
-	</div>
-  </section>
   
-	<br>		  
-			  
-		<!-- Three -->
-<section id="five" class="main style2">
-	<div class="container">
-	<h3 style="font-size: 35px;  margin-bottom: 30px;"><strong> Other Featured Projects </strong></h3>
-	  <div class="row gtr-150">
   
-		<!-- Project 1: COVID-19 CT Scan Detection -->
-		<div class="col-4 col-12-medium">
-		  <span class="image fit">
-			<img src="images/im5.png" alt="COVID-19 CT Scan Detection" style="max-width: 95%; height: 220px; margin-bottom: 1rem;" />
-		  </span>
-		  <h3 style="font-size: 20px;"> 🩺 COVID-19 Detection </h3>
-		  <p style="font-size: 16px;">
-			Tested power of Deep learning CNNs to classify COVID-19 from chest CT scans. Achieved high accuracy using a custom architecture trained on augmented datasets.
-		  </p>
-		  <ul  style="font-size: 16px;" class="actions special">
-			<li><a href="https://medium.com/@vinylango90/deep-learning-based-detection-of-covid-19-from-ct-scans-using-convolutional-neural-networks-a09ca1a6f9ce" class="button" target="_blank">Read on Medium</a></li>
-		  </ul>
-		</div>
   
-		<!-- Project 2: Customer Churn Prediction -->
-		<div class="col-4 col-12-medium">
-		  <span class="image fit">
-			<img src="images/im6.png" alt="Customer Churn Prediction" style="max-width: 95%; height: 220px; margin-bottom: 1rem;" />
-		  </span>
-		  <h3 style="font-size: 20px;"> 📉 Customer Churn Prediction</h3>
-		  <p style="font-size: 16px;">
-			Built ML models to predict customer churn for telecom data. Focused on interpretability and actionable business insights using classification techniques.
-		  </p>
-		  <ul  style="font-size: 16px;" class="actions special">
-			<li><a href="https://github.com/Vinylango25/Customer_Churn_Analysis_And_Prediction" class="button" target="_blank">View on GitHub</a></li>
-		  </ul>
-		</div>
   
-		<!-- Project 3: Sales Time Series Analysis -->
-		<div class="col-4 col-12-medium">
-		  <span class="image fit">
-			<img src="images/im7.png" alt="Sales Forecasting" style="max-width: 95%;  height: 220px; margin-bottom: 1rem;" />
-		  </span>
-		  <h3 style="font-size: 20px;"> 📊 Sales Time Series Forecasting</h3>
-		  <p style="font-size: 16px;">
-			Performed sales forecasting using ARIMA, SARIMA, and Prophet. Included feature engineering and seasonality modeling for improved retail decision-making.
-		  </p>
-		  <ul  style="font-size: 16px;" class="actions special">
-			<li><a href="https://github.com/Vinylango25/Sales_Time_Series_Analysis" class="button" target="_blank">View on GitHub</a></li>
-		  </ul>
-		</div>
-  
-	  </div>
-	</div>
-  </section>
-<br>
-<!-- Four -->
-<!--<section id="four" class="main style2 special">
-	<div class="container">
-	  <header class="major">
-		<h2>🔗 Useful Links</h2>
-	  </header>
-	  <ul style="display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 30px; list-style: none; padding: 0; margin: 0;">
-		<li>
-		  <a href="https://github.com/Vinylango25" class="button primary" target="_blank" rel="noopener">GitHub</a>
-		</li>
-		<li>
-		  <a href="https://www.linkedin.com/in/kipkemoi-vincent-19307a94/" class="button" target="_blank" rel="noopener">LinkedIn</a>
-		</li>
-		<li>
-		  <a href="https://medium.com/@vinylango90" class="button" target="_blank" rel="noopener">Medium Articles</a>
-		</li>
-	  </ul>
-	</div>
-  </section> -->
-  
-
-		<!-- Five -->
-		<!--
-			<section id="five" class="main style1">
-				<div class="container">
-					<header class="major special">
-						<h2>Elements</h2>
-					</header>
-
-					<section>
-						<h4>Text</h4>
-						<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-						This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-						This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-						<hr />
-						<header>
-							<h4>Heading with a Subtitle</h4>
-							<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-						</header>
-						<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-						<header>
-							<h5>Heading with a Subtitle</h5>
-							<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-						</header>
-						<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-						<hr />
-						<h2>Heading Level 2</h2>
-						<h3>Heading Level 3</h3>
-						<h4>Heading Level 4</h4>
-						<h5>Heading Level 5</h5>
-						<h6>Heading Level 6</h6>
-						<hr />
-						<h5>Blockquote</h5>
-						<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-						<h5>Preformatted</h5>
-						<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-print 'Iteration ' + i;
-deck.shuffle();
-i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-					</section>
-
-					<section>
-						<h4>Lists</h4>
-						<div class="row">
-							<div class="col-6 col-12-medium">
-								<h5>Unordered</h5>
-								<ul>
-									<li>Dolor pulvinar etiam.</li>
-									<li>Sagittis adipiscing.</li>
-									<li>Felis enim feugiat.</li>
-								</ul>
-								<h5>Alternate</h5>
-								<ul class="alt">
-									<li>Dolor pulvinar etiam.</li>
-									<li>Sagittis adipiscing.</li>
-									<li>Felis enim feugiat.</li>
-								</ul>
-							</div>
-							<div class="col-6 col-12-medium">
-								<h5>Ordered</h5>
-								<ol>
-									<li>Dolor pulvinar etiam.</li>
-									<li>Etiam vel felis viverra.</li>
-									<li>Felis enim feugiat.</li>
-									<li>Dolor pulvinar etiam.</li>
-									<li>Etiam vel felis lorem.</li>
-									<li>Felis enim et feugiat.</li>
-								</ol>
-								<h5>Icons</h5>
-								<ul class="icons">
-									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-								</ul>
-							</div>
-						</div>
-						<h5>Actions</h5>
-						<div class="row">
-							<div class="col-6 col-12-medium">
-								<ul class="actions">
-									<li><a href="#" class="button primary">Default</a></li>
-									<li><a href="#" class="button">Default</a></li>
-								</ul>
-								<ul class="actions small">
-									<li><a href="#" class="button primary small">Small</a></li>
-									<li><a href="#" class="button small">Small</a></li>
-								</ul>
-								<ul class="actions stacked">
-									<li><a href="#" class="button primary">Default</a></li>
-									<li><a href="#" class="button">Default</a></li>
-								</ul>
-								<ul class="actions stacked">
-									<li><a href="#" class="button primary small">Small</a></li>
-									<li><a href="#" class="button small">Small</a></li>
-								</ul>
-							</div>
-							<div class="col-6 col-12-medium">
-								<ul class="actions stacked">
-									<li><a href="#" class="button primary fit">Default</a></li>
-									<li><a href="#" class="button fit">Default</a></li>
-								</ul>
-								<ul class="actions stacked">
-									<li><a href="#" class="button primary small fit">Small</a></li>
-									<li><a href="#" class="button small fit">Small</a></li>
-								</ul>
-							</div>
-						</div>
-					</section>
-
-					<section>
-						<h4>Table</h4>
-						<h5>Default</h5>
-						<div class="table-wrapper">
-							<table>
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Description</th>
-										<th>Price</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Item One</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Two</td>
-										<td>Vis ac commodo adipiscing arcu aliquet.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Three</td>
-										<td> Morbi faucibus arcu accumsan lorem.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Four</td>
-										<td>Vitae integer tempus condimentum.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Five</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<td colspan="2"></td>
-										<td>100.00</td>
-									</tr>
-								</tfoot>
-							</table>
-						</div>
-
-						<h5>Alternate</h5>
-						<div class="table-wrapper">
-							<table class="alt">
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Description</th>
-										<th>Price</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Item One</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Two</td>
-										<td>Vis ac commodo adipiscing arcu aliquet.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Three</td>
-										<td> Morbi faucibus arcu accumsan lorem.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Four</td>
-										<td>Vitae integer tempus condimentum.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Five</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<td colspan="2"></td>
-										<td>100.00</td>
-									</tr>
-								</tfoot>
-							</table>
-						</div>
-					</section>
-
-					<section>
-						<h4>Buttons</h4>
-						<ul class="actions">
-							<li><a href="#" class="button primary">Primary</a></li>
-							<li><a href="#" class="button">Default</a></li>
-						</ul>
-						<ul class="actions">
-							<li><a href="#" class="button large">Large</a></li>
-							<li><a href="#" class="button">Default</a></li>
-							<li><a href="#" class="button small">Small</a></li>
-						</ul>
-						<ul class="actions fit">
-							<li><a href="#" class="button fit">Fit</a></li>
-							<li><a href="#" class="button primary fit">Fit</a></li>
-							<li><a href="#" class="button fit">Fit</a></li>
-						</ul>
-						<ul class="actions fit small">
-							<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-							<li><a href="#" class="button fit small">Fit + Small</a></li>
-							<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-						</ul>
-						<ul class="actions">
-							<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-							<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-						</ul>
-						<ul class="actions">
-							<li><span class="button primary disabled">Disabled</span></li>
-							<li><span class="button disabled">Disabled</span></li>
-						</ul>
-					</section>
-
-					<section>
-						<h4>Form</h4>
-						<form method="post" action="#">
-							<div class="row gtr-uniform gtr-50">
-								<div class="col-6 col-12-xsmall">
-									<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-								</div>
-								<div class="col-6 col-12-xsmall">
-									<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-								</div>
-								<div class="col-12">
-									<select name="demo-category" id="demo-category">
-										<option value="">- Category -</option>
-										<option value="1">Manufacturing</option>
-										<option value="1">Shipping</option>
-										<option value="1">Administration</option>
-										<option value="1">Human Resources</option>
-									</select>
-								</div>
-								<div class="col-4 col-12-small">
-									<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-									<label for="demo-priority-low">Low</label>
-								</div>
-								<div class="col-4 col-12-small">
-									<input type="radio" id="demo-priority-normal" name="demo-priority">
-									<label for="demo-priority-normal">Normal</label>
-								</div>
-								<div class="col-4 col-12-small">
-									<input type="radio" id="demo-priority-high" name="demo-priority">
-									<label for="demo-priority-high">High</label>
-								</div>
-								<div class="col-6 col-12-small">
-									<input type="checkbox" id="demo-copy" name="demo-copy">
-									<label for="demo-copy">Email me a copy</label>
-								</div>
-								<div class="col-6 col-12-small">
-									<input type="checkbox" id="demo-human" name="demo-human" checked>
-									<label for="demo-human">Not a robot</label>
-								</div>
-								<div class="col-12">
-									<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-								</div>
-								<div class="col-12">
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</div>
-							</div>
-						</form>
-					</section>
-
-					<section>
-						<h4>Image</h4>
-						<h5>Fit</h5>
-						<div class="box alt">
-							<div class="row gtr-uniform gtr-50">
-								<div class="col-12"><span class="image fit"><img src="images/pic06.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-							</div>
-						</div>
-						<h5>Left &amp; Right</h5>
-						<p><span class="image left"><img src="images/pic05.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-						<p><span class="image right"><img src="images/pic05.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-					</section>
-
-				</div>
-			</section>
-		-->
-
-		<!-- Footer -->
-<section id="footer">
+ <section id="footer">
 	<ul class="icons">
-	  <li style="font-size: 16px;">
-		<a href="https://github.com/Vinylango25" class="icon brands alt fa-github" target="_blank" rel="noopener">
-		  <span class="label">GitHub</span>
-		</a>
-	  </li>
-	  <li style="font-size: 16px;">
-		<a href="https://www.linkedin.com/in/kipkemoi-vincent-19307a94/" class="icon brands alt fa-linkedin-in" target="_blank" rel="noopener">
-		  <span class="label">LinkedIn</span>
-		</a>
-	  </li>
-	  <li style="font-size: 16px;">
-		<a href="https://medium.com/@vinylango90" class="icon brands alt fa-medium" target="_blank" rel="noopener">
-		  <span class="label">Medium</span>
-		</a>
-	  </li>
-	  <li style="font-size: 16px;">
-		<a href="mailto:vincentl@aims.ac.za" class="icon solid alt fa-envelope">
-		  <span class="label">Email</span>
-		</a>
-	  </li>
-	</ul>
+	 </ul>
+	  <ul class="icons" style="margin-top: 10px;">
+          <li><a href="https://github.com/Vinylango25" class="icon brands alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+          <li><a href="https://www.linkedin.com/in/kipkemoi-vincent-19307a94/" class="icon brands alt fa-linkedin-in" target="_blank"><span class="label">LinkedIn</span></a></li>
+          <li><a href="https://medium.com/@vinylango90" class="icon brands alt fa-medium" target="_blank"><span class="label">Medium</span></a></li>
+          <li><a href="mailto:vincentl@aims.ac.za" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+        </ul>
 	<ul style="font-size: 16px;" class="copyright">
 	  <li>&copy; Kipkemoi Vincent</li>
-	  <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
 	</ul>
   </section>
   
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+<script>
+  function showTab(tabId) {
+    const tabs = document.querySelectorAll('.tab-content');
+    tabs.forEach(tab => tab.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+  }
+</script>
 
-	</body>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
 </html>
