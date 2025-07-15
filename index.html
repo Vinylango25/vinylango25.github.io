@@ -27,13 +27,13 @@ strong {
    section.main.style2#main {
   padding-top: 30px;
   margin-top: 0;
-  opacity: 1;
+opacity: 1 !important; 
 }
 
 section#main .container {
   margin-top: 0;
   padding-top: 0;
-  opacity: 1;
+  opacity: 1 !important; 
 }
     .tabs {
       position: fixed;
@@ -75,22 +75,26 @@ section#main .container {
       background-color:  #9CA7A6;
       color:  #1a1a1a;
     }
-   .tab-content {
+  .tab-content {
   display: none;
   animation: fadeIn 0.5s ease-in-out;
   margin: 30px;
-  padding:-40px; 
+  padding: -40px;
   width: 100%;
   box-sizing: border-box;
+  opacity: 1 !important;  /* fully visible */
 }
-   .tab-content.active {
+
+.tab-content.active {
   display: block;
   width: 100%;
   margin: 0;
-  padding: 0 ;                  /* spacing inside the tab */
-  color:#1a1a1a !important;            /* ensure black text */
+  padding: 0;
+  color: #1a1a1a !important;
   box-sizing: border-box;
+  opacity: 1 !important;  /* fully visible */
 }
+
 
     /* Chatbot specific styles */
     #chatbox {
@@ -157,11 +161,6 @@ section#main .container {
       opacity: 1;
     }
   }
-section#main.main.style2 {
-  background-color: #ffffff; /* white background */
-  color: #000000;            /* black text */
-  padding: 2rem;             /* optional: adds spacing */
-}
 
   </style>
  <script>
