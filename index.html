@@ -221,52 +221,33 @@ background-color:   white !important;
   </script>
 </head>
 
-<body class="is-preload">
-
-  <!-- Load particles.js -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
-  <section id="main" class="main style2">
-    <div class="container">
-      <div class="tabs">
-        <button onclick="showTab('about')" class="active">About Me</button>
-        <button onclick="showTab('education')" class="active">Education</button>
-        <button onclick="showTab('skills')" class="active">Skills</button>
-        <button onclick="showTab('experience')" class="active">Experience</button>
-        <button onclick="showTab('projects')" class="active">Projects</button>
-        <button onclick="showTab('contact')" class="active">Contact</button>
-      </div>
+class="is-preload">
+<section id="main" class="main style2">
+  <div class="container">
+    <div class="tabs">
+      <button onclick="showTab('about')" class="active">About Me</button>
+      <button onclick="showTab('education')" class="active">Education</button>
+      <button onclick="showTab('skills')" class="active">Skills</button>
+      <button onclick="showTab('experience')" class="active">Experience</button>
+      <button onclick="showTab('projects')" class="active">Projects</button>
+      <button onclick="showTab('contact')" class="active">Contact</button>
     </div>
+  </div>
 
-    <!-- ✅ About Section with Enhanced Network Visibility -->
-    <div style="position: relative; width: 100%;">
+<!-- ✅ About Section: Two-Column Layout -->
+<div id="about" class="tab-content active" style="width: 100%; margin-bottom:0; padding: 100px 10px 50px 10px; background-color: white; color: black !important;">
 
-      <!-- Network Animation Background -->
-      <div id="particles-js"
-           style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;
-                  background-color: #f9fafa;">
-      </div>
-
-      <!-- About Content -->
-      <div id="about" class="tab-content active"
-           style="position: relative; z-index: 1; width: 100%; margin-bottom: 0;
-                  padding: 100px 10px 50px 10px; background-color: transparent; color: black !important;">
-
-        <div style="margin-bottom: 40px; text-align: center;">
-          <h3 style="font-size: 30px; color: black; position: relative; display: inline-block; margin: 0 auto 10px auto;">
-            <strong> 💫 About Me</strong>
-          </h3>
-        </div>
-
-  <div class="row gtr-150">
-    <!-- Column 1: Profile Image + Contact Info -->
-    <div class="col-6 col-12-medium" style="text-align: center;">
-      <span class="image fit">
-        <img src="images/im2.jpg" alt="Kipkemoi Vincent"  style="max-width: 220px; border-radius: 100%; margin-bottom: 1rem; display: block; margin-left: auto; margin-right: auto;" />
-      </span>
-      <h3 style="font-size: 25px; color:black; ">Kipkemoi Vincent</h3>
-    </div>
-
+<div style=" margin-bottom: 40px; text-align: center;">
+    <h3 style="
+      font-size: 30px;
+      color: black;
+      position: relative;
+      display: inline-block;
+      margin: 0 auto 10px auto;
+    ">
+      <strong> 💫 About Me</strong>
+    </h3>
+  </div>
     <!-- Column 2: About Text -->
     <div class="col-6 col-12-medium">
       
