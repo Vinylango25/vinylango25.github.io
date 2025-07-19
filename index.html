@@ -222,32 +222,44 @@ background-color:   white !important;
 </head>
 
 <body class="is-preload">
-<section id="main" class="main style2">
-  <div class="container">
-    <div class="tabs">
-      <button onclick="showTab('about')" class="active">About Me</button>
-      <button onclick="showTab('education')" class="active">Education</button>
-      <button onclick="showTab('skills')" class="active">Skills</button>
-      <button onclick="showTab('experience')" class="active">Experience</button>
-      <button onclick="showTab('projects')" class="active">Projects</button>
-      <button onclick="showTab('contact')" class="active">Contact</button>
+
+  <!-- Load particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <section id="main" class="main style2">
+    <div class="container">
+      <div class="tabs">
+        <button onclick="showTab('about')" class="active">About Me</button>
+        <button onclick="showTab('education')" class="active">Education</button>
+        <button onclick="showTab('skills')" class="active">Skills</button>
+        <button onclick="showTab('experience')" class="active">Experience</button>
+        <button onclick="showTab('projects')" class="active">Projects</button>
+        <button onclick="showTab('contact')" class="active">Contact</button>
+      </div>
     </div>
-  </div>
 
-<!-- ✅ About Section: Two-Column Layout -->
-<div id="about" class="tab-content active" style="width: 100%; margin-bottom:0; padding: 100px 10px 50px 10px; background-color: white; color: black !important;">
+    <!-- ✅ About Section with Network Background -->
+    <div style="position: relative; width: 100%;">
 
-<div style=" margin-bottom: 40px; text-align: center;">
-    <h3 style="
-      font-size: 30px;
-      color: black;
-      position: relative;
-      display: inline-block;
-      margin: 0 auto 10px auto;
-    ">
-      <strong> 💫 About Me</strong>
-    </h3>
-  </div>
+      <!-- Animated Background -->
+      <div id="particles-js"
+           style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
+      </div>
+
+      <!-- About Content -->
+      <div id="about" class="tab-content active"
+           style="position: relative; z-index: 1; width: 100%; margin-bottom:0; padding: 100px 10px 50px 10px; background-color: transparent; color: black !important;">
+
+        <div style="margin-bottom: 40px; text-align: center;">
+          <h3 style="
+            font-size: 30px;
+            color: black;
+            position: relative;
+            display: inline-block;
+            margin: 0 auto 10px auto;">
+            <strong> 💫 About Me</strong>
+          </h3>
+        </div>
 
   <div class="row gtr-150">
     <!-- Column 1: Profile Image + Contact Info -->
@@ -272,7 +284,45 @@ background-color:   white !important;
   </div>
 </div>
 
-   
+ <!-- Particles.js Configuration -->
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 60 },
+        "color": { "value": "#00bcd4" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.4 },
+        "size": { "value": 3 },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#00bcd4",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "bounce": false
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" },
+          "onclick": { "enable": false },
+          "resize": true
+        },
+        "modes": {
+          "repulse": { "distance": 100, "duration": 0.4 }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>  
  
 
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
