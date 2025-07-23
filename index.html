@@ -7,31 +7,37 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+ <!-- ✨ Typing effect -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      font-size: 16px;
-      font-weight: 350;
-      font-family: 'Inter', sans-serif;
-      scroll-snap-type: y mandatory;
-      overflow-y: scroll;
-      scroll-behavior: smooth;
-    }
+  body {
+  color: black;       /* solid black text */
+  margin: 0  !important;
+  padding: 0;
+  padding-top: 10px;
+  margin-bottom:0  !important;
+  font-size: 16px;
+  font-weight: 350;
+  font-family: 'Inter', sans-serif;
+}
 
-    strong {
-      color: black !important;
-    }
+strong {
+  color: black !important;
+}
 
-    section {
-      height: 100vh;
-      scroll-snap-align: start;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.04);
-      transition: box-shadow 0.3s ease;
-    }
+   section.main.style2#main {
+  padding-top: 30px;
+background-color:   white !important;
+  margin-top: 0;
+opacity: 1 !important; 
+}
 
+section#main .container {
+  margin-top: 0;
+  padding-top: 0;
+background-color:   white !important;
+  opacity: 1 !important; 
+}
     .tabs {
       position: fixed;
       top: 0;
@@ -42,61 +48,59 @@
       flex-wrap: wrap;
       gap: 10px;
       padding: 20px 10px;
-      background-color: white;
-      color: #1a1a1a !important;
+      background-color:white;
+      color:  #1a1a1a  !important;
       z-index: 1000;
       animation: slideDown 0.5s ease-in-out;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
       border-bottom-left-radius: 8px;
     }
-
     .tabs button {
-      color: #1a1a1a !important;
+      color: #1a1a1a  !important;
       border: none;
       height: 10px;
       line-height: 10px;
       padding: 0 5px;
-      background-color: white;
+      background-color:   white;
       font-size: 14px;
       border-radius: 4px;
       cursor: pointer;
       text-transform: capitalize;
       transition: background-color 0.3s ease, transform 0.2s ease;
-      font-weight: 420;
-      font-family: 'Inter', sans-serif;
+      font-weight: 420;     /* normal weight — adjust as needed */
+      font-family: 'Inter', sans-serif; /* optional: clean modern font */
     }
-
     .tabs button:hover {
       background-color: rgba(0, 0, 0, 0.07);
       transform: translateY(1px);
     }
-
     .tabs button.active {
-      background-color: white;
-      color: #1a1a1a !important;
+      background-color:  white;
+      color:  #1a1a1a  !important;
     }
+  .tab-content {
+  display: none;
+  animation: fadeIn 0.5s ease-in-out;
+  margin: 0  !important;
+  padding: -40px;
+  width: 100%;
+  box-sizing: border-box;
+  opacity: 1 !important;  /* fully visible */
+}
 
-    .tab-content {
-      display: none;
-      animation: fadeIn 0.5s ease-in-out;
-      margin: 0 !important;
-      padding: -40px;
-      width: 100%;
-      box-sizing: border-box;
-      opacity: 1 !important;
-    }
+.tab-content.active {
+  display: block;
+  width: 100%;
+  margin-bottom: -70px  !important;
+ margin-top: -50px  !important;
+  padding: 0;
+  color: black !important;
+  box-sizing: border-box;
+  opacity: 1 !important;  /* fully visible */
+}
 
-    .tab-content.active {
-      display: block;
-      width: 100%;
-      margin-bottom: -70px !important;
-      margin-top: -50px !important;
-      padding: 0;
-      color: black !important;
-      box-sizing: border-box;
-      opacity: 1 !important;
-    }
 
+    /* Chatbot specific styles */
     #chatbox {
       max-width: 600px;
       margin: auto;
@@ -105,7 +109,6 @@
       border-radius: 8px;
       color: #000;
     }
-
     #messages {
       height: 300px;
       overflow-y: auto;
@@ -115,14 +118,12 @@
       margin-bottom: 10px;
       white-space: pre-wrap;
     }
-
     #userInput {
       width: 80%;
       padding: 8px;
       border-radius: 4px;
       border: 1px solid #ccc;
     }
-
     #sendBtn {
       width: 18%;
       padding: 8px;
@@ -133,12 +134,10 @@
       border-radius: 4px;
       margin-left: 2%;
     }
-
     @keyframes fadeIn {
       from {opacity: .50;}
       to {opacity: 1;}
     }
-
     @keyframes slideDown {
       from {
         transform: translateY(-20px);
@@ -149,33 +148,79 @@
         opacity: 1;
       }
     }
+	  .animated-img {
+    opacity: 0;
+    transform: scale(1);
+    transition: transform 0.6s ease, box-shadow 0.6s ease, opacity 1.5s ease;
+    animation: fadeIn 1s ease forwards;
+  }
 
-    .animated-img {
-      opacity: 0;
-      transform: scale(1);
-      transition: transform 0.6s ease, box-shadow 0.6s ease, opacity 1.5s ease;
-      animation: fadeIn 1s ease forwards;
+  .animated-img:hover {
+  transform: scale(1.05);
+  box-shadow: 10px 10px 20px rgba(0, 139, 139, 0.5);
+}
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  </style>
+ <script>
+    function showTab(tabId) {
+      var contents = document.querySelectorAll('.tab-content');
+      var buttons = document.querySelectorAll('.tabs button');
+
+      contents.forEach(function(content) {
+        content.classList.remove('active');
+      });
+
+      buttons.forEach(function(button) {
+        button.classList.remove('active');
+      });
+
+      document.getElementById(tabId).classList.add('active');
+      event.target.classList.add('active');
     }
 
-    .animated-img:hover {
-      transform: scale(1.05);
-      box-shadow: 10px 10px 20px rgba(0, 139, 139, 0.5);
-    }
+    async function sendMessage() {
+      const input = document.getElementById('userInput');
+      const messages = document.getElementById('messages');
+      const userText = input.value.trim();
+      if (!userText) return;
 
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
+      const userMessageDiv = document.createElement('div');
+      userMessageDiv.textContent = 'You: ' + userText;
+      userMessageDiv.style.fontWeight = 'bold';
+      messages.appendChild(userMessageDiv);
+
+      input.value = '';
+      messages.scrollTop = messages.scrollHeight;
+
+      try {
+        const response = await fetch('http://localhost:8000/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: userText })
+        });
+        const data = await response.json();
+
+        const botMessageDiv = document.createElement('div');
+        botMessageDiv.textContent = 'Bot: ' + data.reply;
+        botMessageDiv.style.marginBottom = '10px';
+        messages.appendChild(botMessageDiv);
+        messages.scrollTop = messages.scrollHeight;
+      } catch (err) {
+        const errorDiv = document.createElement('div');
+        errorDiv.textContent = 'Error: Could not reach chatbot API.';
+        errorDiv.style.color = 'red';
+        messages.appendChild(errorDiv);
+        messages.scrollTop = messages.scrollHeight;
       }
     }
-  </style>
+  </script>
 </head>
-
-
-
- 
- 
-  
-   
  
 
 <section id="main" class="main style2">
