@@ -9,27 +9,27 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <style>
-    body {
-      color: black;
-      margin: 0 !important;
+    html, body {
+      height: 100%;
+      margin: 0;
       padding: 0;
-      padding-top: 10px;
-      margin-bottom: 0 !important;
       font-size: 16px;
       font-weight: 350;
       font-family: 'Inter', sans-serif;
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
+      scroll-behavior: smooth;
     }
 
     strong {
       color: black !important;
     }
 
-    section.main.style2#main,
-    section#main .container {
-      padding-top: 30px;
-      background-color: white !important;
-      margin-top: 0;
-      opacity: 1 !important;
+    section {
+      height: 100vh;
+      scroll-snap-align: start;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.04);
+      transition: box-shadow 0.3s ease;
     }
 
     .tabs {
@@ -95,47 +95,6 @@
       color: black !important;
       box-sizing: border-box;
       opacity: 1 !important;
-    }
-
-    /* Section Overlap Sticky Effect */
-    #about {
-      position: relative;
-      z-index: 1;
-    }
-
-    #education {
-      position: sticky;
-      top: 0;
-      z-index: 2;
-    }
-
-    #skills {
-      position: sticky;
-      top: 0;
-      z-index: 3;
-    }
-
-    #experience {
-      position: sticky;
-      top: 0;
-      z-index: 4;
-    }
-
-    #projects {
-      position: sticky;
-      top: 0;
-      z-index: 5;
-    }
-
-    #contact {
-      position: sticky;
-      top: 0;
-      z-index: 6;
-    }
-
-    section {
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.04);
-      transition: box-shadow 0.3s ease;
     }
 
     #chatbox {
@@ -211,6 +170,13 @@
   </style>
 </head>
 
+
+
+ 
+ 
+  
+   
+ 
 
 <section id="main" class="main style2">
   <div class="container">
