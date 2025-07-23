@@ -159,6 +159,32 @@ background-color:   white !important;
   transform: scale(1.05);
   box-shadow: 10px 10px 20px rgba(0, 139, 139, 0.5);
 }
+#hero-network {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      background-color: #0d0d0d;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      font-size: 2rem;
+    }
 
   @keyframes fadeIn {
     to {
@@ -221,7 +247,44 @@ background-color:   white !important;
     }
   </script>
 </head>
- 
+ <section id="hero-network">
+    <div id="particles-js"></div>
+    <div class="hero-text">
+      <h1>Welcome to My Portfolio</h1>
+      <p>Data Science • AI • Credit Scoring • Innovation</p>
+    </div>
+  </section>
+
+  <!-- Other sections like About, Education, etc. follow here -->
+
+  <script>
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 60 },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: 3 },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#ffffff",
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 2
+        }
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: "repulse" }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
 
 <section id="main" class="main style2">
   <div class="container">
