@@ -160,7 +160,7 @@ background-color:   white !important;
   box-shadow: 10px 10px 20px rgba(0, 139, 139, 0.5);
 }
 #hero-network {
-      position: relative;
+      position: fixed;
       height: 100vh;
       width: 100%;
       background-color: #0d0d0d;
@@ -168,6 +168,7 @@ background-color:   white !important;
       display: flex;
       align-items: center;
       justify-content: center;
+    z-index: -1; /* push it behind all other content */
     }
 
     #particles-js {
