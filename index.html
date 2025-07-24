@@ -206,30 +206,28 @@ background-color:   white !important;
   top: -5px;
   white-space: nowrap;
   overflow: hidden;
-  border-right: 2px solid rgba(210, 16, 52, 0.7); /* blinking cursor */
-  width: 0;
-  animation:
-    typing 4s steps(40, end) forwards,
-    blink-caret 0.7s step-end infinite;
+  border-right: 2px solid rgba(210, 16, 52, 0.7);
+  animation: typing 4s steps(40, end) 1s forwards,
+             blink-caret 0.7s step-end infinite,
+             erase 4s steps(40, end) 6s forwards;
+  animation-iteration-count: infinite;
 }
 
 @keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 21ch; /* Adjust based on character count */
-  }
+  from { width: 0 }
+  to { width: 40ch }
+}
+
+@keyframes erase {
+  from { width: 40ch }
+  to { width: 0 }
 }
 
 @keyframes blink-caret {
-  from, to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: rgba(210, 16, 52, 0.7);
-  }
+  50% { border-color: transparent }
+  100% { border-color: rgba(210, 16, 52, 0.7) }
 }
+
 
   </style>
  <script>
