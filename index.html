@@ -207,10 +207,9 @@ background-color:   white !important;
   white-space: nowrap;
   overflow: hidden;
   border-right: 2px solid rgba(210, 16, 52, 0.7);
-  animation: typing 4s steps(33, end) 1s forwards,
-             blink-caret 0.7s step-end infinite,
-             erase 10s steps(33, end) 6s forwards;
-  animation-iteration-count: infinite;
+  animation:
+    typing 4s steps(33, end) forwards,
+    blink-caret 0.7s step-end infinite;
 }
 
 @keyframes typing {
