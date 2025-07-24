@@ -258,14 +258,23 @@ background-color:   white !important;
 
  <section id="main" class="main style2">
   <div class="container">
-    <div class="tabs">
-      <button onclick="showTab('about')" class="active">About Me</button>
-      <button onclick="showTab('education')" class="active">Education</button>
-      <button onclick="showTab('skills')" class="active">Skills & Certifications</button>
-      <button onclick="showTab('experience')" class="active">Experience</button>
-      <button onclick="showTab('projects')" class="active">Projects</button>
-      <button onclick="showTab('contact')" class="active">Contact</button>
-    </div>
+    <div class="tabs-container" style="display: flex; justify-content: space-between; align-items: center;">
+  <!-- Home button on the left -->
+  <div>
+    <button onclick="scrollToHome()">Home</button>
+  </div>
+
+  <!-- Other tabs on the right -->
+  <div class="tabs">
+    <button onclick="showTab('about')" class="active">About Me</button>
+    <button onclick="showTab('education')" class="active">Education</button>
+    <button onclick="showTab('skills')" class="active">Skills & Certifications</button>
+    <button onclick="showTab('experience')" class="active">Experience</button>
+    <button onclick="showTab('projects')" class="active">Projects</button>
+    <button onclick="showTab('contact')" class="active">Contact</button>
+  </div>
+</div>
+
   </div>
 
 
