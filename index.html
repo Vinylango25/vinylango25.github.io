@@ -207,19 +207,19 @@ background-color:   white !important;
   white-space: nowrap;
   overflow: hidden;
   border-right: 2px solid rgba(210, 16, 52, 0.7);
-  animation: typing 4s steps(40, end) 1s forwards,
+  animation: typing 10s steps(33, end) 1s forwards,
              blink-caret 0.7s step-end infinite,
-             erase 4s steps(40, end) 6s forwards;
+             erase 10s steps(33, end) 6s forwards;
   animation-iteration-count: infinite;
 }
 
 @keyframes typing {
   from { width: 0 }
-  to { width: 40ch }
+  to { width: 33ch }
 }
 
 @keyframes erase {
-  from { width: 40ch }
+  from { width: 33ch }
   to { width: 0 }
 }
 
