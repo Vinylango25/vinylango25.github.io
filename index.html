@@ -38,7 +38,7 @@ section#main .container {
 background-color:   white !important;
   opacity: 1 !important; 
 }
-     .tabs {
+    .tabs {
       position: fixed;
       top: 0;
       right: 0px;
@@ -46,34 +46,37 @@ background-color:   white !important;
       display: flex;
       justify-content: flex-end;
       flex-wrap: wrap;
-      gap: 17px;
-      padding: 10px 20px;
-      background-color:#0074D9;
+      gap: 10px;
+      padding: 20px 10px;
+      background-color:white;
+      color:  #1a1a1a  !important;
       z-index: 1000;
       animation: slideDown 0.5s ease-in-out;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
       border-bottom-left-radius: 8px;
     }
     .tabs button {
-      color: #333;
+      color: #1a1a1a  !important;
       border: none;
-      height: 25px;
-      line-height: 25px;
-      padding: 0 15px;
-      background-color: #0074D9 ;
-      font-size: 12.5px;
+      height: 10px;
+      line-height: 10px;
+      padding: 0 5px;
+      background-color:   white;
+      font-size: 14px;
       border-radius: 4px;
       cursor: pointer;
       text-transform: capitalize;
       transition: background-color 0.3s ease, transform 0.2s ease;
+      font-weight: 420;     /* normal weight — adjust as needed */
+      font-family: 'Inter', sans-serif; /* optional: clean modern font */
     }
     .tabs button:hover {
       background-color: rgba(0, 0, 0, 0.07);
       transform: translateY(1px);
     }
     .tabs button.active {
-      background-color: #0074D9 ;
-      color: white;
+      background-color:  white;
+      color:  #1a1a1a  !important;
     }
   .tab-content {
   display: none;
