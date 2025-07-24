@@ -257,8 +257,20 @@ background-color:   white !important;
 
 
 <section id="main" class="main style2">
-  <div class="container">
-    <div class="tabs">
+  <div class="container" style="position: relative;">
+    <div style="
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-weight: bold;
+      font-size: 16px;
+      letter-spacing: 1px;
+      color: #004d4d; /* optional dark teal */
+    ">
+      DATA SCIENCE • AI • INNOVATION
+    </div>
+
+    <div class="tabs" style="margin-top: 40px;">
       <button onclick="showTab('about')" class="active">About Me</button>
       <button onclick="showTab('education')" class="active">Education</button>
       <button onclick="showTab('skills')" class="active">Skills & Certifications</button>
@@ -267,6 +279,7 @@ background-color:   white !important;
       <button onclick="showTab('contact')" class="active">Contact</button>
     </div>
   </div>
+</section>
 
 
  <div class="content" style="
