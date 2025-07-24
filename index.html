@@ -198,6 +198,39 @@ background-color:   white !important;
     }
   }
 
+.typing-text {
+  font-weight: bold;
+  color: rgba(210, 16, 52, 0.7);
+  font-size: 17px;
+  position: relative;
+  top: -5px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid rgba(210, 16, 52, 0.7); /* blinking cursor */
+  width: 0;
+  animation:
+    typing 4s steps(30, end) forwards,
+    blink-caret 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 21ch; /* Adjust based on character count */
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: rgba(210, 16, 52, 0.7);
+  }
+}
+
   </style>
  <script>
     function showTab(tabId) {
@@ -259,9 +292,7 @@ background-color:   white !important;
  <section id="main" class="main style2">
   <div class="container">
   <div class="tabs">
-  <span style="font-weight: bold; color: rgba(210, 16, 52, 0.7) ; font-size: 17px; position: relative; top: -5px;">
-    DATA SCIENCE • AI • INNOVATION
-  </span>
+  <span class="typing-text">DATA SCIENCE • AI • INNOVATION</span>
 <button onclick="showTab('about')" class="active" style="margin-left: 400px;">About Me</button>
   <button onclick="showTab('education')" class="active">Education</button>
   <button onclick="showTab('skills')" class="active">Skills & Certifications</button>
